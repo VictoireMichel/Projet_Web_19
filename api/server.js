@@ -1,8 +1,8 @@
 //////////////////////////CREATION DU SERVEUR/////////////////////////////////////////////////////////////////////////////////////
 
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -23,9 +23,9 @@ module.exports = app;
 
 //////////////////////////CONNEXION A LA BASE DE DONNEES/////////////////////////////////////////////////////////////////////////////////////
 
-var mysql = require('mysql');
+const mysql = require('mysql');
 
-var con = mysql.createConnection({
+const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "user1234",
