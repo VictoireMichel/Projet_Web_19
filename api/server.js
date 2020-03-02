@@ -53,7 +53,7 @@ con.connect(function(err) {
 //////////////////////////TEST CREATION CATEGORIE LIST/////////////////////////////////////////////////////////////////////////////////////
 
 
-// Toutes les catégories
+// Toutes les catégories => par exemple dans l'url => localhost:3000/categorie
 app.get('/categorie', function (req, res) {
     con.query('SELECT * FROM categorie', function (error, results) {
         if (error) throw error;
