@@ -28,8 +28,8 @@ const mysql = require('mysql');
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "user1234",
-    database: "prototype_web",
+    password: "florent200399",
+    database: "webDB_proto",
 });
 
 
@@ -56,6 +56,14 @@ con.connect(function(err) {
 // Toutes les catégories => par exemple dans l'url => localhost:3000/categorie
 app.get('/categorie', function (req, res) {
     con.query('SELECT * FROM categorie', function (error, results) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'cat list.' });
+    });
+});
+
+// Tous les users => par exemple dans l'url => localhost:3000/users
+app.get('/users', function (req, res) {
+    con.query('SELECT * FROM users', function (error, results) {
         if (error) throw error;
         return res.send({ error: false, data: results, message: 'cat list.' });
     });
