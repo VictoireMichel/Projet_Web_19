@@ -73,7 +73,7 @@ app.get('/addcat', function (req, res) {
 
 // supprimer une catégorie => par exemple dans l'url => localhost:3000/delcat
 app.get('/delcat', function (req, res) {
-    con.query('delete from categorie where idCat = 8', function (error, results) {
+    con.query('delete from categorie where idCat = 9', function (error, results) {
         if (error) throw error;
         res.send(JSON.stringify(results));
 
