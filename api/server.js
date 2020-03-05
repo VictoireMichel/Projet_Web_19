@@ -1,4 +1,5 @@
-//////////////////////////CREATION DU SERVEUR/////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////CREATION DU SERVEUR///////////////////////////////////////////////////////////////////////////////////////////////
+
 
 const express = require('express');
 const app = express();
@@ -9,12 +10,12 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// default route
+// route par défaut
 app.get('/', function (req, res) {
-    return res.send({ error: true, message: 'hello' })
+    return res.send('hello');
 });
 
-// set port
+// affectation du port
 app.listen(3000, function () {
     console.log('Node app is running on port 3000');
 });
@@ -37,27 +38,20 @@ con.connect(function(err) {
     if (err) {
         return console.error('error: ' + err.message);
     }
-    //let sql = "insert into categorie(nom, details) values ('viande', 'pure')";
-    let sql = "select * from categorie";
-    con.query(sql , (error, result) => {
-        if(error){
-            return console.error(error.message);
-        }
-        console.log(result);
-    });
-
     console.log('Connected to the MySQL server.');
 
 });
 
-//////////////////////////REQUÊTES/////////////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////REQUÊTES///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // Toutes les catégories => par exemple dans l'url => localhost:3000/categorie
 app.get('/categorie', function (req, res) {
     con.query('SELECT * FROM categorie', function (error, results) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'cat list.' });
+        res.send(JSON.stringify(results));
     });
 });
 
@@ -65,7 +59,7 @@ app.get('/categorie', function (req, res) {
 app.get('/produits', function (req, res) {
     con.query('SELECT * FROM produits', function (error, results) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'prod list.' });
+        res.send(JSON.stringify(results));
     });
 });
 
@@ -73,14 +67,15 @@ app.get('/produits', function (req, res) {
 app.get('/addcat', function (req, res) {
     con.query('insert into categorie(nom, details) values (\'pate\', \'fraiche\')', function (error, results) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'add cat.' });
+        res.send(JSON.stringify(results));
     });
 });
 
 // supprimer une catégorie => par exemple dans l'url => localhost:3000/delcat
 app.get('/delcat', function (req, res) {
-    con.query('delete from categorie where idCat = 3', function (error, results) {
+    con.query('delete from categorie where idCat = 8', function (error, results) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'del cat' });
+        res.send(JSON.stringify(results));
+
     });
 });
