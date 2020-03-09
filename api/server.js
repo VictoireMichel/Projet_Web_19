@@ -29,8 +29,8 @@ const mysql = require('mysql');
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "user1234",
-    database: "prototype_web",
+    password: "florent200399",
+    database: "webDB_proto",
 });
 
 
@@ -63,6 +63,7 @@ app.get('/produits', function (req, res) {
     });
 });
 
+
 // ajouter une catégorie => par exemple dans l'url => localhost:3000/addcat
 app.get('/addcat', function (req, res) {
     con.query('insert into categorie(nom, details) values (\'pate\', \'fraiche\')', function (error, results) {
@@ -77,5 +78,13 @@ app.get('/delcat', function (req, res) {
         if (error) throw error;
         res.send(JSON.stringify(results));
 
+    });
+});
+
+// Tous les users => par exemple dans l'url => localhost:3000/users
+app.get('/users', function (req, res) {
+    con.query('SELECT * FROM users', function (error, results) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'cat list.' });
     });
 });
