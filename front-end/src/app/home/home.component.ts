@@ -13,4 +13,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  clickS() {
+    console.log("coucou");
+
+    return false;
+  }
+
 }
