@@ -11,5 +11,9 @@ export class ConnecterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  connex() {
+    return false;
+  }
 }
+
+

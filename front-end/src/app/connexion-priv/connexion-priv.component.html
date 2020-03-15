@@ -1,8 +1,15 @@
 <div id="login" class="panel panel-primary container">
   <div class="panel-heading"><h3 class="panel-title"><strong> Identification</strong></h3></div>
   <div class="panel-body">
-    <form id="frm-login" class="form-horizontal" action="/connexion-Privé" onsubmit="connex()" >
+    <form id="frm-login" class="form-horizontal" action="javascript:ctrl.effectuerLogin();">
       <fieldset>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="control-label" for="nomUtilisateur"><span class="glyphicon glyphicon-user"></span> Nom d'utilisateur</label>
+          <div>
+            <input id="nomUtilisateur" name="nomUtilisateur" type="text" placeholder="Entrez votre nom d'utilisateur" class="form-control input-md" required="">
+          </div>
+        </div>
 
         <!-- Password input-->
         <div class="form-group">
