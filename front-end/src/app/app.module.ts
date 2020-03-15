@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule,Routes,Router} from '@angular/router';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -9,7 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { ConnecterComponent } from './connecter/connecter.component';
 import { ConnexionPrivComponent } from './connexion-priv/connexion-priv.component';
+import { ProduitComponent } from './produit/produit.component';
+import {ProduitsService} from "./produit/produits.service";
 
+import {HttpClientModule} from '@angular/common/http';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component'; //pour le lien entre le backend et le frontend
 
 
 
@@ -20,6 +25,7 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent }, // http://localhost:4200/contact
   {path: 'connecter', component: ConnecterComponent}, // http://localhost:4200/connecter
   {path: 'connexion-Privé', component: ConnexionPrivComponent}, // http://localhost:4200/connexion-Privé
+  {path: 'produits', component: ProduitComponent}, // http://localhost:
 ];
 
 
@@ -32,14 +38,18 @@ const routes: Routes = [
     NewsComponent,
     ConnecterComponent,
     ConnexionPrivComponent,
+    ProduitComponent,
+    AjoutProduitComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    ProduitsService
+  ],
   bootstrap: [AppComponent]
 })
 

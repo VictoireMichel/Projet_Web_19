@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   }
 
   clickS() {
-    console.log("coucou");
 
+  return false;
 
   }
 
