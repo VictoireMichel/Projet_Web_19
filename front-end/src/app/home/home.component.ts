@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {$} from "protractor";
+
+
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -16,7 +20,7 @@ export class HomeComponent implements OnInit {
   clickS() {
     console.log("coucou");
 
-    return false;
+
   }
 
 }

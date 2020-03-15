@@ -12,6 +12,10 @@ import { NewsComponent } from './news/news.component';
 import { ConnecterComponent } from './connecter/connecter.component';
 import { EnregistrerComponent } from './enregistrer/enregistrer.component';
 
+
+
+
+
 const routes: Routes = [
   {path: '', component: HomeComponent }, // http://localhost:4200
   {path: 'news', component: NewsComponent}, // http://localhost:4200/news
@@ -35,7 +39,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
