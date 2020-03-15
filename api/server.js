@@ -10,15 +10,18 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+
 // route par défaut
 app.get('/', function (req, res) {
-    return res.send('hello');
+    res.send('hello');
 });
 
 // affectation du port
 app.listen(3000, function () {
     console.log('Node app is running on port 3000');
 });
+
+
 
 module.exports = app;
 

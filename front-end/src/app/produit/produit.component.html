@@ -1,0 +1,29 @@
+
+<div class="row">
+  <div class="col-md-12 pad-10">
+    <button type="submit" class="btn btn-primary" (click)="goToAddProduits()">
+      <span class="glyphicon glyphicon-floppy-disk"></span> Ajout Produit
+    </button>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>idCat</th>
+    <th>idFourn</th>
+    <th>Origine</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let produit of produits">
+    <td>{{ produit.id }}</td>
+    <td>{{ produit.nom }}</td>
+    <td>{{ produit.idCat }}</td>
+    <td>{{ produit.idFourn}}</td>
+    <td>{{ produit.origine }}</td>
+  </tr>
+  </tbody>
+</table>
