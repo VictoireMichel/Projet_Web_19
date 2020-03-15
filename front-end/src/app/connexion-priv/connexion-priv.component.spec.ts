@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnregistrerComponent } from './enregistrer.component';
+import { ConnexionPrivComponent } from './connexion-priv.component';
 
-describe('EnregistrerComponent', () => {
-  let component: EnregistrerComponent;
-  let fixture: ComponentFixture<EnregistrerComponent>;
+describe('ConnexionPrivComponent', () => {
+  let component: ConnexionPrivComponent;
+  let fixture: ComponentFixture<ConnexionPrivComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EnregistrerComponent ]
+      declarations: [ ConnexionPrivComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EnregistrerComponent);
+    fixture = TestBed.createComponent(ConnexionPrivComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
