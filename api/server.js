@@ -74,7 +74,7 @@ app.post('/addproduit', function (req, res) {
         let idCat = req.body.idCat;
         let idFourn = req.body.idFourn;
         let origine = req.body.origine;
-    con.query('insert into produits(nom, idCat, idFourn, origine) values ?', [nom, idCat, idFourn, origine], function (error, results) {
+    con.query('insert into produits(nom, idCat, idFourn, origine) values (?, ?, ? ?)', [nom, idCat, idFourn, origine], function (error, results) {
         if (error) {console.log('erreurdb');}
         res.send(JSON.stringify(results));
     });
