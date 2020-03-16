@@ -4,12 +4,13 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+//const cors = require('cors');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
+//app.use(cors());
 
 // route par défaut
 app.get('/', function (req, res) {
@@ -25,7 +26,7 @@ app.listen(3000, function () {
 
 module.exports = app;
 
-//////////////////////////CONNEXION A LA BASE DE DONNEES/////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////CONNEXION A LA BASE DE DONNEES////////////////////////////////////////////////////////////////////////////////////////////
 
 const mysql = require('mysql');
 
@@ -47,7 +48,7 @@ con.connect(function(err) {
 
 
 
-//////////////////////////REQUÊTES///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////REQUÊTES/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // Toutes les catégories => par exemple dans l'url => localhost:3000/categorie
@@ -60,8 +61,21 @@ app.get('/categorie', function (req, res) {
 
 // Tous les produits => par exemple dans l'url => localhost:3000/produits
 app.get('/produits', function (req, res) {
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     con.query('SELECT * FROM produits', function (error, results) {
         if (error) throw error;
+        res.send(JSON.stringify(results));
+    });
+});
+
+// ajouter un produit => par exemple dans l'url => localhost:3000/addproduit
+app.post('/addproduit', function (req, res) {
+        let nom = req.body.nom;
+        let idCat = req.body.idCat;
+        let idFourn = req.body.idFourn;
+        let origine = req.body.origine;
+    con.query('insert into produits(nom, idCat, idFourn, origine) values ?', [nom, idCat, idFourn, origine], function (error, results) {
+        if (error) {console.log('erreurdb');}
         res.send(JSON.stringify(results));
     });
 });

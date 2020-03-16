@@ -14,6 +14,8 @@ import { ProduitComponent } from './produit/produit.component';
 import {ProduitsService} from "./produit/produits.service";
 
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
+import {ConfirmationPopoverModule} from "angular-confirmation-popover";
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component'; //pour le lien entre le backend et le frontend
 
 
@@ -26,6 +28,7 @@ const routes: Routes = [
   {path: 'connecter', component: ConnecterComponent}, // http://localhost:4200/connecter
   {path: 'connexion-Privé', component: ConnexionPrivComponent}, // http://localhost:4200/connexion-Privé
   {path: 'produits', component: ProduitComponent}, // http://localhost:
+  { path: 'ajout-produit', component: AjoutProduitComponent },
 ];
 
 
@@ -46,6 +49,10 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    FormsModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger' // set defaults here
+    })
   ],
   providers: [
     ProduitsService

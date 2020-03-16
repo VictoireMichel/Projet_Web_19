@@ -15,12 +15,12 @@ export class ProduitsService {
       .get(`${this.url}/produits`);
   }
   createProduits(data) {
-    this.http.post(`${this.url}/produits`, data)
+    this.http.post(`${this.url}/addproduit`, data)
       .subscribe(
         res => {
           console.log(res);
 
-          this.router.navigateByUrl('/produits');
+          this.router.navigateByUrl('/addproduit');
         },
         err => {
           console.log('Error occured:' , err);
