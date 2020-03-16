@@ -1,16 +1,17 @@
-//////////////////////////CREATION DU SERVEUR///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////CREATION DU SERVEUR//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-//const cors = require('cors');
+const cors = require('cors');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-//app.use(cors());
+
 
 // route par défaut
 app.get('/', function (req, res) {
@@ -74,7 +75,7 @@ app.post('/addproduit', function (req, res) {
         let idCat = req.body.idCat;
         let idFourn = req.body.idFourn;
         let origine = req.body.origine;
-    con.query('insert into produits(nom, idCat, idFourn, origine) values (?, ?, ? ?)', [nom, idCat, idFourn, origine], function (error, results) {
+    con.query('insert into produits(nom, idCat, idFourn, origine) values (?, ?, ?, ?)', [nom, idCat, idFourn, origine], function (error, results) {
         if (error) {console.log('erreurdb');}
         res.send(JSON.stringify(results));
     });
