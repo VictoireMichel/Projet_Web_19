@@ -19,7 +19,7 @@ export class ProduitComponent implements OnInit {
     this.produitsService.getProduits().subscribe((data: Produits[]) => {this.produits = data});
   }
   goToAddProduits () {
-    this.router.navigateByUrl('/ajout-matiere');
+    this.router.navigateByUrl('/ajout-produit');
   }
 
 }
