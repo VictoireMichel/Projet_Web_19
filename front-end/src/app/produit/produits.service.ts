@@ -20,7 +20,7 @@ export class ProduitsService {
         res => {
           console.log(res);
 
-          this.router.navigateByUrl('/addproduit');
+          this.router.navigateByUrl('/ajout-produit');
         },
         err => {
           console.log('Error occured:' , err);
