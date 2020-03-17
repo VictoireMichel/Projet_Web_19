@@ -1,0 +1,18 @@
+.title{
+  position:relative;
+  text-align:center;
+}
+.title::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:0;
+  width:100%;
+  background: #4CAF50;
+  height:2px;
+  z-index:-1;
+}
+.title span{
+  background: #4CAF50;
+  padding:4px 8px;
+}
