@@ -12,10 +12,10 @@ export class ProduitsService {
   getProduits() {
     return this
       .http
-      .get(`${this.url}/produits`);
+      .get(`${this.url}/api/produits`);
   }
   createProduits(data) {
-    this.http.post(`${this.url}/addproduit`, data)
+    this.http.post(`${this.url}/api/ajoutProduits`, data)
       .subscribe(
         res => {
           console.log(res);

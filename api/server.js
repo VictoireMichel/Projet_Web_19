@@ -34,7 +34,7 @@ const mysql = require('mysql');
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "florent200399",
+    password: "user1234",
     database: "prototype_web",
 });
 
@@ -52,16 +52,16 @@ con.connect(function(err) {
 //////////////////////////REQUÊTES/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// Toutes les catégories => par exemple dans l'url => localhost:3000/categorie
-app.get('/categorie', function (req, res) {
+// Toutes les catégories => par exemple dans l'url => localhost:3000/api/categorie
+app.get('/api/categorie', function (req, res) {
     con.query('SELECT * FROM categorie', function (error, results) {
         if (error) throw error;
         res.send(JSON.stringify(results));
     });
 });
 
-// Tous les produits => par exemple dans l'url => localhost:3000/produits
-app.get('/produits', function (req, res) {
+// Tous les produits => par exemple dans l'url => localhost:3000/api/produits
+app.get('/api/produits', function (req, res) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
     con.query('SELECT * FROM produits', function (error, results) {
         if (error) throw error;
@@ -69,8 +69,8 @@ app.get('/produits', function (req, res) {
     });
 });
 
-// ajouter un produit => par exemple dans l'url => localhost:3000/addproduit
-app.post('/addproduit', function (req, res) {
+// ajouter un produit => par exemple dans l'url => localhost:3000/api/ajoutProduits
+app.post('/api/ajoutProduits', function (req, res) {
         let nom = req.body.nom;
         let idCat = req.body.idCat;
         let idFourn = req.body.idFourn;
@@ -82,16 +82,16 @@ app.post('/addproduit', function (req, res) {
 });
 
 
-// ajouter une catégorie => par exemple dans l'url => localhost:3000/addcat
-app.get('/addcat', function (req, res) {
+// ajouter une catégorie => par exemple dans l'url => localhost:3000/api/ajoutCategorie
+app.get('/api/ajoutCategorie', function (req, res) {
     con.query('insert into categorie(nom, details) values (\'pate\', \'fraiche\')', function (error, results) {
         if (error) throw error;
         res.send(JSON.stringify(results));
     });
 });
 
-// supprimer une catégorie => par exemple dans l'url => localhost:3000/delcat
-app.get('/delcat', function (req, res) {
+// supprimer une catégorie => par exemple dans l'url => localhost:3000/api/supprimerCategorie
+app.get('/api/supprimerCategorie', function (req, res) {
     con.query('delete from categorie where idCat = 9', function (error, results) {
         if (error) throw error;
         res.send(JSON.stringify(results));
@@ -99,9 +99,9 @@ app.get('/delcat', function (req, res) {
     });
 });
 
-// Tous les users => par exemple dans l'url => localhost:3000/users
-app.get('/users', function (req, res) {
-    con.query('SELECT * FROM users', function (error, results) {
+// Tous les users => par exemple dans l'url => localhost:3000/api/utilisateurs
+app.get('/api/utilisateurs', function (req, res) {
+    con.query('SELECT * FROM utilisateurs', function (error, results) {
         if (error) throw error;
         return res.send(JSON.stringify(results));
     });
