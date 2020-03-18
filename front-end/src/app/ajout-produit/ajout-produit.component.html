@@ -1,0 +1,59 @@
+<div class="form-horizontal pad-10">
+  <br>
+  <form #ajoutProduitForm="ngForm">
+    <div class="col-md-6 form-group">
+      <label class=" control-label">Nom Produit</label>
+      <div class="col-md-12 no-padding">
+        <input name="nom" id="nom" #nom="ngModel" [(ngModel)]="produits.nom" class="form-control" placeholder="" type="text" required />
+        <div *ngIf="nom.errors && (nom.dirty || nom.touched)" class="alert alert-danger">
+          <div [hidden]="!nom.errors.required">
+            Nom est requis!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class=" control-label">Identifiant de catégorie</label>
+      <div class="col-md-12 no-padding">
+        <input name="idCat" id="idCat" #idCat="ngModel" [(ngModel)]="produits.idCat" class="form-control" placeholder="" type="number" required />
+        <div *ngIf="idCat.errors && (idCat.dirty || idCat.touched)" class="alert alert-danger">
+          <div [hidden]="!idCat.errors.required">
+            idCat est requis!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class=" control-label">Identifiant fournisseur</label>
+      <div class="col-md-12 no-padding">
+        <input name="idFourn" id="idFourn" #idFourn="ngModel" [(ngModel)]="produits.idFourn" class="form-control" placeholder="" type="number" required />
+        <div *ngIf="idFourn.errors && (idFourn.dirty || idFourn.touched)" class="alert alert-danger">
+          <div [hidden]="!idFourn.errors.required">
+            idFourn est requis!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class=" control-label">Origine du produit</label>
+      <div class="col-md-12 no-padding">
+        <input name="origine" id="origine" #origine="ngModel" [(ngModel)]="produits.origine" class="form-control" placeholder="" type="text" required />
+        <div *ngIf="origine.errors && (origine.dirty || origine.touched)" class="alert alert-danger">
+          <div [hidden]="!origine.errors.required">
+            Origine est requis!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pad-10">
+      <button mwlConfirmationPopover
+              [popoverTitle]="'Confirmation'"
+              [popoverMessage]="'êtes-vous sûr?'"
+              placement="top"
+              (confirm)="createProduit(produits)"
+              type="submit" class="btn btn-save btn-primary" [disabled]="!ajoutProduitForm.valid">
+        <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
+      </button>
+    </div>
+  </form>
+</div>
