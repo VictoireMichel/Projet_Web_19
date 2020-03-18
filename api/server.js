@@ -103,6 +103,6 @@ app.get('/delcat', function (req, res) {
 app.get('/users', function (req, res) {
     con.query('SELECT * FROM users', function (error, results) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'cat list.' });
+        return res.send(JSON.stringify(results));
     });
 });
