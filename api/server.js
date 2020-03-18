@@ -34,7 +34,7 @@ const mysql = require('mysql');
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "florent200399",
+    password: "user1234",
     database: "prototype_web",
 });
 
@@ -56,6 +56,7 @@ con.connect(function(err) {
 app.get('/categorie', function (req, res) {
     con.query('SELECT * FROM categorie', function (error, results) {
         if (error) throw error;
+
         res.send(JSON.stringify(results));
     });
 });
