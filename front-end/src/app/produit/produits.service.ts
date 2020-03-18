@@ -15,7 +15,7 @@ export class ProduitsService {
       .get(`${this.url}/api/produits`);
   }
   createProduits(data) {
-    this.http.post(`${this.url}/api/ajoutProduits`, data)
+    this.http.post(`${this.url}/api/produits`, data)
       .subscribe(
         res => {
           console.log(res);
