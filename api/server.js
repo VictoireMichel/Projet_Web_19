@@ -231,7 +231,7 @@ app.put('/api/utilisateurs', function (req, res) {
 //Supprimer un utilisateur
 app.delete('/api/utilisateurs', function (req, res) {
     let pseudo = req.body.pseudo;
-    con.query('delete from utilisateurs where nom = ?',[pseudo], function (error, results) {
+    con.query('delete from utilisateurs where pseudo = ?',[pseudo], function (error, results) {
         if (error) throw error;
         res.send(JSON.stringify(results));
 
