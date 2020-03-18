@@ -53,10 +53,10 @@ con.connect(function(err) {
 
 
 // Tous les produits => par exemple dans l'url => localhost:3000/api/produits
-app.get('/api/produits/:id', function (req, res) {
+app.get('/api/produits', function (req, res) {
     let id = req.params.id;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('SELECT * FROM produits where id=?',[id], function (error, results) {
+    con.query('SELECT * FROM produits ', function (error, results) {
         if (error) throw error;
         res.send(JSON.stringify(results));
     });
