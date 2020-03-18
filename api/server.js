@@ -207,21 +207,21 @@ app.post('/api/utilisateurs', function (req, res) {
     let email = req.body.email;
     let adresse = req.body.adresse;
     let telephone = req.body.telephone;
-    con.query('insert into utilisateurs(pseudo, mdp, email, adresse, telephone) values (?, ?, ?, ?, ?)', [pseudo, mdp, email, adresse, telephone], function (error, results) {
+    con.query('insert into utilisateurs (pseudo, mdp, email, adresse, telephone) values (?, ?, ?, ?, ?)', [pseudo, mdp, email, adresse, telephone], function (error, results) {
         if (error) {console.log('erreurdb');}
         res.send(JSON.stringify(results));
     });
 });
 
 //Modifier un utilisateur
-app.put('/api/utilisateur', function (req, res) {
+app.put('/api/utilisateurs', function (req, res) {
     let idUser = req.body.idUser;
     let pseudo = req.body.pseudo;
     let mdp = req.body.mdp;
     let email = req.body.email;
     let adresse = req.body.adresse;
     let telephone = req.body.telephone;
-    con.query('update utilisateur set pseudo = ? AND mdp = ? AND email = ? AND adresse = ? AND telephone = ? where idUser = ?', [pseudo, mdp, email, adresse, telephone, idUser], function (error, results) {
+    con.query('update utilisateurs set pseudo = ? AND mdp = ? AND email = ? AND adresse = ? AND telephone = ? where idUser = ?', [pseudo, mdp, email, adresse, telephone, idUser], function (error, results) {
         if (error) {console.log('erreurdb');}
         res.send(JSON.stringify(results));
     });
@@ -230,7 +230,7 @@ app.put('/api/utilisateur', function (req, res) {
 //Supprimer un utilisateur
 app.delete('/api/utilisateurs', function (req, res) {
     let pseudo = req.body.pseudo;
-    con.query('delete from utilisateur where nom = ?',[pseudo], function (error, results) {
+    con.query('delete from utilisateurs where nom = ?',[pseudo], function (error, results) {
         if (error) throw error;
         res.send(JSON.stringify(results));
 
