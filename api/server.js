@@ -53,9 +53,10 @@ con.connect(function(err) {
 
 
 // Tous les produits => par exemple dans l'url => localhost:3000/api/produits
-app.get('/api/produits', function (req, res) {
+app.get('/api/produits/:id', function (req, res) {
+    let id = req.params.id;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('SELECT * FROM produits', function (error, results) {
+    con.query('SELECT * FROM produits where id=?',[id], function (error, results) {
         if (error) throw error;
 
         res.send(JSON.stringify(results));
@@ -74,8 +75,9 @@ app.get('/api/prod', function (req, res) {
 });
 
 
-// ajouter un produit => par exemple dans l'url => localhost:3000/api/ajoutProduits
-app.post('/api/ajoutProduits', function (req, res) {
+// ajouter un produit => par exemple dans l'url => localhost:3000/api/produits
+app.post('/api/produits', function (req, res) {
+
         let nom = req.body.nom;
         let idCat = req.body.idCat;
         let idFourn = req.body.idFourn;
@@ -86,8 +88,8 @@ app.post('/api/ajoutProduits', function (req, res) {
     });
 });
 
-//Supprimer un produit sur base de son nom => url => localhost:3000/api/supprimerProduits
-app.delete('/api/supprimerProduits', function (req, res) {
+//Supprimer un produit sur base de son nom => url => localhost:3000/api/produits
+app.delete('/api/produits', function (req, res) {
     let nom = req.body.nom;
     con.query('delete from produits where nom = ? ', [nom], function (error, results) {
         if (error) {console.log('erreurdb');}
@@ -95,8 +97,8 @@ app.delete('/api/supprimerProduits', function (req, res) {
     });
 });
 
-//modifier le nom et l'origine d'un produit selon son id=> url => localhost:3000/api/modifierProduits
-app.put('/api/modifierProduits', function (req, res) {
+//modifier le nom et l'origine d'un produit selon son id=> url => localhost:3000/api/produits
+app.put('/api/produits', function (req, res) {
     let id = req.body.id;
     let nom = req.body.nom;
     let origine = req.body.origine;
@@ -115,8 +117,8 @@ app.get('/api/categorie', function (req, res) {
     });
 });
 
-// ajouter une catégorie => par exemple dans l'url => localhost:3000/api/ajoutCategorie
-app.post('/api/ajoutCategorie', function (req, res) {
+// ajouter une catégorie => par exemple dans l'url => localhost:3000/api/categorie
+app.post('/api/categorie', function (req, res) {
     let nom = req.body.nom;
     let details = req.body.details;
     con.query('insert into categorie(nom, details) values (?,?)',[nom, details], function (error, results) {
@@ -125,8 +127,8 @@ app.post('/api/ajoutCategorie', function (req, res) {
     });
 });
 
-// supprimer une catégorie en fonction de son id => par exemple dans l'url => localhost:3000/api/supprimerCategorie
-app.delete('/api/supprimerCategorie', function (req, res) {
+// supprimer une catégorie en fonction de son id => par exemple dans l'url => localhost:3000/api/categorie
+app.delete('/api/categorie', function (req, res) {
     let id = req.body.id;
     con.query('delete from categorie where idCat = ?',[id], function (error, results) {
         if (error) throw error;
@@ -134,6 +136,8 @@ app.delete('/api/supprimerCategorie', function (req, res) {
 
     });
 });
+
+
 
 // Tous les utilisateurs => par exemple dans l'url => localhost:3000/api/utilisateurs
 app.get('/api/utilisateurs', function (req, res) {
