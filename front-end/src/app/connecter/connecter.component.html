@@ -3,7 +3,13 @@
   <div class="panel-body">
     <form id="frm-login" class="form-horizontal" action="/connexion-Privé" onsubmit="connex()" >
       <fieldset>
-
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="control-label" for="adresseMail"><span class="glyphicon glyphicon-user"></span> Adresse mail</label>
+          <div>
+            <input id="adresseMail" name="adresseMail" type="text" placeholder="Entrez votre adresse mail" class="form-control input-md" required="">
+          </div>
+        </div>
         <!-- Password input-->
         <div class="form-group">
           <label class="control-label" for="mdp"><span class="glyphicon glyphicon-lock"></span> Mot de passe</label>
@@ -11,11 +17,16 @@
             <input id="mdp" name="mdp" type="password" placeholder="Entrez votre mot de passe" class="form-control input-md" required="">
           </div>
         </div>
+        <!-- s'inscrire-->
+        <div>
+          <p><b>ou</b></p>
+          <a routerLink="/connexion-Privé"><span class="glyphicon glyphicon-pencil"></span> S'inscrire</a>
+        </div>
         <!-- Button -->
         <div class="form-group">
           <label class="control-label" for="btnSigner"></label>
           <div>
-            <button id="btnSigner" type="submit" name="btnSigner" class="btn btn-success">Signer</button>
+            <button id="btnSigner" type="submit" name="btnSigner" class="btn btn-success">Connexion</button>
           </div>
 
         </div>
