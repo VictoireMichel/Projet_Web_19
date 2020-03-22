@@ -12,8 +12,8 @@ export class AjoutProduitComponent implements OnInit {
   produits: Produits = {
   id: null,
   nom: "",
-  idCat: null,
-  idFourn: null,
+  categorie: null,
+  fournisseur: null,
   origine: "",
 };
 

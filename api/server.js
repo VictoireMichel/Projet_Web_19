@@ -56,7 +56,17 @@ con.connect(function(err) {
 app.get('/api/produits', function (req, res) {
     let id = req.params.id;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('SELECT * FROM produits ', function (error, results) {
+    con.query('SELECT produits.id,\n' +
+        '       produits.nom,\n' +
+        '       categories.nom as categorie,\n' +
+        '       categories.details as details,\n' +
+        '       fournisseurs.nom as fournisseur,\n' +
+        '       produits.origine\n' +
+        'FROM produits\n' +
+        '    join categories\n' +
+        '        on produits.idCat = categories.idCat \n' +
+        '    join fournisseurs\n' +
+        '        on produits.idFourn = fournisseurs.idFourn ', function (error, results) {
         if (error) throw error;
 
         res.send(JSON.stringify(results));

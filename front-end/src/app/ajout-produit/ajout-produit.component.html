@@ -13,22 +13,22 @@
       </div>
     </div>
     <div class="col-md-6 form-group">
-      <label class=" control-label">Identifiant de catégorie</label>
+      <label class=" control-label">catégorie</label>
       <div class="col-md-12 no-padding">
-        <input name="idCat" id="idCat" #idCat="ngModel" [(ngModel)]="produits.idCat" class="form-control" placeholder="" type="number" required />
-        <div *ngIf="idCat.errors && (idCat.dirty || idCat.touched)" class="alert alert-danger">
-          <div [hidden]="!idCat.errors.required">
+        <input name="categorie" id="categorie" #categorie="ngModel" [(ngModel)]="produits.categorie" class="form-control" placeholder="" type="number" required />
+        <div *ngIf="categorie.errors && (categorie.dirty || categorie.touched)" class="alert alert-danger">
+          <div [hidden]="!categorie.errors.required">
             idCat est requis!
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-6 form-group">
-      <label class=" control-label">Identifiant fournisseur</label>
+      <label class=" control-label">fournisseur</label>
       <div class="col-md-12 no-padding">
-        <input name="idFourn" id="idFourn" #idFourn="ngModel" [(ngModel)]="produits.idFourn" class="form-control" placeholder="" type="number" required />
-        <div *ngIf="idFourn.errors && (idFourn.dirty || idFourn.touched)" class="alert alert-danger">
-          <div [hidden]="!idFourn.errors.required">
+        <input name="fournisseur" id="fournisseur" #fournisseur="ngModel" [(ngModel)]="produits.fournisseur" class="form-control" placeholder="" type="number" required />
+        <div *ngIf="fournisseur.errors && (fournisseur.dirty || fournisseur.touched)" class="alert alert-danger">
+          <div [hidden]="!fournisseur.errors.required">
             idFourn est requis!
           </div>
         </div>
