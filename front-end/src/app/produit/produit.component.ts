@@ -11,12 +11,14 @@ import {Produits} from './produits.interface';
 })
 export class ProduitComponent implements OnInit {
 
+
  produits: Produits[];
 
   constructor(private produitsService: ProduitsService, private router: Router) { }
 
   ngOnInit(): void {
     this.produitsService.getProduits().subscribe((data: Produits[]) => {this.produits = data});
+
   }
   goToAddProduits () {
     this.router.navigateByUrl('/ajout-produit');
