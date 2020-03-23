@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ProduitsService} from "./produits.service";
+
 import {Router} from "@angular/router";
 import {Produits} from './produits.interface';
+import {Categories} from "../categories/categories.interface";
 
 
 @Component({
@@ -14,10 +16,12 @@ export class ProduitComponent implements OnInit {
 
  produits: Produits[];
 
+
   constructor(private produitsService: ProduitsService, private router: Router) { }
 
   ngOnInit(): void {
     this.produitsService.getProduits().subscribe((data: Produits[]) => {this.produits = data});
+
 
   }
   goToAddProduits () {

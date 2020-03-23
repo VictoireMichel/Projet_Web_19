@@ -13,23 +13,31 @@
       </div>
     </div>
     <div class="col-md-6 form-group">
-      <label class=" control-label">catégorie</label>
+      <label for="categorie" class=" control-label">Catégorie</label>
       <div class="col-md-12 no-padding">
-        <input name="categorie" id="categorie" #categorie="ngModel" [(ngModel)]="produits.categorie" class="form-control" placeholder="" type="number" required />
+        <select name="categorie" id="categorie" #categorie="ngModel" [(ngModel)]="produits.categorie" class="form-control" required >
+          <option *ngFor="let i of categories" [value]="i.idCat">
+            {{i.nom}}
+          </option>
+        </select>
         <div *ngIf="categorie.errors && (categorie.dirty || categorie.touched)" class="alert alert-danger">
           <div [hidden]="!categorie.errors.required">
-            idCat est requis!
+            Catégorie est requis!
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-6 form-group">
-      <label class=" control-label">fournisseur</label>
+      <label for="fournisseur" class=" control-label">Fournisseur</label>
       <div class="col-md-12 no-padding">
-        <input name="fournisseur" id="fournisseur" #fournisseur="ngModel" [(ngModel)]="produits.fournisseur" class="form-control" placeholder="" type="number" required />
+        <select name="fournisseur" id="fournisseur" #fournisseur="ngModel" [(ngModel)]="produits.fournisseur" class="form-control" required >
+          <option *ngFor="let f of fournisseurs" [value]="f.idFourn">
+            {{f.nom}}
+          </option>
+        </select>
         <div *ngIf="fournisseur.errors && (fournisseur.dirty || fournisseur.touched)" class="alert alert-danger">
           <div [hidden]="!fournisseur.errors.required">
-            idFourn est requis!
+            Fournisseur est requis!
           </div>
         </div>
       </div>

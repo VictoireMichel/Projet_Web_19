@@ -17,7 +17,12 @@ export class CategoriesComponent implements OnInit {
   constructor(private categoriesService: CategoriesService, private router: Router) { }
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe((data: Categories[]) => {this.categories = data});
+    this.categoriesService.getCategories().subscribe((data: Categories[]) => {
+      this.categories = data;
+      console.log(this.categories);
+    });
+
+
   }
 
 }
