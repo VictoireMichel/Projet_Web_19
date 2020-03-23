@@ -18,8 +18,8 @@
   <tr>
     <th>Id</th>
     <th>Nom</th>
-    <th>idCat</th>
-    <th>idFourn</th>
+    <th>Catégorie</th>
+    <th>Fournisseur</th>
     <th>Origine</th>
   </tr>
   </thead>
@@ -27,8 +27,8 @@
   <tr *ngFor="let produit of produits">
     <td>{{ produit.id }}</td>
     <td>{{ produit.nom }}</td>
-    <td>{{ produit.idCat }}</td>
-    <td>{{ produit.idFourn}}</td>
+    <td>{{ produit.categorie }}</td>
+    <td>{{ produit.fournisseur}}</td>
     <td>{{ produit.origine }}</td>
   </tr>
   </tbody>

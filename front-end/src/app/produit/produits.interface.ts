@@ -1,7 +1,7 @@
 export interface Produits {
   id: Number;
   nom: String;
-  idCat: Number;
-  idFourn: Number;
+  categorie: Number;
+  fournisseur: Number;
   origine: String;
 }
