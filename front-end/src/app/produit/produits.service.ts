@@ -36,10 +36,11 @@ export class ProduitsService {
       .delete(`${this.url}/api/produits`);
   }
 
-  getProduitRecherche() {
+  //a revoir vers quel api ?? car pas dynamique pour l'instant
+  getProduitRecherche(produit) {
     return this
       .http
-      .get(`${this.url}/api/prod`);
+      .get(`${this.url}/api/` + produit + "'");
   }
 
 }
