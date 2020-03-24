@@ -101,9 +101,9 @@ app.post('/api/produits', function (req, res) {
 
 //Supprimer un produit sur base de son nom => url => localhost:3000/api/produits
 app.delete('/api/produits', function (req, res) {
-    let nom = req.body.nom;
+    let id = req.body.id;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('delete from produits where nom = ? ', [nom], function (error, results) {
+    con.query('delete from produits where id = ? ', [id], function (error, results) {
         if (error) {console.log('erreurdb');}
         res.send(JSON.stringify(results));
     });

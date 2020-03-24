@@ -28,4 +28,11 @@ export class ProduitsService {
         }
       );
   }
+
+  deleteProduit(){
+    return this
+      .http
+      .delete(`${this.url}/api/produits`);
+  }
+
 }
