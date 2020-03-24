@@ -1,4 +1,4 @@
-create table categorie
+create table categories
 (
     idCat   int auto_increment
         primary key,
@@ -14,7 +14,7 @@ create table fournisseurs
     adresse varchar(100) not null,
     idCat   int          not null,
     constraint fournisseurs_ibfk_1
-        foreign key (idCat) references categorie (idCat)
+        foreign key (idCat) references categories (idCat)
 );
 
 create index idCat
@@ -29,7 +29,7 @@ create table produits
     idFourn int         null,
     origine varchar(30) null,
     constraint fk_produits_categorie
-        foreign key (idCat) references categorie (idCat),
+        foreign key (idCat) references categories (idCat),
     constraint produits_ibfk_1
         foreign key (idFourn) references fournisseurs (idFourn)
 );
