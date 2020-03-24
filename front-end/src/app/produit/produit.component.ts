@@ -27,7 +27,13 @@ export class ProduitComponent implements OnInit {
     this.router.navigateByUrl('/ajout-produit');
   }
 
+
   deleteProduit(){
     this.produitsService.deleteProduit();
+  }
+
+
+  produitRecherche () {
+    this.produitsService.getProduitRecherche()
   }
 }

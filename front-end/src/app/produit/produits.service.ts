@@ -14,6 +14,7 @@ export class ProduitsService {
       .http
       .get(`${this.url}/api/produits`);
   }
+
   createProduits(data) {
     this.http.post(`${this.url}/api/produits`, data)
       .subscribe(
@@ -33,6 +34,12 @@ export class ProduitsService {
     return this
       .http
       .delete(`${this.url}/api/produits`);
+  }
+
+  getProduitRecherche() {
+    return this
+      .http
+      .get(`${this.url}/api/prod`);
   }
 
 }
