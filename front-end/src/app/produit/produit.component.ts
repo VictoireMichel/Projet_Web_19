@@ -3,7 +3,6 @@ import {ProduitsService} from "./produits.service";
 
 import {Router} from "@angular/router";
 import {Produits} from './produits.interface';
-import {Categories} from "../categories/categories.interface";
 
 
 @Component({
@@ -28,4 +27,7 @@ export class ProduitComponent implements OnInit {
     this.router.navigateByUrl('/ajout-produit');
   }
 
+  deleteProduit(){
+    this.produitsService.deleteProduit();
+  }
 }
