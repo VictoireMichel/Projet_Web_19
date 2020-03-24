@@ -13,23 +13,31 @@
       </div>
     </div>
     <div class="col-md-6 form-group">
-      <label class=" control-label">Identifiant de catégorie</label>
+      <label for="categorie" class=" control-label">Catégorie</label>
       <div class="col-md-12 no-padding">
-        <input name="idCat" id="idCat" #idCat="ngModel" [(ngModel)]="produits.idCat" class="form-control" placeholder="" type="number" required />
-        <div *ngIf="idCat.errors && (idCat.dirty || idCat.touched)" class="alert alert-danger">
-          <div [hidden]="!idCat.errors.required">
-            idCat est requis!
+        <select name="categorie" id="categorie" #categorie="ngModel" [(ngModel)]="produits.categorie" class="form-control" required >
+          <option *ngFor="let i of categories" [value]="i.idCat">
+            {{i.nom}}
+          </option>
+        </select>
+        <div *ngIf="categorie.errors && (categorie.dirty || categorie.touched)" class="alert alert-danger">
+          <div [hidden]="!categorie.errors.required">
+            Catégorie est requis!
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-6 form-group">
-      <label class=" control-label">Identifiant fournisseur</label>
+      <label for="fournisseur" class=" control-label">Fournisseur</label>
       <div class="col-md-12 no-padding">
-        <input name="idFourn" id="idFourn" #idFourn="ngModel" [(ngModel)]="produits.idFourn" class="form-control" placeholder="" type="number" required />
-        <div *ngIf="idFourn.errors && (idFourn.dirty || idFourn.touched)" class="alert alert-danger">
-          <div [hidden]="!idFourn.errors.required">
-            idFourn est requis!
+        <select name="fournisseur" id="fournisseur" #fournisseur="ngModel" [(ngModel)]="produits.fournisseur" class="form-control" required >
+          <option *ngFor="let f of fournisseurs" [value]="f.idFourn">
+            {{f.nom}}
+          </option>
+        </select>
+        <div *ngIf="fournisseur.errors && (fournisseur.dirty || fournisseur.touched)" class="alert alert-danger">
+          <div [hidden]="!fournisseur.errors.required">
+            Fournisseur est requis!
           </div>
         </div>
       </div>

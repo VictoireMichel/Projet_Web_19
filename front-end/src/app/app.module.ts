@@ -16,7 +16,11 @@ import {ProduitsService} from "./produit/produits.service";
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
 import {ConfirmationPopoverModule} from "angular-confirmation-popover";
-import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component'; //pour le lien entre le backend et le frontend
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
+import {CategoriesService} from "./categories/categories.service";
+import {FournisseursService} from "./fournisseurs/fournisseurs.service";
 
 
 
@@ -27,7 +31,7 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent }, // http://localhost:4200/contact
   {path: 'connecter', component: ConnecterComponent}, // http://localhost:4200/connecter
   {path: 'connexion-Privé', component: ConnexionPrivComponent}, // http://localhost:4200/connexion-Privé
-  {path: 'produits', component: ProduitComponent}, // http://localhost:
+  {path: 'produits', component: ProduitComponent}, 
   { path: 'ajout-produit', component: AjoutProduitComponent },
 ];
 
@@ -43,6 +47,8 @@ const routes: Routes = [
     ConnexionPrivComponent,
     ProduitComponent,
     AjoutProduitComponent,
+    CategoriesComponent,
+    FournisseursComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,9 @@ const routes: Routes = [
     })
   ],
   providers: [
-    ProduitsService
+    ProduitsService,
+    CategoriesService,
+    FournisseursService
   ],
   bootstrap: [AppComponent]
 })
