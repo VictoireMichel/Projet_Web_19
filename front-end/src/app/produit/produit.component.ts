@@ -14,7 +14,7 @@ export class ProduitComponent implements OnInit {
 
 
  produits: Produits[];
-
+ rechercheValue: string = '';
 
   constructor(private produitsService: ProduitsService, private router: Router) { }
 
@@ -27,7 +27,20 @@ export class ProduitComponent implements OnInit {
     this.router.navigateByUrl('/ajout-produit');
   }
 
+
   deleteProduit(){
     this.produitsService.deleteProduit();
   }
+
+
+  produitRecherche () {
+    this.produitsService.getProduitRecherche(this.rechercheValue)
+  }
+
+  //utilisé a partir de produit.component.html
+  onKey(value: string){
+    this.rechercheValue = value;
+    console.log(this.rechercheValue)
+  }
+
 }
