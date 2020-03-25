@@ -29,10 +29,10 @@ export class ProduitsService {
       );
   }
 
-  deleteProduit(){
+
+  deleteProduit(idProd) {
     return this
       .http
-      .delete(`${this.url}/api/produits`);
+      .delete(`${this.url}/api/produits?id=` + idProd).subscribe(res => {console.log(res)})
   }
-
 }

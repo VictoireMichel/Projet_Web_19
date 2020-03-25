@@ -10,7 +10,6 @@
       <button type="submit" class="btn btn-primary" (click)="goToAddProduits()">
       <span class="glyphicon glyphicon-floppy-disk"></span> Ajout Produit
     </button>
-      <button type="submit" class="btn btn-danger" (click)="deleteProduit()">Supprimer un produit</button>
     </form>
   </div>
 </div>
@@ -31,6 +30,9 @@
     <td>{{ produit.categorie }}</td>
     <td>{{ produit.fournisseur}}</td>
     <td>{{ produit.origine }}</td>
+    <td>
+        <button [id]="produit.id" type="submit" class="btn btn-danger" (click)="deleteProduit(produit.id)">Supprimer</button>
+    </td>
   </tr>
   </tbody>
 </table>
