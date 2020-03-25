@@ -14,32 +14,37 @@ import {Produits} from './produits.interface';
 export class ProduitComponent implements OnInit {
 
 
- produits: Produits[];
- rechercheValue: string = '';
+  produits: Produits[];
+  rechercheValue: string = '';
 
 
-  constructor(private produitsService: ProduitsService, private router: Router) { }
+  constructor(private produitsService: ProduitsService, private router: Router) {
+  }
 
   ngOnInit(): void {
-    this.produitsService.getProduits().subscribe((data: Produits[]) => {this.produits = data});
+    this.produitsService.getProduits().subscribe((data: Produits[]) => {
+      this.produits = data
+    });
 
 
   }
-  goToAddProduits () {
+
+  goToAddProduits() {
     this.router.navigateByUrl('/ajout-produit');
   }
 
-  produitRecherche () {
+  produitRecherche() {
     this.produitsService.getProduitRecherche(this.rechercheValue)
   }
 
   //utilisé a partir de produit.component.html
-  onKey(value: string){
+  onKey(value: string) {
     this.rechercheValue = value;
     console.log(this.rechercheValue)
   }
 
 
-  deleteProduit(idProd){
+  deleteProduit(idProd) {
     this.produitsService.deleteProduit(idProd);
   }
+}
