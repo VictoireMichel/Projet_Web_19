@@ -87,13 +87,12 @@ app.get('/api/prod', function (req, res) {
 
 // ajouter un produit => par exemple dans l'url => localhost:3000/api/produits
 app.post('/api/produits', function (req, res) {
-
         let nom = req.body.nom;
         let idCat = req.body.categorie;
         let idFourn = req.body.fournisseur;
         let origine = req.body.origine;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('insert into produits(nom, idCat, idFourn, origine) values (?, ?, ?, ?)', [nom, idCat, idFourn, origine], function (error, results) {
+    con.query('insert into produits (nom, idCat, idFourn, origine) values (?, ?, ?, ?)', [nom, idCat, idFourn, origine], function (error, results) {
         if (error) {console.log('erreurdb');}
         res.send(JSON.stringify(results));
     });
