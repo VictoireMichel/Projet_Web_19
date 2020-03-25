@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {Produits} from './produits.interface';
 
 
+
 @Component({
   selector: 'app-produit',
   templateUrl: './produit.component.html',
@@ -15,6 +16,7 @@ export class ProduitComponent implements OnInit {
 
  produits: Produits[];
  rechercheValue: string = '';
+
 
   constructor(private produitsService: ProduitsService, private router: Router) { }
 
@@ -27,12 +29,6 @@ export class ProduitComponent implements OnInit {
     this.router.navigateByUrl('/ajout-produit');
   }
 
-
-  deleteProduit(){
-    this.produitsService.deleteProduit();
-  }
-
-
   produitRecherche () {
     this.produitsService.getProduitRecherche(this.rechercheValue)
   }
@@ -43,4 +39,7 @@ export class ProduitComponent implements OnInit {
     console.log(this.rechercheValue)
   }
 
-}
+
+  deleteProduit(idProd){
+    this.produitsService.deleteProduit(idProd);
+  }
