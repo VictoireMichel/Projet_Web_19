@@ -98,15 +98,18 @@ app.post('/api/produits', function (req, res) {
     });
 });
 
-//Supprimer un produit sur base de son nom => url => localhost:3000/api/produits
+//Supprimer un produit sur base de son id => url => localhost:3000/api/produits
 app.delete('/api/produits', function (req, res) {
-    let id = req.body.id;
+    console.log("here");
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('delete from produits where id = ? ', [id], function (error, results) {
+    con.query('delete from produits where id = ' + req.query.id, function (error, results) {
         if (error) {console.log('erreurdb');}
         res.send(JSON.stringify(results));
     });
 });
+
+
+
 
 //modifier le nom et l'origine d'un produit selon son id=> url => localhost:3000/api/produits
 app.put('/api/produits', function (req, res) {
