@@ -30,11 +30,13 @@ export class ProduitsService {
       );
   }
 
-  deleteProduit(){
+
+  deleteProduit(idProd) {
     return this
       .http
-      .delete(`${this.url}/api/produits`);
+      .delete(`${this.url}/api/produits?id=` + idProd).subscribe(res => {console.log(res)})
   }
+
 
   //a revoir vers quel api ?? car pas dynamique pour l'instant
   getProduitRecherche(produit) {
@@ -42,5 +44,6 @@ export class ProduitsService {
       .http
       .get(`${this.url}/api/` + produit + "'");
   }
+
 
 }
