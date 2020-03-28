@@ -12,11 +12,11 @@ export class ProduitsService {
   getProduits() {
     return this
       .http
-      .get(`${this.url}/api/produits`);
+      .get(`${this.url}/v1/api/produits`);
   }
 
   createProduits(data) {
-    this.http.post(`${this.url}/api/produits`, data)
+    this.http.post(`${this.url}/v1/api/produits`, data)
       .subscribe(
         res => {
           console.log(res);
@@ -34,7 +34,7 @@ export class ProduitsService {
   deleteProduit(idProd) {
     return this
       .http
-      .delete(`${this.url}/api/produits?id=` + idProd).subscribe(res => {console.log(res)})
+      .delete(`${this.url}/v1/api/produits?id=` + idProd).subscribe(res => {console.log(res)})
   }
 
 
@@ -42,7 +42,7 @@ export class ProduitsService {
   getProduitRecherche(produit) {
     return this
       .http
-      .get(`${this.url}/api/` + produit + "'");
+      .get(`${this.url}/v1/api/` + produit + "'");
   }
 
 
