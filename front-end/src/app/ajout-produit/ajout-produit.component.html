@@ -16,7 +16,7 @@
       <label for="categorie" class=" control-label">Catégorie</label>
       <div class="col-md-12 no-padding">
         <select name="categorie" id="categorie" #categorie="ngModel" [(ngModel)]="produits.categorie" class="form-control" required >
-          <option *ngFor="let i of categories" [value]="i.idCat">
+          <option *ngFor="let i of categories" [value]="i.id">
             {{i.nom}}
           </option>
         </select>
@@ -31,7 +31,7 @@
       <label for="fournisseur" class=" control-label">Fournisseur</label>
       <div class="col-md-12 no-padding">
         <select name="fournisseur" id="fournisseur" #fournisseur="ngModel" [(ngModel)]="produits.fournisseur" class="form-control" required >
-          <option *ngFor="let f of fournisseurs" [value]="f.idFourn">
+          <option *ngFor="let f of fournisseurs" [value]="f.id">
             {{f.nom}}
           </option>
         </select>

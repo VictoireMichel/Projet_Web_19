@@ -1,5 +1,5 @@
 export interface Fournisseurs {
-  idFourn: Number;
+  id: Number;
   nom: String;
   adresse: String;
   idCat : Number;

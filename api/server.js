@@ -62,9 +62,9 @@ app.get('/v1/api/produits', function (req, res) {
         '       produits.origine\n' +
         'FROM produits\n' +
         '    join categories\n' +
-        '        on produits.idCat = categories.idCat \n' +
+        '        on produits.idCat = categories.id \n' +
         '    join fournisseurs\n' +
-        '        on produits.idFourn = fournisseurs.idFourn ', function (error, results) {
+        '        on produits.idFourn = fournisseurs.id ', function (error, results) {
         if (error) {console.log(error.message);}
         res.send(JSON.stringify(results));
     });
