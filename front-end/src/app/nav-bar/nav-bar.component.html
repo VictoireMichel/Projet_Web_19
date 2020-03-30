@@ -1,15 +1,48 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header" routerLinkActive="active">
-      <a class="navbar-brand" routerLink="/">iDlunch</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active"><a routerLink="/news">News</a></li>
-      <li routerLinkActive="active"><a routerLink="/contact">Contact</a></li>
+
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green " [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand>
+    <a class="navbar-brand" routerLink="/">
+      <img src="../assets/images/Logo.jpg" height="30" class="d-inline-block align-top" alt="">
+      iDlunch
+    </a>
+  </mdb-navbar-brand>
+
+
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link waves-light" routerLink="/news" mdbWavesEffect>News<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="/contact" mdbWavesEffect>Contact</a>
+      </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active"><a routerLink="/connecter"><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <a class="dropdown-item" href="#">Admin</a>
+              <div class="divider dropdown-divider"></div>
+              <a class="dropdown-item" routerLink="/connecter">Se connecter</a>
+            </div>
+          </div>
+        </a>
+      </li>
     </ul>
-  </div>
-</nav>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
 <router-outlet></router-outlet>
