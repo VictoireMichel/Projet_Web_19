@@ -12,7 +12,7 @@ export class CategoriesService {
   getCategories() {
     return this
       .http
-      .get(`${this.url}/api/categories`);
+      .get(`${this.url}/v1/api/categories`);
   }
 
 }

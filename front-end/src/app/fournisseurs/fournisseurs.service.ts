@@ -12,7 +12,7 @@ export class FournisseursService {
   getFournisseurs() {
     return this
       .http
-      .get(`${this.url}/api/fournisseurs`);
+      .get(`${this.url}/v1/api/fournisseurs`);
   }
 
 }

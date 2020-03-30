@@ -25,6 +25,8 @@ import {FournisseursService} from "./fournisseurs/fournisseurs.service";
 
 
 
+
+
 const routes: Routes = [
   {path: '', component: HomeComponent }, // http://localhost:4200
   {path: 'news', component: NewsComponent}, // http://localhost:4200/news

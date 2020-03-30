@@ -1,5 +1,5 @@
 export interface Categories {
-  idCat: Number;
+  id: Number;
   nom: String;
   details: String;
 }
