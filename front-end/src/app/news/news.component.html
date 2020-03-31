@@ -25,7 +25,7 @@
 
       <!-- Excerpt -->
       <a href="#!" class="green-text">
-        <h6 class="h6 pb-1"><mdb-icon fas icon="desktop" class="pr-1"></mdb-icon> Work</h6>
+        <h6 class="h6 pb-1"><mdb-icon fas icon="utensils" class="pr-1"></mdb-icon> iDlunch</h6>
       </a>
 
       <h4 class="h4 mb-4">Les nouvelles chez IDlunch</h4>
@@ -43,3 +43,17 @@
 
 </div>
 <!-- News jumbotron -->
+
+
+
+<mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+              [animation]="'slide'">
+  <mdb-carousel-item *ngFor="let item of slides; let i = index">
+    <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}"
+         *ngFor="let card of item; let cardIndex = index">
+      <mdb-card class="my-1">
+        <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+      </mdb-card>
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
