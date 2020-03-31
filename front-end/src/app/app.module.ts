@@ -26,6 +26,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
 import {CategoriesService} from './categories/categories.service';
 import {FournisseursService} from './fournisseurs/fournisseurs.service';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -37,6 +38,8 @@ const routes: Routes = [
   {path: 'connexion-Privé', component: ConnexionPrivComponent}, // http://localhost:4200/connexion-Privé
   {path: 'produits', component: ProduitComponent},
   { path: 'ajout-produit', component: AjoutProduitComponent },
+  {path: 'admin', component: AdminComponent},
+
 ];
 
 @NgModule({
@@ -52,6 +55,7 @@ const routes: Routes = [
     AjoutProduitComponent,
     CategoriesComponent,
     FournisseursComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
