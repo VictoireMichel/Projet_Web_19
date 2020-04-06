@@ -29,13 +29,17 @@ export class ProduitComponent implements OnInit {
 
   }
 
+
   goToAddProduits() {
     this.router.navigateByUrl('/ajout-produit');
   }
 
   deleteProduit(idProd) {
     this.produitsService.deleteProduit(idProd);
+    window.location.reload();
   }
+
+
 
   //utilisé a partir de produit.component.html
   onKey(value: string) {

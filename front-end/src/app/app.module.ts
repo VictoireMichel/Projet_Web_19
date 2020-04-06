@@ -21,6 +21,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
 import {CategoriesService} from "./categories/categories.service";
 import {FournisseursService} from "./fournisseurs/fournisseurs.service";
+import { ModifierProduitComponent } from './modifier-produit/modifier-produit.component';
 
 
 
@@ -33,8 +34,10 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent }, // http://localhost:4200/contact
   {path: 'connecter', component: ConnecterComponent}, // http://localhost:4200/connecter
   {path: 'connexion-Privé', component: ConnexionPrivComponent}, // http://localhost:4200/connexion-Privé
-  {path: 'produits', component: ProduitComponent}, 
+  {path: 'produits', component: ProduitComponent},
   { path: 'ajout-produit', component: AjoutProduitComponent },
+  { path: 'modifier-produit/:id', component: ModifierProduitComponent },
+
 ];
 
 
@@ -51,6 +54,7 @@ const routes: Routes = [
     AjoutProduitComponent,
     CategoriesComponent,
     FournisseursComponent,
+    ModifierProduitComponent,
   ],
   imports: [
     BrowserModule,
