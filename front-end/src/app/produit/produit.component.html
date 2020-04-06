@@ -31,8 +31,9 @@
     <td>{{ produit.categorie }}</td>
     <td>{{ produit.fournisseur}}</td>
     <td>{{ produit.origine }}</td>
-    <td>
-        <button [id]="produit.id" type="submit" class="btn btn-danger" (click)="deleteProduit(produit.id)">Supprimer</button>
+    <td height="50">
+      <button [id]="produit.id" type="submit" class="btn btn-primary btn-lg" [routerLink]="['/modifier-produit', produit.id]">Modifier</button>
+        <button [id]="produit.id" type="submit" class="glyphicon glyphicon-trash btn-lg" (click)="deleteProduit(produit.id)"></button>
     </td>
   </tr>
   </tbody>

@@ -37,6 +37,13 @@ export class ProduitsService {
       .delete(`${this.url}/v1/api/produits?id=` + idProd).subscribe(res => {console.log(res)})
   }
 
+  modifierProduit(idProd, data){
+    return this
+      .http
+      .put(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);
+      })
+  }
+
 
   //a revoir vers quel api ?? car pas dynamique pour l'instant
   getProduitRecherche(prod) {

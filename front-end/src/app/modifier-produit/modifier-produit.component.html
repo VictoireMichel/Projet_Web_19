@@ -1,0 +1,37 @@
+<div class="form-horizontal pad-10">
+  <br>
+  <form #modifierProduitForm="ngForm">
+    <div class="col-md-6 form-group">
+      <label class=" control-label">Nom Produit</label>
+      <div class="col-md-12 no-padding">
+        <input name="nom" id="nom" #nom="ngModel" [(ngModel)]="leProduit.nom" class="form-control" placeholder="" type="text" required />
+        <div *ngIf="nom.errors && (nom.dirty || nom.touched)" class="alert alert-danger">
+          <div [hidden]="!nom.errors.required">
+            Nom est requis!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class=" control-label">Origine du produit</label>
+      <div class="col-md-12 no-padding">
+        <input name="origine" id="origine" #origine="ngModel" [(ngModel)]="leProduit.origine" class="form-control" placeholder="" type="text" required />
+        <div *ngIf="origine.errors && (origine.dirty || origine.touched)" class="alert alert-danger">
+          <div [hidden]="!origine.errors.required">
+            Origine est requis!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pad-10">
+      <button mwlConfirmationPopover
+              [popoverTitle]="'Confirmation'"
+              [popoverMessage]="'êtes-vous sûr?'"
+              placement="top"
+              (confirm)="modifierProduit(this.id)"
+              type="submit" class="btn btn-save btn-primary" [disabled]="!modifierProduitForm.valid">
+        <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
+      </button>
+    </div>
+  </form>
+</div>
