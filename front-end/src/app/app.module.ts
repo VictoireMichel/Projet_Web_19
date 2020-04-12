@@ -45,7 +45,6 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'modifier-produit/:id', component: ModifierProduitComponent }
 ];
-];
 
 @NgModule({
   declarations: [
