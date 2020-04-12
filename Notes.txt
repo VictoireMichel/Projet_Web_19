@@ -7,4 +7,5 @@ https://o7planning.org/fr/11959/connexion-a-la-base-de-donnees-mysql-a-l-aide-de
 
 https://expressjs.com/fr/
 
-
+à tester:
+https://stackblitz.com/edit/angular-search-filter?file=app%2Fapp.module.ts

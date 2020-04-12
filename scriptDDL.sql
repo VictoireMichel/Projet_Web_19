@@ -1,6 +1,6 @@
 create table categories
 (
-    idCat   int auto_increment
+    id      int auto_increment
         primary key,
     nom     varchar(20) not null,
     details varchar(50) not null
@@ -8,13 +8,13 @@ create table categories
 
 create table fournisseurs
 (
-    idFourn int          not null
+    id      int auto_increment
         primary key,
     nom     varchar(20)  not null,
     adresse varchar(100) not null,
     idCat   int          not null,
     constraint fournisseurs_ibfk_1
-        foreign key (idCat) references categories (idCat)
+        foreign key (idCat) references categories (id)
 );
 
 create index idCat
@@ -26,12 +26,12 @@ create table produits
         primary key,
     nom     varchar(20) not null,
     idCat   int         not null,
-    idFourn int         null,
-    origine varchar(30) null,
+    idFourn int         not null,
+    origine varchar(30) not null,
     constraint fk_produits_categorie
-        foreign key (idCat) references categories (idCat),
+        foreign key (idCat) references categories (id),
     constraint produits_ibfk_1
-        foreign key (idFourn) references fournisseurs (idFourn)
+        foreign key (idFourn) references fournisseurs (id)
 );
 
 create index idFourn
@@ -39,11 +39,11 @@ create index idFourn
 
 create table utilisateurs
 (
-    idUser    int          not null
+    id        int auto_increment
         primary key,
     pseudo    varchar(50)  not null,
     mdp       varchar(50)  not null,
-    email     varchar(20)  not null,
+    email     varchar(50)  not null,
     adresse   varchar(100) not null,
     telephone varchar(15)  not null
 );

@@ -24,9 +24,13 @@ import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
+
 import {CategoriesService} from './categories/categories.service';
 import {FournisseursService} from './fournisseurs/fournisseurs.service';
 import { AdminComponent } from './admin/admin.component';
+import { ModifierProduitComponent } from './modifier-produit/modifier-produit.component';
+
+
 
 
 
@@ -37,9 +41,10 @@ const routes: Routes = [
   {path: 'connecter', component: ConnecterComponent}, // http://localhost:4200/connecter
   {path: 'connexion-Privé', component: ConnexionPrivComponent}, // http://localhost:4200/connexion-Privé
   {path: 'produits', component: ProduitComponent},
-  { path: 'ajout-produit', component: AjoutProduitComponent },
+  {path: 'ajout-produit', component: AjoutProduitComponent },
   {path: 'admin', component: AdminComponent},
-
+  {path: 'modifier-produit/:id', component: ModifierProduitComponent }
+];
 ];
 
 @NgModule({
@@ -56,6 +61,7 @@ const routes: Routes = [
     CategoriesComponent,
     FournisseursComponent,
     AdminComponent,
+    ModifierProduitComponent
   ],
   imports: [
     BrowserModule,

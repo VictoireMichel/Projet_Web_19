@@ -29,22 +29,23 @@ export class ProduitComponent implements OnInit {
 
   }
 
+
   goToAddProduits() {
     this.router.navigateByUrl('/ajout-produit');
   }
 
-  produitRecherche() {
-    this.produitsService.getProduitRecherche(this.rechercheValue)
+  deleteProduit(idProd) {
+    this.produitsService.deleteProduit(idProd);
+    window.location.reload();
   }
+
+
 
   //utilisé a partir de produit.component.html
   onKey(value: string) {
     this.rechercheValue = value;
-    console.log(this.rechercheValue)
   }
-
-
-  deleteProduit(idProd) {
-    this.produitsService.deleteProduit(idProd);
+  produitRecherche() {
+    this.produitsService.getProduitRecherche(this.rechercheValue);
   }
 }

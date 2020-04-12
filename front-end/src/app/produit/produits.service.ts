@@ -12,11 +12,11 @@ export class ProduitsService {
   getProduits() {
     return this
       .http
-      .get(`${this.url}/api/produits`);
+      .get(`${this.url}/v1/api/produits`);
   }
 
   createProduits(data) {
-    this.http.post(`${this.url}/api/produits`, data)
+    this.http.post(`${this.url}/v1/api/produits`, data)
       .subscribe(
         res => {
           console.log(res);
@@ -34,15 +34,22 @@ export class ProduitsService {
   deleteProduit(idProd) {
     return this
       .http
-      .delete(`${this.url}/api/produits?id=` + idProd).subscribe(res => {console.log(res)})
+      .delete(`${this.url}/v1/api/produits?id=` + idProd).subscribe(res => {console.log(res)})
+  }
+
+  modifierProduit(idProd, data){
+    return this
+      .http
+      .put(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);
+      })
   }
 
 
   //a revoir vers quel api ?? car pas dynamique pour l'instant
-  getProduitRecherche(produit) {
+  getProduitRecherche(prod) {
     return this
       .http
-      .get(`${this.url}/api/` + produit + "'");
+      .get(`${this.url}/v1/api/produits?` + prod).subscribe(res => {console.log(res)});
   }
 
 
