@@ -15,7 +15,7 @@
     <div class="col-md-6 form-group">
       <label for="categorie" class=" control-label">Catégorie</label>
       <div class="col-md-12 no-padding">
-        <select name="categorie" id="categorie" #categorie="ngModel" [(ngModel)]="produits.categorie" class="form-control" required >
+        <select class="browser-default custom-select" name="categorie" id="categorie" #categorie="ngModel" [(ngModel)]="produits.categorie" required>
           <option *ngFor="let i of categories" [value]="i.id">
             {{i.nom}}
           </option>
