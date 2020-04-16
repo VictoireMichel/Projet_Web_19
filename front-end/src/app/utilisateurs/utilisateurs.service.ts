@@ -3,25 +3,25 @@ import { HttpClient } from '@angular/common/http';
 import {Router} from "@angular/router";
 
 @Injectable()
-export class FournisseursService {
+export class UtilisateursService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
   url = 'http://localhost:3000';
 
-  getFournisseurs() {
+  getUtilisateurs() {
     return this
       .http
-      .get(`${this.url}/v1/api/fournisseurs`);
+      .get(`${this.url}/v1/api/utilisateurs`);
   }
 
-  createProduits(data) {
-    this.http.post(`${this.url}/v1/api/fournisseurs`, data)
+  createUtilisateur(data) {
+    this.http.post(`${this.url}/v1/api/utilisateurs`, data)
       .subscribe(
         res => {
           console.log(res);
 
-          this.router.navigateByUrl('/ajout-fournisseur');
+          this.router.navigateByUrl('/ajout-utilisateur');
         },
         err => {
           console.log('Error occured:' , err);
@@ -30,17 +30,17 @@ export class FournisseursService {
       );
   }
 
-  modifierFournisseur(idFourn, data){
+  modifierUtilisateur(idUser, data){
     return this
       .http
-      .put(`${this.url}/v1/api/fournisseurs?id=` + idFourn, data).subscribe(res => {console.log(res);
+      .put(`${this.url}/v1/api/utilisateurs?id=` + idUser, data).subscribe(res => {console.log(res);
       })
   }
 
-  deleteFourn(idFourn) {
+  deleteUtilisateur(idUser) {
     return this
       .http
-      .delete(`${this.url}/v1/api/fournisseurs?id=` + idFourn).subscribe(res => {console.log(res)})
+      .delete(`${this.url}/v1/api/utilisateurs?id=` + idUser).subscribe(res => {console.log(res)})
   }
 
 }

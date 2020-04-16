@@ -19,10 +19,17 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.categoriesService.getCategories().subscribe((data: Categories[]) => {
       this.categories = data;
-      console.log(this.categories);
     });
 
+  }
 
+  goToAddCategories() {
+    this.router.navigateByUrl('/ajout-categorie');
+  }
+
+  deleteCategorie(idProd) {
+    this.categoriesService.deleteCategorie(idProd);
+    window.location.reload();
   }
 
 }
