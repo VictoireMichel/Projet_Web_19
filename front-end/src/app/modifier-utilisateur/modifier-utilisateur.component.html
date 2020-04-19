@@ -1,0 +1,68 @@
+<div class="form-horizontal pad-10">
+  <br>
+  <form #modifierUtilisateurForm="ngForm">
+    <label class=" control-label">Pseudo</label>
+    <div class="col-md-12 no-padding">
+      <input name="pseudo" id="pseudo" #pseudo="ngModel" [(ngModel)]="leUtilisateur.pseudo" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="pseudo.errors && (pseudo.dirty || pseudo.touched)" class="alert alert-danger">
+        <div [hidden]="!pseudo.errors.required">
+          pseudo est requis!
+        </div>
+      </div>
+    </div>
+    <label class=" control-label">Mot de Passe</label>
+    <div class="col-md-12 no-padding">
+      <input name="mdp" id="mdp" #mdp="ngModel" [(ngModel)]="leUtilisateur.mdp" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="mdp.errors && (mdp.dirty || mdp.touched)" class="alert alert-danger">
+        <div [hidden]="!mdp.errors.required">
+          Mot de Passe est requis!
+        </div>
+      </div>
+    </div>
+
+    <label class=" control-label">Email</label>
+    <div class="col-md-12 no-padding">
+      <input name="email" id="email" #email="ngModel" [(ngModel)]="leUtilisateur.email" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+        <div [hidden]="!email.errors.required">
+          Email est requis!
+        </div>
+      </div>
+    </div>
+
+    <label class=" control-label">Adresse</label>
+    <div class="col-md-12 no-padding">
+      <input name="adresse" id="adresse" #adresse="ngModel" [(ngModel)]="leUtilisateur.adresse" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="adresse.errors && (adresse.dirty || adresse.touched)" class="alert alert-danger">
+        <div [hidden]="!adresse.errors.required">
+          Adresse est requis!
+        </div>
+      </div>
+    </div>
+
+    <label class=" control-label">Téléphone</label>
+    <div class="col-md-12 no-padding">
+      <input name="telephone" id="telephone" #telephone="ngModel" [(ngModel)]="leUtilisateur.telephone" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="telephone.errors && (telephone.dirty || telephone.touched)" class="alert alert-danger">
+        <div [hidden]="!telephone.errors.required">
+          Téléphone est requis!
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="pad-10">
+      <button mwlConfirmationPopover
+              [popoverTitle]="'Confirmation'"
+              [popoverMessage]="'êtes-vous sûr?'"
+              placement="top"
+              (confirm)="modifierUtilisateur(this.id)"
+              type="submit" class="btn btn-save btn-primary" [disabled]="!modifierUtilisateurForm.valid">
+        <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
+      </button>
+    </div>
+  </form>
+</div>
+
+
+

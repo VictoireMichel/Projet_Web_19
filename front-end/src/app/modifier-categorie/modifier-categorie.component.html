@@ -1,0 +1,33 @@
+<div class="form-horizontal pad-10">
+  <br>
+  <form #modifierCategorieForm="ngForm">
+    <label class=" control-label">Nom Catégorie</label>
+    <div class="col-md-12 no-padding">
+      <input name="nom" id="nom" #nom="ngModel" [(ngModel)]="laCategorie.nom" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="nom.errors && (nom.dirty || nom.touched)" class="alert alert-danger">
+        <div [hidden]="!nom.errors.required">
+          Nom est requis!
+        </div>
+      </div>
+    </div>
+    <label class=" control-label">Détails Catégorie</label>
+    <div class="col-md-12 no-padding">
+      <input name="details" id="details" #details="ngModel" [(ngModel)]="laCategorie.details" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="details.errors && (details.dirty || details.touched)" class="alert alert-danger">
+        <div [hidden]="!details.errors.required">
+          Détails est requis!
+        </div>
+      </div>
+    </div>
+    <div class="pad-10">
+      <button mwlConfirmationPopover
+              [popoverTitle]="'Confirmation'"
+              [popoverMessage]="'êtes-vous sûr?'"
+              placement="top"
+              (confirm)="modifierCategorie(this.id)"
+              type="submit" class="btn btn-save btn-primary" [disabled]="!modifierCategorieForm.valid">
+        <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
+      </button>
+    </div>
+  </form>
+</div>
