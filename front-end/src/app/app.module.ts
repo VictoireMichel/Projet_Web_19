@@ -54,10 +54,13 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'modifier-produit/:id', component: ModifierProduitComponent },
   {path: 'ajout-fournisseur', component: AjoutFournisseurComponent },
+  {path: 'fournisseurs', component: FournisseursComponent },
   {path: 'modifier-fournisseur/:id', component: ModifierFournisseurComponent },
   {path: 'ajout-categorie', component: AjoutCategorieComponent },
+  {path: 'categories', component: CategoriesComponent },
   {path: 'modifier-categorie/:id', component: ModifierCategorieComponent },
   {path: 'ajout-utilisateur', component: AjoutUtilisateurComponent },
+  {path: 'utilisateurs', component: UtilisateursComponent },
   {path: 'modifier-utilisateur/:id', component: ModifierUtilisateurComponent },
 ];
 
