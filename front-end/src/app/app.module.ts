@@ -29,6 +29,15 @@ import {CategoriesService} from './categories/categories.service';
 import {FournisseursService} from './fournisseurs/fournisseurs.service';
 import { AdminComponent } from './admin/admin.component';
 import { ModifierProduitComponent } from './modifier-produit/modifier-produit.component';
+import { AjoutFournisseurComponent } from './ajout-fournisseur/ajout-fournisseur.component';
+import { ModifierFournisseurComponent } from './modifier-fournisseur/modifier-fournisseur.component';
+import { AjoutCategorieComponent } from './ajout-categorie/ajout-categorie.component';
+import { ModifierCategorieComponent } from './modifier-categorie/modifier-categorie.component';
+import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
+import {UtilisateursService} from "./utilisateurs/utilisateurs.service";
+import { AjoutUtilisateurComponent } from './ajout-utilisateur/ajout-utilisateur.component';
+import { ModifierUtilisateurComponent } from './modifier-utilisateur/modifier-utilisateur.component';
+import { AfficherProduitsComponent } from './afficher-produits/afficher-produits.component';
 
 
 
@@ -43,7 +52,16 @@ const routes: Routes = [
   {path: 'produits', component: ProduitComponent},
   {path: 'ajout-produit', component: AjoutProduitComponent },
   {path: 'admin', component: AdminComponent},
-  {path: 'modifier-produit/:id', component: ModifierProduitComponent }
+  {path: 'modifier-produit/:id', component: ModifierProduitComponent },
+  {path: 'ajout-fournisseur', component: AjoutFournisseurComponent },
+  {path: 'fournisseurs', component: FournisseursComponent },
+  {path: 'modifier-fournisseur/:id', component: ModifierFournisseurComponent },
+  {path: 'ajout-categorie', component: AjoutCategorieComponent },
+  {path: 'categories', component: CategoriesComponent },
+  {path: 'modifier-categorie/:id', component: ModifierCategorieComponent },
+  {path: 'ajout-utilisateur', component: AjoutUtilisateurComponent },
+  {path: 'utilisateurs', component: UtilisateursComponent },
+  {path: 'modifier-utilisateur/:id', component: ModifierUtilisateurComponent },
 ];
 
 @NgModule({
@@ -60,7 +78,15 @@ const routes: Routes = [
     CategoriesComponent,
     FournisseursComponent,
     AdminComponent,
-    ModifierProduitComponent
+    ModifierProduitComponent,
+    AjoutFournisseurComponent,
+    ModifierFournisseurComponent,
+    AjoutCategorieComponent,
+    ModifierCategorieComponent,
+    UtilisateursComponent,
+    AjoutUtilisateurComponent,
+    ModifierUtilisateurComponent,
+    AfficherProduitsComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +103,8 @@ const routes: Routes = [
   providers: [
     ProduitsService,
     CategoriesService,
-    FournisseursService
+    FournisseursService,
+    UtilisateursService
   ],
   bootstrap: [AppComponent]
 })

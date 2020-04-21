@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProduitsService} from "./produits.service";
+
+
+
 
 import {Router} from "@angular/router";
 import {Produits} from './produits.interface';
@@ -14,21 +17,18 @@ import {Produits} from './produits.interface';
 export class ProduitComponent implements OnInit {
 
 
-  produits: Produits[];
-  rechercheValue: string = '';
 
+  produits: Produits[];
 
   constructor(private produitsService: ProduitsService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.produitsService.getProduits().subscribe((data: Produits[]) => {
-      this.produits = data
+      this.produits = data;
     });
 
-
   }
-
 
   goToAddProduits() {
     this.router.navigateByUrl('/ajout-produit');
@@ -39,13 +39,4 @@ export class ProduitComponent implements OnInit {
     window.location.reload();
   }
 
-
-
-  //utilisé a partir de produit.component.html
-  onKey(value: string) {
-    this.rechercheValue = value;
-  }
-  produitRecherche() {
-    this.produitsService.getProduitRecherche(this.rechercheValue);
-  }
 }

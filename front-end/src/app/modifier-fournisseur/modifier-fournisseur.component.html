@@ -1,0 +1,38 @@
+<div class="form-horizontal pad-10">
+  <br>
+  <form #modifierFournisseurForm="ngForm">
+    <div class="col-md-6 form-group">
+      <label class=" control-label">Nom Fournisseur</label>
+      <div class="col-md-12 no-padding">
+        <input name="nom" id="nom" #nom="ngModel" [(ngModel)]="leFournisseur.nom" class="form-control" placeholder="" type="text" required />
+        <div *ngIf="nom.errors && (nom.dirty || nom.touched)" class="alert alert-danger">
+          <div [hidden]="!nom.errors.required">
+            Nom est requis!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 form-group">
+      <label class=" control-label">Adresse Fournisseur</label>
+      <div class="col-md-12 no-padding">
+        <input name="adresse" id="adresse" #adresse="ngModel" [(ngModel)]="leFournisseur.adresse" class="form-control" placeholder="" type="text" required />
+        <div *ngIf="adresse.errors && (adresse.dirty || adresse.touched)" class="alert alert-danger">
+          <div [hidden]="!adresse.errors.required">
+            Nom est requis!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pad-10">
+      <button mwlConfirmationPopover
+              [popoverTitle]="'Confirmation'"
+              [popoverMessage]="'êtes-vous sûr?'"
+              placement="top"
+              (confirm)="modifierFournisseur(this.id)"
+              type="submit" class="btn btn-save btn-primary" [disabled]="!modifierFournisseurForm.valid">
+        <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
+      </button>
+    </div>
+  </form>
+
+</div>

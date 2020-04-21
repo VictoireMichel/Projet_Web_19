@@ -18,4 +18,12 @@ export class FournisseursComponent implements OnInit {
     this.fournisseursService.getFournisseurs().subscribe((data: Fournisseurs[]) => {this.fournisseurs = data});
   }
 
+  goToAddFournisseurs() {
+    this.router.navigateByUrl('/ajout-fournisseur');
+  }
+
+  deleteFourn(idFourn) {
+    this.fournisseursService.deleteFourn(idFourn);
+    window.location.reload();
+  }
 }

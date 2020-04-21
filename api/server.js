@@ -119,7 +119,7 @@ app.post('/v1/api/categories', function (req, res) {
 //Modifier une categorie
 app.put('/v1/api/categories', function (req, res) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('update categories set nom = ? AND details = ? where id = ' + req.query.id,[req.body.nom, req.body.details], function (error, results) {
+    con.query('update categories set nom = ? , details = ? where id = ' + req.query.id,[req.body.nom, req.body.details], function (error, results) {
         if (error) {console.log(error.message);}
         res.send(JSON.stringify(results));
     });
@@ -137,7 +137,9 @@ app.delete('/v1/api/categories', function (req, res) {
 //Tous les fournisseurs
 app.get('/v1/api/fournisseurs', function (req, res) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('SELECT * FROM fournisseurs ',function (error, results) {
+    con.query('select fournisseurs.id, fournisseurs.nom, fournisseurs.adresse, c.nom as categorie\n' +
+        'from fournisseurs\n' +
+        '    join categories c on fournisseurs.idCat = c.id;',function (error, results) {
         if (error) {console.log(error.message);}
         res.send(JSON.stringify(results));
     });
@@ -146,7 +148,7 @@ app.get('/v1/api/fournisseurs', function (req, res) {
 //Ajouter un fournisseur
 app.post('/v1/api/fournisseurs', function (req, res) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('insert into fournisseurs (nom, adresse, idCat) values (?, ?, ?)',[req.body.nom, req.body.adresse, req.body.idCat], function (error, results) {
+    con.query('insert into fournisseurs (nom, adresse, idCat) values (?, ?, ?)',[req.body.nom, req.body.adresse, req.body.categorie], function (error, results) {
         if (error) {console.log(error.message);}
         res.send(JSON.stringify(results));
     });
@@ -155,7 +157,7 @@ app.post('/v1/api/fournisseurs', function (req, res) {
 //Modifier un fournisseur
 app.put('/v1/api/fournisseurs', function (req, res) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('update fournisseurs set nom = ? AND adresse = ? where id = ' + req.query.id,[req.body.nom, req.body.adresse], function (error, results) {
+    con.query('update fournisseurs set nom = ? , adresse = ? where id = ' + req.query.id,[req.body.nom, req.body.adresse], function (error, results) {
         if (error) {console.log(error.message);}
         res.send(JSON.stringify(results));
     });
@@ -191,7 +193,7 @@ app.post('/v1/api/utilisateurs', function (req, res) {
 //Modifier un utilisateur
 app.put('/v1/api/utilisateurs', function (req, res) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    con.query('update utilisateurs set pseudo = ? AND mdp = ? AND email = ? AND adresse = ? AND telephone = ? where id = ' + req.query.id, [req.body.pseudo, req.body.mdp, req.body.email, req.body.adresse, req.body.telephone], function (error, results) {
+    con.query('update utilisateurs set pseudo = ? , mdp = ? , email = ? , adresse = ? , telephone = ? where id = ' + req.query.id, [req.body.pseudo, req.body.mdp, req.body.email, req.body.adresse, req.body.telephone], function (error, results) {
         if (error) {console.log(error.message);}
         res.send(JSON.stringify(results));
     });
