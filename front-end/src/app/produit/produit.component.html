@@ -2,10 +2,6 @@
 <div class="row">
   <div class="col-md-12 pad-10">
     <form class="navbar-form navbar-left" role="search">
-      <div class="form-group">
-        <input #recherche (keyup)="onKey(recherche.value)" type="text" class="form-control" placeholder="Produits">
-      </div>
-      <button type="submit" class="btn btn-default" (click)="produitRecherche()">Recherche de produits</button>
       <button type="submit" class="btn btn-primary" (click)="goToAddProduits()">
       <span class="glyphicon glyphicon-floppy-disk"></span> Ajout Produit
     </button>
@@ -15,37 +11,19 @@
 
 <div>
 
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 mx-auto">
-        <div class="md-form">
-          <input
-            type="text"
-            [(ngModel)]="searchText"
-            class="form-control"
-            id="search"
-            mdbInput
-          />
-          <label for="search">Search</label>
-        </div>
-      </div>
-    </div>
-
 <table id="table" mdbTable>
 
   <thead>
   <tr>
-    <th
-      *ngFor="let head of headElements; let i = index"
-      scope="col"
-    >
-      {{head}}
-    </th>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Catégorie</th>
+    <th>Fournisseur</th>
+    <th>Origine</th>
   </tr>
   </thead>
   <tbody>
-  <tr mdbTableCol *ngFor="let produit of elements">
+  <tr mdbTableCol *ngFor="let produit of produits">
     <td>{{ produit.id }}</td>
     <td>{{ produit.nom }}</td>
     <td>{{ produit.categorie }}</td>
@@ -61,4 +39,3 @@
   </tbody>
 </table>
 </div>
-
