@@ -37,6 +37,7 @@ import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 import {UtilisateursService} from "./utilisateurs/utilisateurs.service";
 import { AjoutUtilisateurComponent } from './ajout-utilisateur/ajout-utilisateur.component';
 import { ModifierUtilisateurComponent } from './modifier-utilisateur/modifier-utilisateur.component';
+import { AfficherProduitsComponent } from './afficher-produits/afficher-produits.component';
 
 
 
@@ -81,7 +82,8 @@ const routes: Routes = [
     ModifierCategorieComponent,
     UtilisateursComponent,
     AjoutUtilisateurComponent,
-    ModifierUtilisateurComponent
+    ModifierUtilisateurComponent,
+    AfficherProduitsComponent
   ],
   imports: [
     BrowserModule,

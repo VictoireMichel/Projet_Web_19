@@ -1,6 +1,6 @@
-import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProduitsService} from "./produits.service";
-import {MdbTableDirective} from "angular-bootstrap-md/";
+
 
 
 
@@ -19,37 +19,16 @@ export class ProduitComponent implements OnInit {
 
 
   produits: Produits[];
-  rechercheValue: string = '';
-
-  @ViewChild(MdbTableDirective, { static: true }) mdbTable:
-    MdbTableDirective; elements: any = []; headElements = ['Id', 'Nom',
-    'Catégorie', 'Fournisseur', 'Origine']; searchText: string = ''; previous: string;
-
-
 
   constructor(private produitsService: ProduitsService, private router: Router) {
   }
-  @HostListener('input') oninput() { this.searchItems();
-  }
+
   ngOnInit(): void {
-    this.produitsService.getProduits().subscribe((data) => {
-      this.elements = data;
-      this.mdbTable.setDataSource(this.elements);
-      this.previous = this.mdbTable.getDataSource();
+    this.produitsService.getProduits().subscribe((data: Produits[]) => {
+      this.produits = data;
     });
 
   }
-  searchItems() { const
-    prev = this.mdbTable.getDataSource(); if (!this.searchText) {
-    this.mdbTable.setDataSource(this.previous); this.elements =
-      this.mdbTable.getDataSource(); } if (this.searchText) { this.elements =
-    this.mdbTable.searchLocalDataByMultipleFields(this.searchText, [
-      'nom', 'categorie', 'fournisseur', 'origine']); this.mdbTable.setDataSource(prev); }
-  }
-
-
-
-
 
   goToAddProduits() {
     this.router.navigateByUrl('/ajout-produit');
@@ -60,13 +39,4 @@ export class ProduitComponent implements OnInit {
     window.location.reload();
   }
 
-
-
-  //utilisé a partir de produit.component.html
-  onKey(value: string) {
-    this.rechercheValue = value;
-  }
-  produitRecherche() {
-    this.produitsService.getProduitRecherche(this.rechercheValue);
-  }
 }
