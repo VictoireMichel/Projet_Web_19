@@ -1,19 +1,40 @@
 <br>
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+
+
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-1 navbar-light green lighten-2 " [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Administration de la page</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
   <links>
+
+    <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link waves-light" routerLink="/produits" mdbWavesEffect>Produits</a>
+      <li class="nav-item active">
+        <a class="nav-link waves-light" routerLink="/produits" mdbWavesEffect>PRODUITS<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" routerLink="/categories" mdbWavesEffect>Catégories</a>
+        <a class="nav-link waves-light" routerLink="/categories" mdbWavesEffect>CATEGORIES</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" routerLink="/fournisseurs" mdbWavesEffect>Fournisseurs</a>
+      <a class="nav-link waves-light" routerLink="/fournisseurs" mdbWavesEffect>FOURNISSEURS</a>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="/utilisateurs" mdbWavesEffect>UTILISATEURS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" routerLink="/utilisateurs" mdbWavesEffect>Utilisateurs</a>
+        <a class="nav-link waves-light" routerLink="/statistiques" mdbWavesEffect>STATISTIQUES</a>
       </li>
     </ul>
+    <!-- Links -->
   </links>
+  <!-- Collapsible content -->
+
 </mdb-navbar>
+<!--/.Navbar-->
+
+
+

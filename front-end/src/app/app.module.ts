@@ -38,6 +38,7 @@ import {UtilisateursService} from "./utilisateurs/utilisateurs.service";
 import { AjoutUtilisateurComponent } from './ajout-utilisateur/ajout-utilisateur.component';
 import { ModifierUtilisateurComponent } from './modifier-utilisateur/modifier-utilisateur.component';
 import { AfficherProduitsComponent } from './afficher-produits/afficher-produits.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
 
 
 
@@ -62,6 +63,7 @@ const routes: Routes = [
   {path: 'ajout-utilisateur', component: AjoutUtilisateurComponent },
   {path: 'utilisateurs', component: UtilisateursComponent },
   {path: 'modifier-utilisateur/:id', component: ModifierUtilisateurComponent },
+  {path: 'statistiques', component: StatistiquesComponent },
 ];
 
 @NgModule({
@@ -86,7 +88,8 @@ const routes: Routes = [
     UtilisateursComponent,
     AjoutUtilisateurComponent,
     ModifierUtilisateurComponent,
-    AfficherProduitsComponent
+    AfficherProduitsComponent,
+    StatistiquesComponent
   ],
   imports: [
     BrowserModule,
