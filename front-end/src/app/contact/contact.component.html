@@ -1,39 +1,104 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<section id="contact">
-  <div class="container">
-    <div class="well well-sm">
-      <h3><strong>Contact</strong></h3>
+
+<!--Section: Contact v.1-->
+<section class="pb-5 ">
+
+  <!--Section heading-->
+  <h2 class="h1 pt-4">Contactez-nous</h2>
+  <!--Section description-->
+  <p class="pb-4">iDlunch vous propose de compléter ce formulaire de contact pour toute question relative à nos activités.<br> Nous essayerons d'y répondre dans les plus brefs délais ! </p>
+
+  <div class="row">
+
+    <!--Grid column-->
+    <div class="col-lg-5 my-4 green lighten-2">
+
+      <!--Form with header-->
+      <mdb-card>
+
+        <mdb-card-body>
+          <!--Header-->
+          <div class="form-header accent-1 ">
+            <h3>
+              <mdb-icon fas icon="envelope"></mdb-icon> Écrivez-nous:</h3>
+          </div>
+
+          <p>Nous nous efforçons à batir un monde meilleur !</p>
+          <br>
+
+          <!--Body-->
+          <div class="md-form">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            <input mdbInput type="text" id="form3" class="form-control">
+            <label for="form3">Votre nom</label>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+            <input mdbInput type="text" id="form2" class="form-control">
+            <label for="form2">Votre email</label>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="tag" class="prefix grey-text"></mdb-icon>
+            <input mdbInput type="text" id="form32" class="form-control">
+            <label for="form34">Votre sujet</label>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
+            <textarea mdbInput type="text" id="form8" class="md-textarea"></textarea>
+            <label for="form8">Votre message</label>
+          </div>
+
+          <div class="text-center">
+            <button mdbBtn class="waves-light green lighten-2" mdbWavesEffect>Envoyer</button>
+          </div>
+
+        </mdb-card-body>
+
+      </mdb-card>
+      <!--Form with header-->
+
     </div>
+    <!--Grid column-->
 
-    <div class="row">
-      <div class="col-md-7">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2529.3525436754767!2d5.4270639159048235!3d50.65771458028937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0fdb592b60b61%3A0x64c6f4a820ebce70!2sI.D%20Lunch!5e0!3m2!1sfr!2sbe!4v1584004556035!5m2!1sfr!2sbe" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <!--Grid column-->
+    <div class="col-lg-7 ">
+      <!--Google map-->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2529.3525436754767!2d5.4270639159048235!3d50.65771458028937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0fdb592b60b61%3A0x64c6f4a820ebce70!2sI.D%20Lunch!5e0!3m2!1sfr!2sbe!4v1584004556035!5m2!1sfr!2sbe" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <br>
+      <!--Buttons-->
+      <div class="row text-center">
+        <div class="col-md-4">
+          <a mdbBtn floating="true" class="accent-1 waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="map-marked"></mdb-icon>
+          </a>
+          <p>Rue de l'Arrêt 38, 4347 Fexhe-le-Haut-Clocher</p>
+          <p>Belgique</p>
+        </div>
+
+        <div class="col-md-4">
+          <a mdbBtn floating="true" class="accent-1 waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="phone"></mdb-icon>
+          </a>
+          <p>+ 01 234 567 89</p>
+          <p>lun - vend, 8:00-22:00</p>
+        </div>
+
+        <div class="col-md-4">
+          <a mdbBtn floating="true" class="accent-1 waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="envelope"></mdb-icon>
+          </a>
+          <p>info@gmail.com</p>
+          <p>sale@gmail.com</p>
+        </div>
       </div>
 
-      <div class="col-md-5">
-        <h4><strong>Renseignements</strong></h4>
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" name="" value="" placeholder="Nom">
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" name="" value="" placeholder="E-mail">
-          </div>
-          <div class="form-group">
-            <input type="tel" class="form-control" name="" value="" placeholder="Téléphone">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
-          </div>
-          <button class="btn btn-default" type="submit" name="button">
-            <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Envoyer
-          </button>
-        </form>
-      </div>
     </div>
+    <!--Grid column-->
+
   </div>
+
 </section>
+<!--Section: Contact v.1-->
