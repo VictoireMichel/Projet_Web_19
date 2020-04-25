@@ -44,13 +44,4 @@ export class ProduitsService {
       })
   }
 
-
-  //a revoir vers quel api ?? car pas dynamique pour l'instant
-  getProduitRecherche(prod) {
-    return this
-      .http
-      .get(`${this.url}/v1/api/produits?` + prod).subscribe(res => {console.log(res)});
-  }
-
-
 }
