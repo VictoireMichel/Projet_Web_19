@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModifierFournisseurComponent } from './modifier-fournisseur.component';
+import {RouterTestingModule} from "@angular/router/testing";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+
+import { FormsModule } from '@angular/forms';
 
 describe('ModifierFournisseurComponent', () => {
   let component: ModifierFournisseurComponent;
@@ -8,7 +12,12 @@ describe('ModifierFournisseurComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModifierFournisseurComponent ]
+      declarations: [ ModifierFournisseurComponent ],
+      imports:[
+        RouterTestingModule,
+        HttpClientTestingModule,
+        FormsModule
+      ]
     })
     .compileComponents();
   }));
