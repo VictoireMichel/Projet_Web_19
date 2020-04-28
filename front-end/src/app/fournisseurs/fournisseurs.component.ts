@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Fournisseurs} from "./fournisseurs.interface";
 import {FournisseursService} from "./fournisseurs.service";
 import {Router} from "@angular/router";
+import {isNull} from "util";
 
 @Component({
   selector: 'app-fournisseurs',
@@ -23,11 +24,16 @@ export class FournisseursComponent implements OnInit {
   }
 
   deleteFourn(idFourn) {
+
     this.fournisseursService.deleteFourn(idFourn);
+    var indexed = null;
     Object.keys(this.fournisseurs).forEach((e) => {
       if (this.fournisseurs[e].id == idFourn){
-        this.fournisseurs.splice(this.fournisseurs.indexOf(this.fournisseurs[e]), 1);
+        indexed = this.fournisseurs.indexOf(this.fournisseurs[e]);
       }
     });
+    if (!isNull(indexed)){
+      this.fournisseurs.splice(indexed, 1);
+    }
   }
 }

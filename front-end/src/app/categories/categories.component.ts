@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CategoriesService} from "./categories.service";
 import {Router} from "@angular/router";
 import {Categories} from './categories.interface';
+import {isNull} from "util";
 
 
 
@@ -29,11 +30,16 @@ export class CategoriesComponent implements OnInit {
 
   deleteCategorie(idProd) {
     this.categoriesService.deleteCategorie(idProd);
+    /*
+    var indexed = null;
     Object.keys(this.categories).forEach((e) => {
       if (this.categories[e].id == idProd){
-        this.categories.splice(this.categories.indexOf(this.categories[e]), 1);
+        indexed = this.categories.indexOf(this.categories[e]);
       }
     });
+    if (!isNull(indexed)){
+      this.categories.splice(indexed, 1);
+    }*/
   }
 
 }

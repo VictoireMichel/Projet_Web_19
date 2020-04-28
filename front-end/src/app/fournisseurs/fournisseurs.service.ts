@@ -17,7 +17,7 @@ export class FournisseursService {
       .get(`${this.url}/v1/api/fournisseurs`);
   }
 
-  createProduits(data) {
+  createFournisseur(data) {
     this.http.post(`${this.url}/v1/api/fournisseurs`, data)
       .subscribe(
         res => {
