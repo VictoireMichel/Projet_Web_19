@@ -6,6 +6,7 @@ import {ProduitsService} from "./produits.service";
 
 import {Router} from "@angular/router";
 import {Produits} from './produits.interface';
+import {isNull} from "util";
 
 
 
@@ -36,12 +37,15 @@ export class ProduitComponent implements OnInit {
 
   deleteProduit(idProd) {
     this.produitsService.deleteProduit(idProd);
+    var indexed = null;
     Object.keys(this.produits).forEach((e) => {
       if (this.produits[e].id == idProd){
-        this.produits.splice(this.produits.indexOf(this.produits[e]), 1);
+        indexed = this.produits.indexOf(this.produits[e]);
       }
     });
-
+    if (!isNull(indexed)){
+      this.produits.splice(indexed, 1);
+    }
   }
 
 }

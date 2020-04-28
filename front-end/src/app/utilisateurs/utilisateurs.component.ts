@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UtilisateursService} from "./utilisateurs.service";
 import {Router} from "@angular/router";
 import {Utilisateurs} from './utilisateurs.interface';
+import {isNull} from "util";
 
 
 @Component({
@@ -28,11 +29,15 @@ export class UtilisateursComponent implements OnInit {
 
   deleteUtilisateur(idUser) {
     this.utilisateursService.deleteUtilisateur(idUser);
+    var indexed = null;
     Object.keys(this.utilisateurs).forEach((e) => {
       if (this.utilisateurs[e].id == idUser){
-        this.utilisateurs.splice(this.utilisateurs.indexOf(this.utilisateurs[e]), 1);
+        indexed = this.utilisateurs.indexOf(this.utilisateurs[e]);
       }
     });
+    if (!isNull(indexed)){
+      this.utilisateurs.splice(indexed, 1);
+    }
   }
 
 }
