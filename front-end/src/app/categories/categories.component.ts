@@ -29,7 +29,11 @@ export class CategoriesComponent implements OnInit {
 
   deleteCategorie(idProd) {
     this.categoriesService.deleteCategorie(idProd);
-    window.location.reload();
+    Object.keys(this.categories).forEach((e) => {
+      if (this.categories[e].id == idProd){
+        this.categories.splice(this.categories.indexOf(this.categories[e]), 1);
+      }
+    });
   }
 
 }
