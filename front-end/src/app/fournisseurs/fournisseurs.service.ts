@@ -9,7 +9,7 @@ export class FournisseursService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  url = 'http://localhost:3000';
+  url = 'http://51.178.41.95:3000';
 
   getFournisseurs() {
     return this
