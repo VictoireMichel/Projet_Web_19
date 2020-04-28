@@ -36,7 +36,7 @@ export class ProduitComponent implements OnInit {
 
   deleteProduit(idProd) {
     this.produitsService.deleteProduit(idProd);
-    window.location.reload();
+
   }
 
 }
