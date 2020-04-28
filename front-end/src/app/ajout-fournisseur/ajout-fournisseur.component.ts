@@ -30,6 +30,6 @@ export class AjoutFournisseurComponent implements OnInit {
   }
 
   createFournisseur(data: Fournisseurs){
-    this.fournisseursService.createProduits(data);
+    this.fournisseursService.createFournisseur(data);
   }
 }
