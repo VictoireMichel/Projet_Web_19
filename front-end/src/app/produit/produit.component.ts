@@ -41,6 +41,7 @@ export class ProduitComponent implements OnInit {
         this.produits.splice(this.produits.indexOf(this.produits[e]), 1);
       }
     });
+
   }
 
 }
