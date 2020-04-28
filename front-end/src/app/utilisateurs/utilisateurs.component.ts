@@ -28,7 +28,11 @@ export class UtilisateursComponent implements OnInit {
 
   deleteUtilisateur(idUser) {
     this.utilisateursService.deleteUtilisateur(idUser);
-    window.location.reload();
+    Object.keys(this.utilisateurs).forEach((e) => {
+      if (this.utilisateurs[e].id == idUser){
+        this.utilisateurs.splice(this.utilisateurs.indexOf(this.utilisateurs[e]), 1);
+      }
+    });
   }
 
 }

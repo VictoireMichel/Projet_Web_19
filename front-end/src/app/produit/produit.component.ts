@@ -36,7 +36,11 @@ export class ProduitComponent implements OnInit {
 
   deleteProduit(idProd) {
     this.produitsService.deleteProduit(idProd);
-    window.location.reload();
+    Object.keys(this.produits).forEach((e) => {
+      if (this.produits[e].id == idProd){
+        this.produits.splice(this.produits.indexOf(this.produits[e]), 1);
+      }
+    });
   }
 
 }
