@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Router} from "@angular/router";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ProduitsService {
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -43,14 +45,5 @@ export class ProduitsService {
       .put(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);
       })
   }
-
-
-  //a revoir vers quel api ?? car pas dynamique pour l'instant
-  getProduitRecherche(prod) {
-    return this
-      .http
-      .get(`${this.url}/v1/api/produits?` + prod).subscribe(res => {console.log(res)});
-  }
-
 
 }

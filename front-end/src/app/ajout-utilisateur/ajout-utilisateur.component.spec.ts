@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AjoutUtilisateurComponent } from './ajout-utilisateur.component';
+import {RouterTestingModule} from "@angular/router/testing";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+
+import { FormsModule } from '@angular/forms';
 
 describe('AjoutUtilisateurComponent', () => {
   let component: AjoutUtilisateurComponent;
@@ -8,7 +12,12 @@ describe('AjoutUtilisateurComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AjoutUtilisateurComponent ]
+      declarations: [ AjoutUtilisateurComponent ],
+      imports:[
+        RouterTestingModule,
+        HttpClientTestingModule,
+        FormsModule
+      ]
     })
     .compileComponents();
   }));
