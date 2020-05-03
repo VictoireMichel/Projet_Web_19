@@ -19,7 +19,7 @@ import { ProduitComponent } from './produit/produit.component';
 import {ProduitsService} from './produit/produits.service';
 
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -91,18 +91,19 @@ const routes: Routes = [
     AfficherProduitsComponent,
     StatistiquesComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MDBBootstrapModule.forRoot(),
-    FormsModule,
-    AppRoutingModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule,
-    ConfirmationPopoverModule.forRoot({
-      confirmButtonType: 'danger' // set defaults here
-    })
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MDBBootstrapModule.forRoot(),
+        FormsModule,
+        AppRoutingModule,
+        RouterModule.forRoot(routes),
+        HttpClientModule,
+        ConfirmationPopoverModule.forRoot({
+            confirmButtonType: 'danger' // set defaults here
+        }),
+        ReactiveFormsModule
+    ],
   providers: [
     ProduitsService,
     CategoriesService,
