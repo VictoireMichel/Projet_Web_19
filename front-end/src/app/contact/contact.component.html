@@ -1,10 +1,9 @@
-
-
 <!--Section: Contact v.1-->
+
 <section class="pb-5 ">
 
   <!--Section heading-->
-  <h2 class="h1 pt-4">Contactez-nous</h2>
+  <h2 class="h1 pt-4">{{text}}</h2>
   <!--Section description-->
   <p class="pb-4">iDlunch vous propose de compléter ce formulaire de contact pour toute question relative à nos activités.<br> Nous essayerons d'y répondre dans les plus brefs délais ! </p>
 
@@ -27,33 +26,35 @@
           <br>
 
           <!--Body-->
+          <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
           <div class="md-form">
             <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-            <input mdbInput type="text" id="form3" class="form-control">
-            <label for="form3">Votre nom</label>
+            <input mdbInput type="text" id="form1" class="form-control" formControlName="nom">
+            <label for="form1">Votre nom</label>
           </div>
 
           <div class="md-form">
             <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
-            <input mdbInput type="text" id="form2" class="form-control">
+            <input mdbInput type="text" id="form2" class="form-control" formControlName="email">
             <label for="form2">Votre email</label>
           </div>
 
           <div class="md-form">
             <mdb-icon fas icon="tag" class="prefix grey-text"></mdb-icon>
-            <input mdbInput type="text" id="form32" class="form-control">
-            <label for="form34">Votre sujet</label>
+            <input mdbInput type="text" id="form3" class="form-control" formControlName="sujet">
+            <label for="form3">Votre sujet</label>
           </div>
 
           <div class="md-form">
             <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
-            <textarea mdbInput type="text" id="form8" class="md-textarea"></textarea>
-            <label for="form8">Votre message</label>
+            <textarea mdbInput type="text" id="form4" class="md-textarea"></textarea>
+            <label for="form4">Votre message</label>
           </div>
 
           <div class="text-center">
-            <button mdbBtn class="waves-light green lighten-2" mdbWavesEffect>Envoyer</button>
+            <button type="submit" [disabled]="!contactForm.valid" mdbBtn class="waves-light green lighten-2" mdbWavesEffect>Envoyer</button>
           </div>
+          </form>
 
         </mdb-card-body>
 
