@@ -6,6 +6,8 @@ import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 import { FormsModule } from '@angular/forms';
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('ModifierUtilisateurComponent', () => {
   let component: ModifierUtilisateurComponent;
   let fixture: ComponentFixture<ModifierUtilisateurComponent>;
@@ -13,6 +15,9 @@ describe('ModifierUtilisateurComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ModifierUtilisateurComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
       imports:[
         RouterTestingModule,
         HttpClientTestingModule,

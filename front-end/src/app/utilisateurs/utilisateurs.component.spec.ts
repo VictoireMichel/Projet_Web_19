@@ -4,6 +4,8 @@ import { UtilisateursComponent } from './utilisateurs.component';
 import {RouterTestingModule} from "@angular/router/testing";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('UtilisateursComponent', () => {
   let component: UtilisateursComponent;
   let fixture: ComponentFixture<UtilisateursComponent>;
@@ -11,6 +13,9 @@ describe('UtilisateursComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UtilisateursComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
       imports:[
         RouterTestingModule,
         HttpClientTestingModule,

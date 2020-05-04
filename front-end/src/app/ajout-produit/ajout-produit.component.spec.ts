@@ -7,6 +7,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { FormsModule } from '@angular/forms';
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('AjoutProduitComponent', () => {
   let component: AjoutProduitComponent;
   let fixture: ComponentFixture<AjoutProduitComponent>;
@@ -14,6 +16,9 @@ describe('AjoutProduitComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AjoutProduitComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
       imports:[
         RouterTestingModule,
         HttpClientTestingModule,

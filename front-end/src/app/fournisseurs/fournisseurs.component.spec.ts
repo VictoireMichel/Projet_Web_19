@@ -5,6 +5,8 @@ import { FournisseursComponent } from './fournisseurs.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('FournisseursComponent', () => {
   let component: FournisseursComponent;
   let fixture: ComponentFixture<FournisseursComponent>;
@@ -12,6 +14,9 @@ describe('FournisseursComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FournisseursComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
       imports:[
         RouterTestingModule,
         HttpClientTestingModule,

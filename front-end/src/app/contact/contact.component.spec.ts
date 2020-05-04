@@ -5,6 +5,8 @@ import {DebugElement} from "@angular/core";
 
 import { ContactComponent } from './contact.component';
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -15,6 +17,9 @@ describe('ContactComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ContactComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
       imports: [
         BrowserModule,
         FormsModule,
@@ -52,6 +57,7 @@ describe('ContactComponent', () => {
     component.contactForm.controls['email'].setValue('');
     component.contactForm.controls['nom'].setValue('');
     component.contactForm.controls['sujet'].setValue('');
+    component.contactForm.controls['message'].setValue('');
     expect(component.contactForm.valid).toBeFalsy();
   }));
 
@@ -59,6 +65,7 @@ describe('ContactComponent', () => {
     component.contactForm.controls['email'].setValue('florent.janssens@gmail.com');
     component.contactForm.controls['nom'].setValue('florent');
     component.contactForm.controls['sujet'].setValue('commande pomme');
+    component.contactForm.controls['message'].setValue('je suis interessé pour une commande');
     expect(component.contactForm.valid).toBeTruthy();
   }));
 

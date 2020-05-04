@@ -6,6 +6,8 @@ import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 import { FormsModule } from '@angular/forms';
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('AjoutFournisseurComponent', () => {
   let component: AjoutFournisseurComponent;
   let fixture: ComponentFixture<AjoutFournisseurComponent>;
@@ -13,6 +15,9 @@ describe('AjoutFournisseurComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AjoutFournisseurComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
       imports:[
         RouterTestingModule,
         HttpClientTestingModule,

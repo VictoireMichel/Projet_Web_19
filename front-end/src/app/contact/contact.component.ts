@@ -12,7 +12,8 @@ export class ContactComponent implements OnInit {
   contact = {
     nom: '',
     email: '',
-    sujet: ''
+    sujet: '',
+    message: ''
   };
   submitted = false;
 
@@ -30,7 +31,8 @@ export class ContactComponent implements OnInit {
         Validators.required,
         Validators.email
       ]),
-        'sujet': new FormControl(this.contact.sujet, Validators.required)
+        'sujet': new FormControl(this.contact.sujet, Validators.required),
+        'message': new FormControl(this.contactForm, Validators.required)
     });
 
   }
