@@ -2,13 +2,18 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsComponent } from './news.component';
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('NewsComponent', () => {
   let component: NewsComponent;
   let fixture: ComponentFixture<NewsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsComponent ]
+      declarations: [ NewsComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
     })
     .compileComponents();
   }));

@@ -5,6 +5,8 @@ import { ProduitComponent } from './produit.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 
 describe('ProduitComponent', () => {
   let component: ProduitComponent;
@@ -13,6 +15,9 @@ describe('ProduitComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ProduitComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
       imports:[
         RouterTestingModule,
         HttpClientTestingModule,

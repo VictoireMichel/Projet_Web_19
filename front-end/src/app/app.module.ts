@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -91,6 +92,8 @@ const routes: Routes = [
     AfficherProduitsComponent,
     StatistiquesComponent
   ],
+    schemas: [ NO_ERRORS_SCHEMA],
+
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
