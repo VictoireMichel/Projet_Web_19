@@ -4,7 +4,7 @@
 
   <mdb-card-header class=" green lighten-2 white-text text-center py-4">
     <h5>
-      <strong>Identification</strong>
+      <strong>{{text}}</strong>
     </h5>
   </mdb-card-header>
 
@@ -13,42 +13,42 @@
   <mdb-card-body class="px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" style="color: #757575;">
+    <form class="text-center" style="color: #757575;" [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()" novalidate>
 
       <!-- Nom -->
       <div class="md-form">
-        <input type="email" id="materialLoginFormNom" class="form-control" mdbInput>
+        <input type="email" id="materialLoginFormNom" class="form-control" mdbInput formControlName="nom">
         <label for="materialLoginFormNom">Votre nom</label>
       </div>
       <!-- Prenom -->
       <div class="md-form">
-        <input type="email" id="materialLoginFormPrenom" class="form-control" mdbInput>
+        <input type="email" id="materialLoginFormPrenom" class="form-control" mdbInput formControlName="prenom">
         <label for="materialLoginFormPrenom">Votre prenom</label>
       </div>
       <!-- Société -->
       <div class="md-form">
-        <input type="email" id="materialLoginFormSociete" class="form-control" mdbInput>
+        <input type="email" id="materialLoginFormSociete" class="form-control" mdbInput formControlName="societe">
         <label for="materialLoginFormSociete">Votre Société</label>
       </div>
       <!-- Email -->
       <div class="md-form">
-        <input type="email" id="materialLoginFormEmail" class="form-control" mdbInput>
+        <input type="email" id="materialLoginFormEmail" class="form-control" mdbInput formControlName="email">
         <label for="materialLoginFormEmail">Votre mail</label>
       </div>
       <!-- Password -->
       <div class="md-form">
-        <input type="password" id="materialLoginFormPassword" class="form-control" mdbInput>
+        <input type="password" id="materialLoginFormPassword" class="form-control" mdbInput formControlName="password">
         <label for="materialLoginFormPassword">Mot de passe</label>
       </div>
       <!-- code -->
       <div class="md-form">
-        <input type="password" id="materialLoginFormCode" class="form-control" mdbInput>
+        <input type="password" id="materialLoginFormCode" class="form-control" mdbInput formControlName="code">
         <label for="materialLoginFormCode">Code d'inscription</label>
       </div>
 
 
       <!-- Sign in button -->
-      <button type="submit" mdbBtn class="waves-light green lighten-2" mdbWavesEffect>S'inscrire</button>
+      <button type="submit" [disabled]="!inscriptionForm.valid" mdbBtn class="waves-light green lighten-2" mdbWavesEffect>S'inscrire</button>
 
     </form>
     <!-- Form -->
@@ -57,3 +57,5 @@
 
 </mdb-card>
 <!-- Material form login -->
+
+
