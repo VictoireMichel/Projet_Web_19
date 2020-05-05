@@ -36,8 +36,8 @@ describe('ContactComponent', () => {
     });
   }));
 
-  it('should have as text Connectez-vous', async(() => {
-    expect(component.text).toEqual('Connectez-vous');
+  it('should have as text Contactez-nous', async(() => {
+    expect(component.text).toEqual('Contactez-nous');
   }));
 
   it( 'should set submited to true', async(() => {

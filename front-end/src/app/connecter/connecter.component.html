@@ -5,7 +5,7 @@
 
       <mdb-card-header class=" green lighten-2 white-text text-center py-4">
         <h5>
-          <strong>Connexion</strong>
+          <strong>{{text}}</strong>
         </h5>
       </mdb-card-header>
 
@@ -14,17 +14,17 @@
       <mdb-card-body class="px-lg-5 pt-0">
 
         <!-- Form -->
-        <form class="text-center" style="color: #757575;">
+        <form class="text-center" style="color: #757575;" [formGroup]="connexionForm" (ngSubmit)="onSubmit()" novalidate>
 
           <!-- Email -->
           <div class="md-form">
-            <input type="email" id="materialLoginFormEmail" class="form-control" mdbInput>
+            <input type="email" id="materialLoginFormEmail" class="form-control" mdbInput formControlName="email">
             <label for="materialLoginFormEmail">Mail</label>
           </div>
 
           <!-- Password -->
           <div class="md-form">
-            <input type="password" id="materialLoginFormPassword" class="form-control" mdbInput>
+            <input type="password" id="materialLoginFormPassword" class="form-control" mdbInput formControlName="password">
             <label for="materialLoginFormPassword">Mot de passe</label>
           </div>
 
@@ -39,7 +39,7 @@
             </div>
           </div>
           <!-- Sign in button -->
-            <button type="submit" mdbBtn class="waves-light green lighten-2" mdbWavesEffect>Se connecter</button>
+            <button type="submit" [disabled]="!connexionForm.valid" mdbBtn class="waves-light green lighten-2" mdbWavesEffect>Se connecter</button>
           <!-- Register -->
           <p>Pas encore membre?
             <a routerLink="/connexion-Privé">S'enregistrer</a>
