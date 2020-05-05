@@ -15,7 +15,6 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { ConnecterComponent } from './connecter/connecter.component';
-import { ConnexionPrivComponent } from './connexion-priv/connexion-priv.component';
 import { ProduitComponent } from './produit/produit.component';
 import {ProduitsService} from './produit/produits.service';
 
@@ -40,6 +39,8 @@ import { AjoutUtilisateurComponent } from './ajout-utilisateur/ajout-utilisateur
 import { ModifierUtilisateurComponent } from './modifier-utilisateur/modifier-utilisateur.component';
 import { AfficherProduitsComponent } from './afficher-produits/afficher-produits.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+
 
 
 
@@ -50,7 +51,6 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent}, // http://localhost:4200/news
   {path: 'contact', component: ContactComponent }, // http://localhost:4200/contact
   {path: 'connecter', component: ConnecterComponent}, // http://localhost:4200/connecter
-  {path: 'connexion-Privé', component: ConnexionPrivComponent}, // http://localhost:4200/connexion-Privé
   {path: 'produits', component: ProduitComponent},
   {path: 'ajout-produit', component: AjoutProduitComponent },
   {path: 'admin', component: AdminComponent},
@@ -65,6 +65,7 @@ const routes: Routes = [
   {path: 'utilisateurs', component: UtilisateursComponent },
   {path: 'modifier-utilisateur/:id', component: ModifierUtilisateurComponent },
   {path: 'statistiques', component: StatistiquesComponent },
+  {path: 'inscription', component: InscriptionComponent},
 ];
 
 @NgModule({
@@ -75,7 +76,6 @@ const routes: Routes = [
     HomeComponent,
     NewsComponent,
     ConnecterComponent,
-    ConnexionPrivComponent,
     ProduitComponent,
     AjoutProduitComponent,
     CategoriesComponent,
@@ -90,7 +90,8 @@ const routes: Routes = [
     AjoutUtilisateurComponent,
     ModifierUtilisateurComponent,
     AfficherProduitsComponent,
-    StatistiquesComponent
+    StatistiquesComponent,
+    InscriptionComponent,
   ],
     schemas: [ NO_ERRORS_SCHEMA],
 
