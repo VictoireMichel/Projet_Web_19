@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  text = 'Connectez-vous';
+  text = 'Contactez-nous';
   contactForm: FormGroup;
   contact = {
     nom: '',
@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
     this.contactForm = new FormGroup({
       'nom': new FormControl(this.contact.nom, [
         Validators.required,
-        Validators.minLength(4)
+        Validators.minLength(4),
       ]),
       'email': new FormControl(this.contact.email, [
         Validators.required,
@@ -38,6 +38,10 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit():void{
+
+    const formValue = this.contactForm.value;
+    const message = ("Merci " + formValue['nom'] + " d'avoir posé une question ayant comme sujet : " + formValue['sujet'] + ", nous allons transmettre ce message au gérant : " + formValue['message'] + " !");
+    console.log(message);
     this.submitted = true;
   }
 

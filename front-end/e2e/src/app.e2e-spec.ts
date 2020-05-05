@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import {browser,logging} from 'protractor';
+import {browser, by, element, logging} from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -17,3 +17,9 @@ describe('workspace-project App', () => {
   });
 });
 
+describe('angular-cli-single-tests-example App', () => {
+  it('should display welcome message', () => {
+    browser.get('/');
+    expect(element(by.css('app-root h1')).getText()).toEqual('Welcome to iDlunch!');
+  });
+});
