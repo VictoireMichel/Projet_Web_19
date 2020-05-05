@@ -1,6 +1,7 @@
 //////////////////////////CREATION DU SERVEUR//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+const fs = require('fs');
+const https = require('https');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -12,17 +13,31 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+// active le routage des fichiers
+app.use(express.static('public'));
+
+// Certificate
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/idlunch.wt1-2.ephec-ti.be/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/idlunch.wt1-2.ephec-ti.be/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/idlunch.wt1-2.ephec-ti.be/chain.pem', 'utf8');
+
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
+
 
 // route par défaut
 app.get('/', function (req, res) {
     res.send('hello');
 });
 
-// affectation du port
-app.listen(3000, function () {
-    console.log('Node app is running on port 3000');
-});
+const httpsServer = https.createServer(credentials, app);
 
+httpsServer.listen(3000, () => {
+	console.log('HTTPS Server running on port 3000');
+});
 
 
 module.exports = app;
@@ -32,7 +47,7 @@ module.exports = app;
 const mysql = require('mysql');
 
 const con = mysql.createConnection({
-    host: "localhost",
+    host: "51.178.40.201",
     user: "root",
     password: "user1234",
     database: "prototype_web",
