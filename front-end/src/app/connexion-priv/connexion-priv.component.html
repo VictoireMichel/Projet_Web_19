@@ -1,54 +1,59 @@
-<div id="login" class="panel panel-primary container">
-  <div class="panel-heading"><h3 class="panel-title"><strong> Identification</strong></h3></div>
-  <div class="panel-body">
-    <form id="frm-login" class="form-horizontal" action="javascript:ctrl.effectuerLogin();">
-      <fieldset>
-        <!-- Text input-->
-        <div class="row">
-          <label class="control-label" for="nom"><span class="glyphicon glyphicon-user"></span> Utilisateur</label>
-          <div>
-            <input id="nom" name="nom" type="text" placeholder="Entrez votre nom" class="form-control" required="">
-          </div>
-          <div  class="col">
-            <input id="prenom" name="prenom" type="text" placeholder="Entrez votre prenom" class="form-control" required="">
-          </div>
-        </div>
+<br>
+<!-- Material form login -->
+<mdb-card>
 
-        <div  class="form-group">
-          <label class="control-label" for="nom"><span class="glyphicon glyphicon-cutlery"></span> Société</label>
-          <div>
-            <input id="societe" name="societe" type="text" placeholder="Entrez votre société" class="form-control input-md" required="">
-          </div>
-        </div>
+  <mdb-card-header class=" green lighten-2 white-text text-center py-4">
+    <h5>
+      <strong>Identification</strong>
+    </h5>
+  </mdb-card-header>
 
-        <div  class="form-group">
-          <label class="control-label" for="nom"><span class="glyphicon glyphicon-envelope"></span> Adresse mail</label>
-          <div>
-            <input id="mail" name="mail" type="text" placeholder="Entrez votre e-mail" class="form-control input-md" required="">
-          </div>
-        </div>
-        <!-- Password input-->
-        <div class="form-group">
-          <label class="control-label" for="mdp"><span class="glyphicon glyphicon-lock"></span> Mot de passe</label>
-          <div>
-            <input id="mdp" name="mdp" type="password" placeholder="Entrez votre mot de passe" class="form-control input-md" required="">
-          </div>
-        </div>
 
-        <div class="form-group">
-          <label class="control-label" for="code"><span class="glyphicon glyphicon-lock"></span> Code</label>
-          <div>
-            <input id="code" name="code" type="text" placeholder="Entrez le code" class="form-control input-md" required="">
-          </div>
-        </div>
-        <!-- Button -->
-        <div class="form-group">
-          <label class="control-label" for="btnSigner"></label>
-          <div>
-            <button id="btnSigner" type="submit" name="btnSigner" class="btn btn-success">Signer</button>
-          </div>
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5 pt-0">
 
-        </div>
-      </fieldset>
+    <!-- Form -->
+    <form class="text-center" style="color: #757575;">
+
+      <!-- Nom -->
+      <div class="md-form">
+        <input type="email" id="materialLoginFormNom" class="form-control" mdbInput>
+        <label for="materialLoginFormNom">Votre nom</label>
+      </div>
+      <!-- Prenom -->
+      <div class="md-form">
+        <input type="email" id="materialLoginFormPrenom" class="form-control" mdbInput>
+        <label for="materialLoginFormPrenom">Votre prenom</label>
+      </div>
+      <!-- Société -->
+      <div class="md-form">
+        <input type="email" id="materialLoginFormSociete" class="form-control" mdbInput>
+        <label for="materialLoginFormSociete">Votre Société</label>
+      </div>
+      <!-- Email -->
+      <div class="md-form">
+        <input type="email" id="materialLoginFormEmail" class="form-control" mdbInput>
+        <label for="materialLoginFormEmail">Votre mail</label>
+      </div>
+      <!-- Password -->
+      <div class="md-form">
+        <input type="password" id="materialLoginFormPassword" class="form-control" mdbInput>
+        <label for="materialLoginFormPassword">Mot de passe</label>
+      </div>
+      <!-- code -->
+      <div class="md-form">
+        <input type="password" id="materialLoginFormCode" class="form-control" mdbInput>
+        <label for="materialLoginFormCode">Code d'inscription</label>
+      </div>
+
+
+      <!-- Sign in button -->
+      <button type="submit" mdbBtn class="waves-light green lighten-2" mdbWavesEffect>S'inscrire</button>
+
     </form>
+    <!-- Form -->
 
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form login -->
