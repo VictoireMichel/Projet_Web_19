@@ -42,7 +42,7 @@ export class ProduitsService {
   modifierProduit(idProd, data){
     return this
       .http
-      .put(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);
+      .patch(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);
       })
   }
 

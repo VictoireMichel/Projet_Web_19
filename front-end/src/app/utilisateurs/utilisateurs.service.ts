@@ -35,7 +35,7 @@ export class UtilisateursService {
   modifierUtilisateur(idUser, data){
     return this
       .http
-      .put(`${this.url}/v1/api/utilisateurs?id=` + idUser, data).subscribe(res => {console.log(res);
+      .patch(`${this.url}/v1/api/utilisateurs?id=` + idUser, data).subscribe(res => {console.log(res);
       })
   }
 

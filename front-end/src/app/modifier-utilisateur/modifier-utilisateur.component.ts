@@ -16,9 +16,11 @@ export class ModifierUtilisateurComponent implements OnInit {
 
   leUtilisateur: Utilisateurs = {
     id: null,
-    pseudo: "",
-    mdp:"",
+    nom:"",
+    prenom:"",
+    genre: "",
     email:"",
+    mdp: "",
     adresse:"",
     telephone:"",
   };

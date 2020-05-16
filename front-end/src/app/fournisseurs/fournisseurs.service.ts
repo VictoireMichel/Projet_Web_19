@@ -35,7 +35,7 @@ export class FournisseursService {
   modifierFournisseur(idFourn, data){
     return this
       .http
-      .put(`${this.url}/v1/api/fournisseurs?id=` + idFourn, data).subscribe(res => {console.log(res);
+      .patch(`${this.url}/v1/api/fournisseurs?id=` + idFourn, data).subscribe(res => {console.log(res);
       })
   }
 

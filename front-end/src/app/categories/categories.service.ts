@@ -35,7 +35,7 @@ export class CategoriesService {
   modifierCategorie(idCat, data){
     return this
       .http
-      .put(`${this.url}/v1/api/categories?id=` + idCat, data).subscribe(res => {console.log(res);
+      .patch(`${this.url}/v1/api/categories?id=` + idCat, data).subscribe(res => {console.log(res);
       })
   }
 

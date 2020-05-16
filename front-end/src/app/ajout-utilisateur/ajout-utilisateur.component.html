@@ -1,15 +1,47 @@
 <div class="form-horizontal pad-10">
   <br>
+
   <form #ajoutUtilisateurForm="ngForm">
-    <label class=" control-label">Pseudo</label>
+    <label class=" control-label">Nom</label>
     <div class="col-md-12 no-padding">
-      <input name="pseudo" id="pseudo" #pseudo="ngModel" [(ngModel)]="utilisateurs.pseudo" class="form-control" placeholder="" type="text" required />
-      <div *ngIf="pseudo.errors && (pseudo.dirty || pseudo.touched)" class="alert alert-danger">
-        <div [hidden]="!pseudo.errors.required">
-          pseudo est requis!
+      <input name="nom" id="nom" #nom="ngModel" [(ngModel)]="utilisateurs.nom" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="nom.errors && (nom.dirty || nom.touched)" class="alert alert-danger">
+        <div [hidden]="!nom.errors.required">
+          nom est requis!
         </div>
       </div>
     </div>
+
+    <label class=" control-label">Prenom</label>
+    <div class="col-md-12 no-padding">
+      <input name="prenom" id="prenom" #prenom="ngModel" [(ngModel)]="utilisateurs.prenom" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="prenom.errors && (prenom.dirty || prenom.touched)" class="alert alert-danger">
+        <div [hidden]="!prenom.errors.required">
+          Prenom est requis!
+        </div>
+      </div>
+    </div>
+
+    <label class=" control-label">Genre</label>
+    <div class="col-md-12 no-padding">
+      <input name="genre" id="genre" #genre="ngModel" [(ngModel)]="utilisateurs.genre" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="genre.errors && (genre.dirty || genre.touched)" class="alert alert-danger">
+        <div [hidden]="!genre.errors.required">
+          genre est requis!
+        </div>
+      </div>
+    </div>
+
+    <label class=" control-label">Email</label>
+    <div class="col-md-12 no-padding">
+      <input name="email" id="email" #email="ngModel" [(ngModel)]="utilisateurs.email" class="form-control" placeholder="" type="text" required />
+      <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+        <div [hidden]="!email.errors.required">
+          Email est requis!
+        </div>
+      </div>
+    </div>
+
     <label class=" control-label">Mot de Passe</label>
     <div class="col-md-12 no-padding">
       <input name="mdp" id="mdp" #mdp="ngModel" [(ngModel)]="utilisateurs.mdp" class="form-control" placeholder="" type="text" required />
@@ -19,16 +51,6 @@
         </div>
       </div>
     </div>
-
-<label class=" control-label">Email</label>
-<div class="col-md-12 no-padding">
-  <input name="email" id="email" #email="ngModel" [(ngModel)]="utilisateurs.email" class="form-control" placeholder="" type="text" required />
-  <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
-    <div [hidden]="!email.errors.required">
-      Email est requis!
-    </div>
-  </div>
-</div>
 
     <label class=" control-label">Adresse</label>
     <div class="col-md-12 no-padding">
@@ -49,7 +71,6 @@
         </div>
       </div>
     </div>
-
 
 
     <br>
