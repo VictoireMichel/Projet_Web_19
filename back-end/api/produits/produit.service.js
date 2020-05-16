@@ -5,7 +5,7 @@ module.exports = {
     createProduit: (data, callback) =>{
         pool.query(
             'insert into produits(nom, idCat, idFourn, origine) ' +
-            'values(?,(select id from categories where categories.nom = ?),(select id from fournisseurs where fournisseurs.nom = ?),?)',
+            'values(?,?,?,?)',
             [
                 data.nom,
                 data.categorie,
@@ -41,7 +41,7 @@ module.exports = {
     },
     updateProduit: (data, callBack) => {
         pool.query(
-            'update produits set nom=?, idCat=(select id from categories where categories.nom = ?), idFourn=(select id from fournisseurs where fournisseurs.nom = ?), origine=? where id = ?',
+            'update produits set nom=?, idCat=?, idFourn=?, origine=? where id = ?',
             [
                 data.nom,
                 data.categorie,

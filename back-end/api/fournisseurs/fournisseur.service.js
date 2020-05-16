@@ -5,7 +5,7 @@ module.exports = {
     createFournisseur: (data, callback) =>{
         pool.query(
             'insert into fournisseurs(nom, adresse, idCat) ' +
-            'values(?,?,(select id from categories where categories.nom = ?))',
+            'values(?,?,?)',
             [
                 data.nom,
                 data.adresse,
@@ -35,7 +35,7 @@ module.exports = {
     },
     updateFournisseur: (data, callBack) => {
         pool.query(
-            'update fournisseurs set nom=?, adresse=?, idCat=(select id from categories where categories.nom = ?) where id = ?',
+            'update fournisseurs set nom=?, adresse=?, idCat=? where id = ?',
             [
                 data.nom,
                 data.adresse,
