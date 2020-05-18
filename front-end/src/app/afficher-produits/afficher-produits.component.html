@@ -1,34 +1,23 @@
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 mx-auto">
-        <div class="md-form">
-          <input
-            type="text"
-            [(ngModel)]="searchText"
-            class="form-control"
-            id="search"
-            mdbInput
-          />
-          <label for="search">Search</label>
-        </div>
-      </div>
-    </div>
+<br>
+
+<div>
+  <input #box (keyup.enter)="onEnter(box.value)">
+</div>
 
     <table id="table" mdbTable>
 
       <thead>
       <tr>
-        <th
-          *ngFor="let head of headElements; let i = index"
-          scope="col"
-        >
-          {{head}}
-        </th>
+        <th>id</th>
+        <th>Nom</th>
+        <th>Catégorie</th>
+        <th>Fournisseur</th>
+        <th>Origine</th>
       </tr>
       </thead>
       <tbody>
-      <tr mdbTableCol *ngFor="let produit of elements">
+      <tr mdbTableCol *ngFor="let produit of produits">
         <td>{{ produit.id }}</td>
         <td>{{ produit.nom }}</td>
         <td>{{ produit.categorie }}</td>
@@ -38,5 +27,4 @@
       </tr>
       </tbody>
     </table>
-  </div>
 

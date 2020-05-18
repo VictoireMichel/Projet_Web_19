@@ -13,46 +13,20 @@ export class AfficherProduitsComponent implements OnInit {
 
   produits: Produits[];
 
-  @ViewChild(MdbTableDirective, {static: true}) mdbTable:
-    MdbTableDirective;
-  elements: any = [];
-  headElements = ['Id', 'Nom',
-    'Catégorie', 'Fournisseur', 'Origine'];
-  searchText: string = '';
-  previous: string;
+  recherche: string = '';
+
 
   constructor(private produitsService: ProduitsService, private router: Router) {
   }
 
-  @HostListener('input') oninput() {this.searchItems();}
+    ngOnInit(): void {}
 
-    ngOnInit()
-  :
-    void {
-      this.produitsService.getProduits().subscribe((data) => {
-        this.elements = data;
-        this.mdbTable.setDataSource(this.elements);
-        this.previous = this.mdbTable.getDataSource();
-      });
+  onEnter(value: string) { // without type info
+    this.recherche = value;
+    this.produitsService.getProduits(this.recherche);
+    console.log(this.recherche);
 
   }
-
-    searchItems()
-    {
-      const
-        prev = this.mdbTable.getDataSource();
-      if (!this.searchText) {
-        this.mdbTable.setDataSource(this.previous);
-        this.elements =
-          this.mdbTable.getDataSource();
-      }
-      if (this.searchText) {
-        this.elements =
-          this.mdbTable.searchLocalDataByMultipleFields(this.searchText, [
-            'nom', 'categorie', 'fournisseur', 'origine']);
-        this.mdbTable.setDataSource(prev);
-      }
-    }
 
   }
 
