@@ -26,7 +26,9 @@ export class AfficherProduitsComponent implements OnInit {
     this.produitsService.getProduits(this.recherche).subscribe(
       res => {
         //this.produits = res;
-        console.log(res + "res");
+
+        console.log(res.byteLength + " res");
+
       },
       err => {
         console.log('Error occured:' , err);
@@ -34,7 +36,7 @@ export class AfficherProduitsComponent implements OnInit {
       }
     );
     console.log(this.recherche);
-    console.log(this.produits);
+    //console.log(this.produits);
 
   }
 

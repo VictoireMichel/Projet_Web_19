@@ -36,15 +36,10 @@ export class ProduitComponent implements OnInit {
 
   onEnter(value: string) {
     this.recherche = value;
-   this.produitsService.getProduits(this.recherche).subscribe(
-      res => {
-        //this.produits = res;
-        console.log(res + "res");
-      },
-      err => {
-        console.log('Error occured:' , err);
-
-      }
+   this.produitsService.getProduits(this.recherche).subscribe((data)=> {
+     console.log(data);
+     //this.produits = data;
+     }
     );
    console.log(this.recherche);
    console.log(this.produits);
