@@ -25,9 +25,9 @@ export class ModifierFournisseurComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.fournisseursService.getFournisseurs().subscribe((data) => {
-      Object.keys(data).forEach((e) => {
-        if (data[e].id == this.id){
-          this.leFournisseur = data[e];
+      Object.keys(data["data"]).forEach((e) => {
+        if (data["data"][e].id == this.id){
+          this.leFournisseur = data["data"][e];
         }
       });
     });

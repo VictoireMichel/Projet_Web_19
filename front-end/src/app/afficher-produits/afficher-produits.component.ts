@@ -36,11 +36,12 @@ export class AfficherProduitsComponent implements OnInit {
     this.produitsService.getProduits(this.search).subscribe(data => {
       this.produits = data["data"];
       console.log(JSON.stringify(data["data"]) + " data");
+      console.log(this.produits + " prod");
     });
 
     console.log(JSON.stringify(this.search) + " recherche");
 
-    console.log(this.produits + " prod");
+
 
 
     //console.log(this.search.recherche + " rechercheValeur");
