@@ -35,6 +35,7 @@ export class ConnecterComponent implements OnInit {
     const formValue = this.connexionForm.value;
     const message = (formValue['email'] + "   , vous avez demmandé à vous connecter");
     console.log(message);
+    console.log(formValue.password);
     this.submitted = true;
   }
 

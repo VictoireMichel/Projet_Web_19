@@ -11,10 +11,11 @@ export class ProduitsService {
 
   url = 'https://idlunch.wt1-2.ephec-ti.be:3000';
 
-  getProduits() {
+  getProduits(data) {
     return this
       .http
-      .get(`${this.url}/v1/api/produits`);
+      .get(`${this.url}/v1/api/produits`, data);
+
   }
 
   createProduits(data) {
