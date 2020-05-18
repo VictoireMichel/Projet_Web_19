@@ -35,11 +35,11 @@ module.exports = {
     },
     updateFournisseur: (data, callBack) => {
         pool.query(
-            'update fournisseurs set nom=?, adresse=?, idCat=? where id = ?',
+            'update fournisseurs set nom=?, adresse=? where id = ?',
             [
                 data.nom,
                 data.adresse,
-                data.categorie,
+                //data.categorie,
                 data.id
             ],
             (error, results, fields) => {

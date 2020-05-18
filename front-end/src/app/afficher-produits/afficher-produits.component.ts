@@ -1,7 +1,7 @@
 import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {ProduitsService} from "../produit/produits.service";
 import {MdbTableDirective} from "angular-bootstrap-md/";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Produits} from '../produit/produits.interface';
 
 @Component({
@@ -13,20 +13,41 @@ export class AfficherProduitsComponent implements OnInit {
 
   produits: Produits[];
 
-  recherche: string = '';
+  search = { recherche: '' }
 
 
   constructor(private produitsService: ProduitsService, private router: Router) {
   }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
 
-  onEnter(value: string) { // without type info
-    this.recherche = value;
-    this.produitsService.getProduits(this.recherche);
-    console.log(this.recherche);
+    /*
+      this.produitsService.getProduitsAll().subscribe(data=> {
+        this.produits = data["data"];
+      });
+
+     */
+    }
+
+  onEnter(value) {
+
+    this.search = value;
+
+    this.produitsService.getProduits(this.search).subscribe(data => {
+      this.produits = data["data"];
+      console.log(JSON.stringify(data["data"]) + " data");
+      console.log(this.produits + " prod");
+    });
+
+    console.log(JSON.stringify(this.search) + " recherche");
+
+
+
+
+    //console.log(this.search.recherche + " rechercheValeur");
+    //console.log(this.produits);
 
   }
 
-  }
+}
 

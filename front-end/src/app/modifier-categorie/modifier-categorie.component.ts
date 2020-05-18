@@ -24,9 +24,9 @@ export class ModifierCategorieComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.categoriesService.getCategories().subscribe((data) => {
-      Object.keys(data).forEach((e) => {
-        if (data[e].id == this.id){
-          this.laCategorie = data[e];
+      Object.keys(data["data"]).forEach((e) => {
+        if (data["data"][e].id == this.id){
+          this.laCategorie = data["data"][e];
         }
       });
     });

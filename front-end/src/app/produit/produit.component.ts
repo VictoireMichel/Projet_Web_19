@@ -22,7 +22,7 @@ export class ProduitComponent implements OnInit {
 
   produits: Produits[];
 
-  recherche: string = '';
+  search = { recherche: '' }
 
 
   constructor(private produitsService: ProduitsService, private router: Router) {
@@ -35,18 +35,11 @@ export class ProduitComponent implements OnInit {
   }
 
   onEnter(value: string) {
-    this.recherche = value;
-   this.produitsService.getProduits(this.recherche).subscribe(
-      res => {
-        //this.produits = res;
-        console.log(res);
-      },
-      err => {
-        console.log('Error occured:' , err);
+    this.search.recherche = value;
+   this.produitsService.getProduits(this.search);
+   console.log(this.search);
+   console.log(this.produits);
 
-      }
-    );
-   console.log(this.recherche);
 
 
   }

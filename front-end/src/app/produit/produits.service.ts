@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Router} from "@angular/router";
+import {optionsFactory} from "angular-confirmation-popover/confirmation-popover.module";
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProduitsService {
-  constructor(private http: HttpClient, responseType:'json', private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   url = 'http://localhost:3000';
@@ -14,8 +16,15 @@ export class ProduitsService {
   getProduits(data) {
     return this
       .http
-      .get(`${this.url}/v1/api/produits`,{responseType:"json", params:data});
+      .get(`${this.url}/v1/api/produits`, data);
+
   }
+
+ getProduitsAll(){
+  return this
+    .http
+    .get(`${this.url}/v1/api/produits/all`);
+}
 
   createProduits(data) {
     this.http.post(`${this.url}/v1/api/produits`, data)
@@ -42,8 +51,7 @@ export class ProduitsService {
   modifierProduit(idProd, data){
     return this
       .http
-      .patch(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);
-      })
+      .patch(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);})
   }
 
 }

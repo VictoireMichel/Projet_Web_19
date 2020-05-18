@@ -16,7 +16,9 @@ export class FournisseursComponent implements OnInit {
   constructor(private fournisseursService: FournisseursService, private router: Router) { }
 
   ngOnInit(): void {
-    this.fournisseursService.getFournisseurs().subscribe((data: Fournisseurs[]) => {this.fournisseurs = data});
+    this.fournisseursService.getFournisseurs().subscribe((data: Fournisseurs[]) => {
+      this.fournisseurs = data["data"];
+    });
   }
 
   goToAddFournisseurs() {
@@ -24,11 +26,12 @@ export class FournisseursComponent implements OnInit {
   }
 
   deleteFourn(idFourn) {
-
+    console.log(this.fournisseurs);
     this.fournisseursService.deleteFourn(idFourn);
     var indexed = null;
     Object.keys(this.fournisseurs).forEach((e) => {
       if (this.fournisseurs[e].id == idFourn){
+        console.log(this.fournisseurs[e].id);
         indexed = this.fournisseurs.indexOf(this.fournisseurs[e]);
       }
     });
