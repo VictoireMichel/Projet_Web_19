@@ -39,7 +39,7 @@ export class ProduitComponent implements OnInit {
    this.produitsService.getProduits(this.recherche).subscribe(
       res => {
         //this.produits = res;
-        console.log(res);
+        console.log(res + "res");
       },
       err => {
         console.log('Error occured:' , err);
@@ -47,6 +47,8 @@ export class ProduitComponent implements OnInit {
       }
     );
    console.log(this.recherche);
+   console.log(this.produits);
+
 
 
   }

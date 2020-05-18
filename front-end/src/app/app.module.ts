@@ -15,6 +15,8 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { ConnecterComponent } from './connecter/connecter.component';
+import { ConnecterService } from './connecter/connecter.service';
+
 import { ProduitComponent } from './produit/produit.component';
 import {ProduitsService} from './produit/produits.service';
 
@@ -46,6 +48,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 
 
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent }, // http://localhost:4200
   {path: 'news', component: NewsComponent}, // http://localhost:4200/news
@@ -66,6 +69,7 @@ const routes: Routes = [
   {path: 'modifier-utilisateur/:id', component: ModifierUtilisateurComponent },
   {path: 'statistiques', component: StatistiquesComponent },
   {path: 'inscription', component: InscriptionComponent},
+  {path: 'afficher-produits', component: AfficherProduitsComponent},
 ];
 
 @NgModule({
@@ -112,7 +116,9 @@ const routes: Routes = [
     ProduitsService,
     CategoriesService,
     FournisseursService,
-    UtilisateursService
+    UtilisateursService,
+    ConnecterService
+
   ],
   bootstrap: [AppComponent]
 })

@@ -21,10 +21,20 @@ export class AfficherProduitsComponent implements OnInit {
 
     ngOnInit(): void {}
 
-  onEnter(value: string) { // without type info
+  onEnter(value: string) {
     this.recherche = value;
-    this.produitsService.getProduits(this.recherche);
+    this.produitsService.getProduits(this.recherche).subscribe(
+      res => {
+        //this.produits = res;
+        console.log(res + "res");
+      },
+      err => {
+        console.log('Error occured:' , err);
+
+      }
+    );
     console.log(this.recherche);
+    console.log(this.produits);
 
   }
 
