@@ -33,7 +33,6 @@ module.exports = {
     getProduits: (req, res) => {
         const data = req.body;
         getProduits(data, (err, results) => {
-            res.setHeader('Content-Type', 'application/json; charset=utf-8');
             if (err) {
                 console.log(err);
                 return;
