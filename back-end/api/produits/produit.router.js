@@ -2,10 +2,10 @@ const { createProduit, getProduits, getProduitsAll, updateProduit, deleteProduit
 const router = require("express").Router();
 const { checkToken } = require("../../auth/token_validation");
 
-router.post("/", createProduit);
-router.get("/", getProduits);
-router.get("/all", getProduitsAll);
-router.patch("/", updateProduit);
-router.delete("/", deleteProduit);
+router.post("/", checkToken, createProduit);
+router.get("/:recherche", checkToken, getProduits);
+router.get("/all", checkToken, getProduitsAll);
+router.patch("/", checkToken, updateProduit);
+router.delete("/", checkToken, deleteProduit);
 
 module.exports = router;

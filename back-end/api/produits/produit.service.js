@@ -34,15 +34,15 @@ module.exports = {
             }
         );
     },
-    getProduits: (data, callBack) => {
+    getProduits: (recherche, callBack) => {
         pool.query(
             'select produits.id, produits.nom as nom, categories.nom as categorie, fournisseurs.nom as fournisseur, produits.origine as origine from produits \n' +
                 'join categories on produits.idCat = categories.id \n' +
                 'join fournisseurs on produits.idFourn = fournisseurs.id \n' +
-                'where produits.nom like \'%' + data.recherche +
-                '%\' or categories.nom like \'%' + data.recherche +
-                '%\' or fournisseurs.nom like \'%' + data.recherche +
-                '%\' or produits.origine like \'%' + data.recherche + '%\' \n' +
+                'where produits.nom like \'%' + recherche +
+                '%\' or categories.nom like \'%' + recherche +
+                '%\' or fournisseurs.nom like \'%' + recherche +
+                '%\' or produits.origine like \'%' + recherche + '%\' \n' +
                 'order by produits.nom, produits.origine, fournisseurs.nom, categories.nom',
             [],
             (error, results, fields) => {
