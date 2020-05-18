@@ -31,9 +31,8 @@ module.exports = {
         });
     },
     getProduits: (req, res) => {
-        //const data = req.body;
-        const recherche = req.params.recherche;
-        getProduits(recherche, (err, results) => {
+        const data = req.body;
+        getProduits(data, (err, results) => {
             if (err) {
                 console.log(err);
                 return;
