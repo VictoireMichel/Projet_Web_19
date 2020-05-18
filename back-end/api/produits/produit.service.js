@@ -20,6 +20,20 @@ module.exports = {
             }
         );
     },
+    getProduitsAll: callBack => {
+        pool.query(
+            'select produits.id, produits.nom as nom, categories.nom as categorie, fournisseurs.nom as fournisseur, produits.origine as origine from produits \n' +
+            'join categories on produits.idCat = categories.id \n' +
+            'join fournisseurs on produits.idFourn = fournisseurs.id',
+            [],
+            (error, results, fields) => {
+                if (error) {
+                    return callBack(error);
+                }
+                return callBack(null, results);
+            }
+        );
+    },
     getProduits: (data, callBack) => {
         pool.query(
             'select produits.id, produits.nom as nom, categories.nom as categorie, fournisseurs.nom as fournisseur, produits.origine as origine from produits \n' +
