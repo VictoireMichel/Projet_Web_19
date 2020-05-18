@@ -26,13 +26,10 @@ export class AfficherProduitsComponent implements OnInit {
     this.produitsService.getProduits(this.recherche).subscribe(
       res => {
         //this.produits = res;
-
-        console.log(res.byteLength + " res");
-
+        console.log(res + " res");
       },
       err => {
         console.log('Error occured:' , err);
-
       }
     );
     console.log(this.recherche);

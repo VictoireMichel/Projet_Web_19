@@ -39,7 +39,7 @@ module.exports = {
             }
             return res.json({
                 success: 1,
-                data: JSON.stringify(results)
+                data: "hello"
             });
         });
     },
