@@ -9,20 +9,19 @@ export class ProduitsService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  url = 'https://idlunch.wt1-2.ephec-ti.be:3000';
+  url = 'http://localhost:3000';
 
   getProduits(data) {
     return this
       .http
       .get(`${this.url}/v1/api/produits`, data);
-
   }
 
   createProduits(data) {
     this.http.post(`${this.url}/v1/api/produits`, data)
       .subscribe(
         res => {
-          console.log(res);
+          console.log(res['data']);
 
           this.router.navigateByUrl('/ajout-produit');
         },

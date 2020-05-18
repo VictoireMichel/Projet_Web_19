@@ -2,6 +2,7 @@ const { createUtilisateur, getUtilisateurByUtilisateurId, getUtilisateurs, updat
 
 const { genSaltSync, hashSync, compareSync } = require("bcrypt");
 const { sign } = require("jsonwebtoken");
+const Cookies = require( "cookies" );
 
 module.exports = {
     createUtilisateur: (req, res) => {
@@ -110,6 +111,10 @@ module.exports = {
                 results.mdp = undefined;
                 const jsontoken = sign({ result : results }, process.env.CLE_TOKEN, {
                     expiresIn: "1h"
+                });
+                new Cookies(req,res).set('access_token', jsontoken, {
+                    httpOnly: true,
+                    secure: false
                 });
                 return res.json({
                     success: 1,
