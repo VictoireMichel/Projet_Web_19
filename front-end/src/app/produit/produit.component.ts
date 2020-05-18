@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {ProduitsService} from "./produits.service";
 
 
@@ -7,6 +7,7 @@ import {ProduitsService} from "./produits.service";
 import {Router} from "@angular/router";
 import {Produits} from './produits.interface';
 import {isNull} from "util";
+import {MdbTableDirective} from "angular-bootstrap-md";
 
 
 
@@ -21,13 +22,32 @@ export class ProduitComponent implements OnInit {
 
   produits: Produits[];
 
+  recherche: string = '';
+
+
   constructor(private produitsService: ProduitsService, private router: Router) {
   }
 
+
+
   ngOnInit(): void {
-    this.produitsService.getProduits().subscribe((data: Produits[]) => {
-      this.produits = data;
-    });
+
+  }
+
+  onEnter(value: string) {
+    this.recherche = value;
+   this.produitsService.getProduits(this.recherche).subscribe(
+      res => {
+        //this.produits = res;
+        console.log(res);
+      },
+      err => {
+        console.log('Error occured:' , err);
+
+      }
+    );
+   console.log(this.recherche);
+
 
   }
 
@@ -47,5 +67,6 @@ export class ProduitComponent implements OnInit {
       this.produits.splice(indexed, 1);
     }
   }
+
 
 }
