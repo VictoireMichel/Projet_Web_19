@@ -37,10 +37,9 @@ module.exports = {
                 console.log(err);
                 return;
             }
-            //res.send(JSON.stringify(results));
             return res.json({
                 success: 1,
-                data: results
+                data: JSON.stringify(results)
             });
         });
     },
