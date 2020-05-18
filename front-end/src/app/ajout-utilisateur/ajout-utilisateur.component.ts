@@ -11,9 +11,11 @@ export class AjoutUtilisateurComponent implements OnInit {
 
   utilisateurs: Utilisateurs = {
     id: null,
-    pseudo:"",
-    mdp:"",
+    nom:"",
+    prenom:"",
+    genre: "",
     email:"",
+    mdp: "",
     adresse:"",
     telephone:"",
   };

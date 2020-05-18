@@ -29,13 +29,15 @@ export class ModifierProduitComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-   this.produitsService.getProduits().subscribe((data) => {
-      Object.keys(data).forEach((e) => {
-        if (data[e].id == this.id){
-          this.leProduit = data[e];
+   this.produitsService.getProduitsAll().subscribe((data) => {
+      Object.keys(data["data"]).forEach((e) => {
+        if (data["data"][e].id == this.id){
+          this.leProduit = data["data"][e];
         }
       });
     });
+
+
   }
 
   modifierProduit(idProd){

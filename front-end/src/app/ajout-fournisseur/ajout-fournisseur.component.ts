@@ -25,7 +25,7 @@ export class AjoutFournisseurComponent implements OnInit {
   constructor(private fournisseursService: FournisseursService,private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe((data: Categories[]) => {this.categories = data});
+    this.categoriesService.getCategories().subscribe((data: Categories[]) => {this.categories = data["data"]});
 
   }
 

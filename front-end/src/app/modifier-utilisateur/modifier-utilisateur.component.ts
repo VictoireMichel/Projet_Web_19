@@ -16,9 +16,11 @@ export class ModifierUtilisateurComponent implements OnInit {
 
   leUtilisateur: Utilisateurs = {
     id: null,
-    pseudo: "",
-    mdp:"",
+    nom:"",
+    prenom:"",
+    genre: "",
     email:"",
+    mdp: "",
     adresse:"",
     telephone:"",
   };
@@ -29,9 +31,9 @@ export class ModifierUtilisateurComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.utilisateursService.getUtilisateurs().subscribe((data) => {
-      Object.keys(data).forEach((e) => {
-        if (data[e].id == this.id){
-          this.leUtilisateur = data[e];
+      Object.keys(data["data"]).forEach((e) => {
+        if (data["data"][e].id == this.id){
+          this.leUtilisateur = data["data"][e];
         }
       });
     });

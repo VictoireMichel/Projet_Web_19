@@ -1,7 +1,7 @@
 import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {ProduitsService} from "../produit/produits.service";
 import {MdbTableDirective} from "angular-bootstrap-md/";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Produits} from '../produit/produits.interface';
 
 @Component({
@@ -13,46 +13,41 @@ export class AfficherProduitsComponent implements OnInit {
 
   produits: Produits[];
 
-  @ViewChild(MdbTableDirective, {static: true}) mdbTable:
-    MdbTableDirective;
-  elements: any = [];
-  headElements = ['Id', 'Nom',
-    'Catégorie', 'Fournisseur', 'Origine'];
-  searchText: string = '';
-  previous: string;
+  search = { recherche: '' }
+
 
   constructor(private produitsService: ProduitsService, private router: Router) {
   }
 
-  @HostListener('input') oninput() {this.searchItems();}
+    ngOnInit(): void {
 
-    ngOnInit()
-  :
-    void {
-      this.produitsService.getProduits().subscribe((data) => {
-        this.elements = data;
-        this.mdbTable.setDataSource(this.elements);
-        this.previous = this.mdbTable.getDataSource();
+    /*
+      this.produitsService.getProduitsAll().subscribe(data=> {
+        this.produits = data["data"];
       });
 
-  }
-
-    searchItems()
-    {
-      const
-        prev = this.mdbTable.getDataSource();
-      if (!this.searchText) {
-        this.mdbTable.setDataSource(this.previous);
-        this.elements =
-          this.mdbTable.getDataSource();
-      }
-      if (this.searchText) {
-        this.elements =
-          this.mdbTable.searchLocalDataByMultipleFields(this.searchText, [
-            'nom', 'categorie', 'fournisseur', 'origine']);
-        this.mdbTable.setDataSource(prev);
-      }
+     */
     }
 
+  onEnter(value) {
+
+    this.search = value;
+
+    this.produitsService.getProduits(this.search).subscribe(data => {
+      this.produits = data["data"];
+      console.log(JSON.stringify(data["data"]) + " data");
+      console.log(this.produits + " prod");
+    });
+
+    console.log(JSON.stringify(this.search) + " recherche");
+
+
+
+
+    //console.log(this.search.recherche + " rechercheValeur");
+    //console.log(this.produits);
+
   }
+
+}
 

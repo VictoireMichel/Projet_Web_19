@@ -1,8 +1,10 @@
 export interface Utilisateurs {
   id: Number;
-  pseudo: String;
-  mdp: String;
+  nom: String;
+  prenom: String;
+  genre: String;
   email: String;
+  mdp: String;
   adresse: String;
   telephone: String;
 }

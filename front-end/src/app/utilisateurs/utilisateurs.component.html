@@ -9,8 +9,9 @@
     <thead>
     <tr>
       <th>Id</th>
-      <th>Pseudo</th>
-      <th>Mot De Passe</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Genre</th>
       <th>Email</th>
       <th>Adresse</th>
       <th>Téléphone</th>
@@ -19,8 +20,9 @@
     <tbody>
     <tr mdbTableCol *ngFor="let u of utilisateurs">
       <td>{{ u.id }}</td>
-      <td>{{ u.pseudo }}</td>
-      <td>{{ u.mdp }}</td>
+      <td>{{ u.nom }}</td>
+      <td>{{ u.prenom }}</td>
+      <td>{{ u.genre }}</td>
       <td>{{ u.email }}</td>
       <td>{{ u.adresse }}</td>
       <td>{{ u.telephone }}</td>

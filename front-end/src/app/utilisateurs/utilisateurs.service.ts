@@ -9,7 +9,7 @@ export class UtilisateursService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  url = 'https://idlunch.wt1-2.ephec-ti.be:3000';
+  url = 'http://localhost:3000';
 
   getUtilisateurs() {
     return this
@@ -35,7 +35,7 @@ export class UtilisateursService {
   modifierUtilisateur(idUser, data){
     return this
       .http
-      .put(`${this.url}/v1/api/utilisateurs?id=` + idUser, data).subscribe(res => {console.log(res);
+      .patch(`${this.url}/v1/api/utilisateurs?id=` + idUser, data).subscribe(res => {console.log(res);
       })
   }
 
