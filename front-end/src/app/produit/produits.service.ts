@@ -16,7 +16,7 @@ export class ProduitsService {
   getProduits(data) {
     return this
       .http
-      .get(`${this.url}/v1/api/produits?recherche=` + data);
+      .get(`${this.url}/v1/api/produits`, data);
 
   }
 
@@ -51,8 +51,7 @@ export class ProduitsService {
   modifierProduit(idProd, data){
     return this
       .http
-      .patch(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);
-      })
+      .patch(`${this.url}/v1/api/produits?id=` + idProd, data).subscribe(res => {console.log(res);})
   }
 
 }
