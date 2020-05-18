@@ -1,4 +1,4 @@
-const { createProduit, getProduits, updateProduit, deleteProduit } = require("./produit.service");
+const { createProduit, getProduits, getProduitsAll, updateProduit, deleteProduit } = require("./produit.service");
 
 
 module.exports = {
@@ -18,9 +18,8 @@ module.exports = {
             });
         });
     },
-    getProduits: (req, res) => {
-        const data = req.body;
-        getProduits(data, (err, results) => {
+    getProduitsAll: (req, res) => {
+        getProduitsAll( (err, results) => {
             if (err) {
                 console.log(err);
                 return;
@@ -28,6 +27,20 @@ module.exports = {
             return res.json({
                 success: 1,
                 data: results
+            });
+        });
+    },
+    getProduits: (req, res) => {
+        const data = req.body;
+        getProduits(data, (err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            //res.send(results);
+            return res.json({
+                success: 1,
+                data: JSON.stringify(results)
             });
         });
     },
