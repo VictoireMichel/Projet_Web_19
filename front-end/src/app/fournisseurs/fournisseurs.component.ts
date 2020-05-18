@@ -16,7 +16,9 @@ export class FournisseursComponent implements OnInit {
   constructor(private fournisseursService: FournisseursService, private router: Router) { }
 
   ngOnInit(): void {
-    this.fournisseursService.getFournisseurs().subscribe((data: Fournisseurs[]) => {this.fournisseurs = data});
+    this.fournisseursService.getFournisseurs().subscribe((data: Fournisseurs[]) => {
+      this.fournisseurs = data["data"];
+    });
   }
 
   goToAddFournisseurs() {

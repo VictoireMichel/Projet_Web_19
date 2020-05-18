@@ -13,29 +13,35 @@ export class AfficherProduitsComponent implements OnInit {
 
   produits: Produits[];
 
-  recherche: string = '';
+  search = { recherche: '' }
 
 
   constructor(private produitsService: ProduitsService, private router: Router) {
   }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+    /*
+      this.produitsService.getProduitsAll().subscribe(data=> {
+        this.produits = data["data"];
+      });
 
-  onEnter(value: string) {
-    this.recherche = value;
-    this.produitsService.getProduits(this.recherche).subscribe(
-      res => {
-        //this.produits = res;
-        console.log(res + " res");
-      },
-      err => {
-        console.log('Error occured:' , err);
-      }
-    );
-    console.log(this.recherche);
+     */
+    }
+
+  onEnter(value) {
+    this.search.recherche = value;
+    this.produitsService.getProduits(this.search.recherche).subscribe(data => {
+      this.produits = data["data"];
+      console.log(JSON.stringify(data["data"]) + " data");
+    });
+    console.log(JSON.stringify(this.search) + " obj");
+    console.log(this.produits + " prod");
+
+
+    //console.log(this.search.recherche + " rechercheValeur");
     //console.log(this.produits);
 
   }
 
-  }
+}
 

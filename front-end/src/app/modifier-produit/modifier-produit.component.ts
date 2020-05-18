@@ -28,8 +28,8 @@ export class ModifierProduitComponent implements OnInit {
   constructor(private produitsService: ProduitsService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    /*this.id = this.route.snapshot.paramMap.get('id');
-   this.produitsService.getProduits().subscribe((data) => {
+    this.id = this.route.snapshot.paramMap.get('id');
+   this.produitsService.getProduitsAll().subscribe((data) => {
       Object.keys(data).forEach((e) => {
         if (data[e].id == this.id){
           this.leProduit = data[e];
@@ -37,7 +37,7 @@ export class ModifierProduitComponent implements OnInit {
       });
     });
 
-     */
+
   }
 
   modifierProduit(idProd){

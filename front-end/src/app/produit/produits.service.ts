@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Router} from "@angular/router";
+import {optionsFactory} from "angular-confirmation-popover/confirmation-popover.module";
+
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +16,15 @@ export class ProduitsService {
   getProduits(data) {
     return this
       .http
-      .get(`${this.url}/v1/api/produits`, data);
+      .get(`${this.url}/v1/api/produits?recherche=` + data);
+
   }
+
+ getProduitsAll(){
+  return this
+    .http
+    .get(`${this.url}/v1/api/produits/all`);
+}
 
   createProduits(data) {
     this.http.post(`${this.url}/v1/api/produits`, data)
