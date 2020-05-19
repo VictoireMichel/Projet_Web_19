@@ -17,7 +17,7 @@ export class ProduitsService {
   getProduits(data) {
     return this
       .http
-      .post(`${this.url}/v1/api/produits/get`, data);
+      .get(`${this.url}/v1/api/produits/` + data);
 
   }
 
