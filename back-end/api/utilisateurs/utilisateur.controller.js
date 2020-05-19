@@ -119,7 +119,8 @@ module.exports = {
                 return res.json({
                     success: 1,
                     message: "connecté avec succès",
-                    token: jsontoken
+                    token: jsontoken,
+                    data: res.cookies
                 });
             } else {
                 return res.json({
