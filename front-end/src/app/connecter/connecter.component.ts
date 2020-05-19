@@ -44,6 +44,7 @@ export class ConnecterComponent implements OnInit {
 
     console.log(this.connexion);
 
+
     this.connecterService.getConnexion(this.connexion);
 
     if(this.connexion.email == "michelvictoire@gmail.com"){
