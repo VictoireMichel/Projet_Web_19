@@ -9,7 +9,7 @@ export class FournisseursService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  url = 'https://idlunch.wt1-2.ephec-ti.be:3000';
+  url = 'http://localhost:3000';
 
   getFournisseurs() {
     return this
