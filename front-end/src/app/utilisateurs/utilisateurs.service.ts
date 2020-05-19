@@ -9,7 +9,7 @@ export class UtilisateursService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  url = 'http://localhost:3000';
+  url = 'https://idlunch.wt1-2.ephec-ti.be:3000';
 
   getUtilisateurs() {
     return this
