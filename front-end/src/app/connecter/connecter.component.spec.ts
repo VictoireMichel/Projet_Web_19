@@ -42,11 +42,11 @@ describe('ConnecterComponent', () => {
       el = de.nativeElement;
     });
   }));
-
+/*
 it('should have as text Connectez-vous', async(() => {
   expect(component.text).toEqual('Connectez-vous');
 }));
-/*
+
 it( 'should set submited to true', async(() => {
   component.onSubmit();
   expect(component.submitted).toBeTruthy();
