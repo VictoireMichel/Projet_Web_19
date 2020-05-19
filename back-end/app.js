@@ -5,7 +5,12 @@ const app = express();
 //const fs = require('fs');
 //const https = require('https');
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:4200',
+    credentials: true
+}));
+
+
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
@@ -20,8 +25,8 @@ const categorieRouter = require("./api/categories/categorie.router");
 
 //const credentials = {
   //  key: privateKey,
-  //  cert: certificate,
-  //  ca: ca
+    //cert: certificate,
+    //ca: ca
 //};
 
 //const httpsServer = https.createServer(credentials, app);
@@ -38,5 +43,5 @@ app.use("/v1/api/fournisseurs", fournisseurRouter);
 app.use("/v1/api/categories", categorieRouter);
 
 app.listen(process.env.APP_PORT, () =>{
-   console.log("Server up and running : ", process.env.APP_PORT);
+    console.log("Server up and running : ", process.env.APP_PORT);
 });

@@ -9,7 +9,8 @@ export class UtilisateursService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  url = 'localhost:3000';
+
+  url = 'http://localhost:3000';
 
   getUtilisateurs() {
     return this

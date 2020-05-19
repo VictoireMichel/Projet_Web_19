@@ -11,7 +11,8 @@ export class ProduitsService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  url = 'localhost:3000';
+
+  url = 'http://localhost:3000';
 
   getProduits(data) {
     return this

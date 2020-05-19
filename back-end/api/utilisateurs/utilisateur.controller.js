@@ -115,13 +115,12 @@ module.exports = {
                 new Cookies(req,res).set('access_token', jsontoken, {
                     httpOnly: true,
                     secure: false,
-                    domain: 'localhost',
+                    domain: "localhost"
                 });
                 return res.json({
                     success: 1,
                     message: "connecté avec succès",
-                    token: jsontoken,
-                    data: res.cookies
+                    token: jsontoken
                 });
             } else {
                 return res.json({

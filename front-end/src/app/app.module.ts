@@ -20,7 +20,7 @@ import { ConnecterService } from './connecter/connecter.service';
 import { ProduitComponent } from './produit/produit.component';
 import {ProduitsService} from './produit/produits.service';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
@@ -43,6 +43,7 @@ import { AfficherProduitsComponent } from './afficher-produits/afficher-produits
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnecterAdminComponent } from './connecter-admin/connecter-admin.component';
+import {HttpRequestInterceptor} from "./HttpRequestInterceptor";
 
 
 
@@ -120,7 +121,8 @@ const routes: Routes = [
     CategoriesService,
     FournisseursService,
     UtilisateursService,
-    ConnecterService
+    ConnecterService,
+    [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }]
 
   ],
   bootstrap: [AppComponent]
