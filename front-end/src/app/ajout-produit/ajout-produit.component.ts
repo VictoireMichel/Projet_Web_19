@@ -28,8 +28,8 @@ export class AjoutProduitComponent implements OnInit {
   constructor(private produitsService: ProduitsService,private categoriesService: CategoriesService, private fournisseursService: FournisseursService) { }
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe((data: Categories[]) => {this.categories = data});
-    this.fournisseursService.getFournisseurs().subscribe((data: Fournisseurs[]) => {this.fournisseurs = data});
+    this.categoriesService.getCategories().subscribe((data: Categories[]) => {this.categories = data["data"]});
+    this.fournisseursService.getFournisseurs().subscribe((data: Fournisseurs[]) => {this.fournisseurs = data["data"]});
   }
 
   createProduit(data: Produits){
