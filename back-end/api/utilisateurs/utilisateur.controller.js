@@ -114,7 +114,8 @@ module.exports = {
                 });
                 new Cookies(req,res).set('access_token', jsontoken, {
                     httpOnly: true,
-                    secure: false
+                    secure: false,
+                    domain: "localhost"
                 });
                 return res.json({
                     success: 1,

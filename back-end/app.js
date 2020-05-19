@@ -5,7 +5,12 @@ const app = express();
 //const fs = require('fs');
 //const https = require('https');
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:4200',
+    credentials: true
+}));
+
+
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
@@ -19,15 +24,15 @@ const categorieRouter = require("./api/categories/categorie.router");
 //const ca = fs.readFileSync('/etc/letsencrypt/live/idlunch.wt1-2.ephec-ti.be/chain.pem', 'utf8');
 
 //const credentials = {
-//    key: privateKey,
-//    cert: certificate,
-//    ca: ca
+  //  key: privateKey,
+    //cert: certificate,
+    //ca: ca
 //};
 
 //const httpsServer = https.createServer(credentials, app);
 
 //httpsServer.listen(process.env.APP_PORT, () => {
-//    console.log('HTTPS Server running on port 3000');
+  //  console.log('HTTPS Server running on port 3000');
 //});
 
 app.use(express.json());

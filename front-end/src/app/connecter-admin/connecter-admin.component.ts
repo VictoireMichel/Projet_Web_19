@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import { ConnecterService } from './connecter.service';
+
 import {Router} from "@angular/router";
-import { HttpClientModule } from '@angular/common/http';
+import {ConnecterService} from "../connecter/connecter.service";
 
 @Component({
-  selector: 'app-connecter',
-  templateUrl: './connecter.component.html',
-  styleUrls: ['./connecter.component.scss']
+  selector: 'app-connecter-admin',
+  templateUrl: './connecter-admin.component.html',
+  styleUrls: ['./connecter-admin.component.scss']
 })
-export class ConnecterComponent implements OnInit {
-  text = 'Connectez-vous';
+export class ConnecterAdminComponent implements OnInit {
+
+  text = "Connectez-vous à l'administration";
   connexionForm: FormGroup;
   connexion = {
     email: '',
@@ -18,7 +19,9 @@ export class ConnecterComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private connecterService: ConnecterService, private router: Router) {
+  constructor(private router: Router, private connecterService: ConnecterService) { }
+
+  ngOnInit(): void {
     this.createForm();
   }
 
@@ -48,21 +51,12 @@ export class ConnecterComponent implements OnInit {
 
     this.connecterService.getConnexion(this.connexion);
 
-
-
-    this.router.navigateByUrl('/afficher-produits');
+    if(this.connexion.email == "michelvictoire@gmail.com"){
+      this.router.navigateByUrl('/admin');
+    }
 
 
     this.submitted = true;
   }
 
-  ngOnInit(): void {
-  }
-
-
-
-
-
 }
-
-

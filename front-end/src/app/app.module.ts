@@ -21,7 +21,7 @@ import { ConnecterService } from './connecter/connecter.service';
 import { ProduitComponent } from './produit/produit.component';
 import {ProduitsService} from './produit/produits.service';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
@@ -43,6 +43,8 @@ import { ModifierUtilisateurComponent } from './modifier-utilisateur/modifier-ut
 import { AfficherProduitsComponent } from './afficher-produits/afficher-produits.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ConnecterAdminComponent } from './connecter-admin/connecter-admin.component';
+import {HttpRequestInterceptor} from "./HttpRequestInterceptor";
 
 
 
@@ -55,6 +57,7 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent}, // http://localhost:4200/news
   {path: 'contact', component: ContactComponent }, // http://localhost:4200/contact
   {path: 'connecter', component: ConnecterComponent}, // http://localhost:4200/connecter
+  {path: 'connecter-admin', component: ConnecterAdminComponent},
   {path: 'produits', component: ProduitComponent},
   {path: 'ajout-produit', component: AjoutProduitComponent },
   {path: 'admin', component: AdminComponent},
@@ -97,6 +100,7 @@ const routes: Routes = [
     AfficherProduitsComponent,
     StatistiquesComponent,
     InscriptionComponent,
+    ConnecterAdminComponent,
   ],
     schemas: [ NO_ERRORS_SCHEMA],
 
@@ -118,7 +122,8 @@ const routes: Routes = [
     CategoriesService,
     FournisseursService,
     UtilisateursService,
-    ConnecterService
+    ConnecterService,
+    [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }]
 
   ],
   bootstrap: [AppComponent]
