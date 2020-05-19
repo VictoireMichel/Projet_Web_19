@@ -63,7 +63,7 @@ module.exports = {
         });
     },
     deleteProduit: (req, res) => {
-        const data = req.body;
+        const data = req.query;
         deleteProduit(data, (err, results) => {
             if (err) {
                 console.log(err);

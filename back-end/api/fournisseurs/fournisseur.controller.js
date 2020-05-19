@@ -50,7 +50,7 @@ module.exports = {
         });
     },
     deleteFournisseur: (req, res) => {
-        const data = req.body;
+        const data = req.query;
         deleteFournisseur(data, (err, results) => {
             if (err) {
                 console.log(err);

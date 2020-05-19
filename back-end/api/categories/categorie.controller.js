@@ -50,7 +50,7 @@ module.exports = {
         });
     },
     deleteCategorie: (req, res) => {
-        const data = req.body;
+        const data = req.query;
         deleteCategorie(data, (err, results) => {
             if (err) {
                 console.log(err);

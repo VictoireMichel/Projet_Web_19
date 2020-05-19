@@ -76,7 +76,7 @@ module.exports = {
         });
     },
     deleteUtilisateur: (req, res) => {
-        const data = req.body;
+        const data = req.query;
         deleteUtilisateur(data, (err, results) => {
             if (err) {
                 console.log(err);
