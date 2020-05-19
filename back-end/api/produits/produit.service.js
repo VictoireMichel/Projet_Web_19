@@ -55,7 +55,7 @@ module.exports = {
     },
     updateProduit: (data, callBack) => {
         pool.query(
-            'update produits set nom=?, (select idCat from categories where categories.nom=?), (select idFourn from fournisseurs where fournisseurs.nom=?), origine=? where id = ?',
+            'update produits set nom=?, idCat=(select idCat from categories where categories.nom=?), idFourn=(select idFourn from fournisseurs where fournisseurs.nom=?), origine=? where id = ?',
             [
                 data.nom,
                 data.categorie,
