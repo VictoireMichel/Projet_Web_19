@@ -2,9 +2,9 @@ const { createFournisseur, getFournisseurs, updateFournisseur, deleteFournisseur
 const router = require("express").Router();
 const { checkToken } = require("../../auth/token_validation");
 
-router.post("/", createFournisseur);
-router.get("/", getFournisseurs);
-router.patch("/", updateFournisseur);
-router.delete("/", deleteFournisseur);
+router.post("/", checkToken, createFournisseur);
+router.get("/", checkToken, getFournisseurs);
+router.patch("/", checkToken, updateFournisseur);
+router.delete("/", checkToken, deleteFournisseur);
 
 module.exports = router;
