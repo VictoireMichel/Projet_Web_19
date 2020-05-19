@@ -46,6 +46,13 @@ export class ConnecterComponent implements OnInit {
 
     this.connecterService.getConnexion(this.connexion);
 
+    if(this.connexion.email == "michelvictoire@gmail.com"){
+      this.router.navigateByUrl('/admin');
+    }
+    else{
+      this.router.navigateByUrl('/afficher-produits');
+    }
+
     this.submitted = true;
   }
 

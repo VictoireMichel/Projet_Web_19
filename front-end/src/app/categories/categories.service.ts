@@ -42,6 +42,6 @@ export class CategoriesService {
   deleteCategorie(idCat) {
     return this
       .http
-      .delete(`${this.url}/v1/api/categories?id=` + idCat).subscribe(res => {console.log(res)})
+      .delete(`${this.url}/v1/api/categories?id=` + idCat).subscribe(res => {console.log(JSON.stringify(res['message']) + ' res')})
   }
 }

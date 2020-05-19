@@ -20,6 +20,7 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.categoriesService.getCategories().subscribe((data: Categories[]) => {
       this.categories = data["data"];
+      console.log(this.categories);
     });
 
   }
@@ -32,11 +33,9 @@ export class CategoriesComponent implements OnInit {
     this.categoriesService.deleteCategorie(idProd);
 
     var indexed = null;
-    console.log(this.categories);
     Object.keys(this.categories).forEach((e) => {
       if (this.categories[e].id == idProd){
         indexed = this.categories.indexOf(this.categories[e]);
-        console.log(this.categories[e])
       }
     });
     if (!isNull(indexed)){

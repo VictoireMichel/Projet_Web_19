@@ -18,7 +18,7 @@ export class ConnecterService {
       .post(`${this.url}/v1/api/utilisateurs/login`, data).subscribe(
         res=>{
         console.log(res);
-        this.router.navigateByUrl('/afficher-produits');
+
       }
         ,
         err => {
