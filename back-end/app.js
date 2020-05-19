@@ -37,6 +37,6 @@ app.use("/v1/api/produits", produitRouter);
 app.use("/v1/api/fournisseurs", fournisseurRouter);
 app.use("/v1/api/categories", categorieRouter);
 
-app.listen(process.env.APP_PORT, () =>{
-    console.log("Server up and running : ", process.env.APP_PORT);
-});
+//app.listen(process.env.APP_PORT, () =>{
+ //   console.log("Server up and running : ", process.env.APP_PORT);
+//});
