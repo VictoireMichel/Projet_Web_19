@@ -4,11 +4,15 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const https = require('https');
+
 const cors = require('cors');
-app.use(cors({
-    origin: ['http://localhost:4200', 'https://idlunch-e11a5.web.app/', 'https://idlunch.wt1-2.ephec-ti.be:3000'],
+
+const corsOptions = {
+    origin: 'https://idlunch-e11a5.web.app/',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     credentials: true
-}));
+};
+app.use(cors(corsOptions));
 
 
 const cookieParser = require('cookie-parser');
