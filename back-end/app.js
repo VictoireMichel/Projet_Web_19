@@ -8,11 +8,17 @@ const https = require('https');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: 'https://idlunch-e11a5.web.app',
+    origin: 'https://idlunch-e11a5.web.app/admin',
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-    credentials: true
+    credentials: true,
 };
 app.use(cors(corsOptions))
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://idlunch-e11a5.web.app/admin");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 
 const cookieParser = require('cookie-parser');
@@ -47,5 +53,5 @@ app.use("/v1/api/fournisseurs", fournisseurRouter);
 app.use("/v1/api/categories", categorieRouter);
 
 //app.listen(process.env.APP_PORT, () =>{
-    //console.log("Server up and running : ", process.env.APP_PORT);
+  //  console.log("Server up and running : ", process.env.APP_PORT);
 //});
