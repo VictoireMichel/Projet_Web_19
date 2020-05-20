@@ -8,11 +8,11 @@ const https = require('https');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: 'https://idlunch-e11a5.web.app/',
+    origin: 'https://idlunch-e11a5.web.app',
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     credentials: true
 };
-app.use(cors(corsOptions));
+app.use(cors(corsOptions))
 
 
 const cookieParser = require('cookie-parser');

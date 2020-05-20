@@ -114,8 +114,8 @@ module.exports = {
                 });
                 new Cookies(req,res).set('access_token', jsontoken, {
                     httpOnly: true,
-                    secure: false,
-                    domain: "localhost"
+                    secure: true,
+                    domain: "https://idlunch-e11a5.web.app"
                 });
                 return res.json({
                     success: 1,
