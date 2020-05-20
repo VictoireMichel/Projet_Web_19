@@ -8,14 +8,14 @@ const https = require('https');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: 'https://idlunch-e11a5.web.app/admin',
+    origin: 'https://idlunch-e11a5.web.app',
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     credentials: true,
 };
 app.use(cors(corsOptions))
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://idlunch-e11a5.web.app/admin");
+    res.header("Access-Control-Allow-Origin", "https://idlunch-e11a5.web.app");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
