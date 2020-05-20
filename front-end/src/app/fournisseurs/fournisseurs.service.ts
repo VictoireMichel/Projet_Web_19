@@ -10,7 +10,7 @@ export class FournisseursService {
   }
 
 
-  url = 'http://localhost:3000';
+  url = 'https://idlunch.wt1-2.ephec-ti.be:3000';
 
   getFournisseurs() {
     return this
