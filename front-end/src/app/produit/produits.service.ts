@@ -24,7 +24,7 @@ export class ProduitsService {
  getProduitsAll(){
   return this
     .http
-    .get(`${this.url}/v1/api/produits/all`);
+    .get(`${this.url}/v1/api/produits/recherche/all`);
 }
 
   createProduits(data) {
