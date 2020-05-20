@@ -13,30 +13,17 @@ export class AfficherProduitsComponent implements OnInit {
 
   produits: Produits[];
 
-  recherche = {
-    recherche: ''
-  };
 
   constructor(private produitsService: ProduitsService, private router: Router) {
   }
 
     ngOnInit(): void {
 
-    /*
-      this.produitsService.getProduitsAll().subscribe(data=> {
-        this.produits = data["data"];
-      });
-
-     */
     }
 
   onEnter(value) {
 
-    this.recherche.recherche = value;
-
-    console.log(this.recherche);
-
-    this.produitsService.getProduits(this.recherche).subscribe(data => {
+    this.produitsService.getProduits(value).subscribe(data => {
       this.produits = data["data"];
 
       console.log(JSON.stringify(data["data"]) + " data");
