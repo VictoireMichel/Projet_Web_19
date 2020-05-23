@@ -36,18 +36,6 @@ module.exports = {
             }
         );
     },
-    getUtilisateurByUtilisateurId: (id, callBack) => {
-        pool.query(
-            'select id, nom, prenom, genre, email, adresse, telephone from utilisateurs where id = ?',
-            [id],
-            (error, results, fields) => {
-                if (error) {
-                    return callBack(error);
-                }
-                return callBack(null, results[0]);
-            }
-        );
-    },
     getUtilisateurByUtilisateurEmail: (email, callBack) => {
         pool.query(
             'select * from utilisateurs where email = ?',
@@ -92,5 +80,6 @@ module.exports = {
                 return callBack(null, results);
             }
         );
-    }
+    },
+
 };
