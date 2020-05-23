@@ -34,43 +34,59 @@
 <!--/.Navbar-->
 
 
-<form class="form-inline md-form mr-auto mb-4">
-  <input class="form-control mr-sm-2" type="text" placeholder="Recherche" aria-label="Search" #box (keyup.enter)="recherche(box.value)">
-  <button mdbBtn size="md" color="light-green" rounded="true" class="my-0 waves-light" mdbWavesEffect type="button" (click)="recherche(box.value)">Recherche</button>
-  <button mdbBtn size="md" color="light-green" rounded="true" class="my-0 waves-light" mdbWavesEffect type="button" (click)="goToAddProduits()">Ajout de produit</button>
+<!-- Jumbotron -->
+<div class="jumbotron text-center">
 
-</form>
-
-
-
+  <!-- Title -->
+  <h2 class="card-title h2">Administration des produits</h2>
+  <!-- Subtitle -->
+  <p class="green-text my-4 font-weight-bold">iDlunch propose plus de produits</p>
 
 
 
-<table id="table" mdbTable>
+  <hr class="my-4">
 
-  <thead>
-  <tr>
-    <th>id</th>
-    <th>Nom</th>
-    <th>Catégorie</th>
-    <th>Fournisseur</th>
-    <th>Origine</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr mdbTableCol *ngFor="let produit of produits">
-    <td>{{ produit.id }}</td>
-    <td>{{ produit.nom }}</td>
-    <td>{{ produit.categorie }}</td>
-    <td>{{ produit.fournisseur}}</td>
-    <td>{{ produit.origine }}</td>
+  <form class="form-inline md-form mr-auto mb-4">
+    <input class="form-control mr-sm-2" type="text" placeholder="Recherche" aria-label="Search" #box (keyup.enter)="recherche(box.value)">
+    <button mdbBtn size="md" color="light-green" rounded="true" class="my-0 waves-light" mdbWavesEffect type="button" (click)="recherche(box.value)">Recherche</button>
+    <button mdbBtn size="md" color="light-green" rounded="true" class="my-0 waves-light" mdbWavesEffect type="button" (click)="goToAddProduits()">Ajout de produit</button>
+  </form>
 
-    <td>
-      <button [id]="produit.id" type="submit" mdbBtn color="danger" mdbWavesEffect (click)="deleteProduit(produit.id)">Supprimer</button>
-      <button [id]="produit.id" type="submit" mdbBtn color="primary" mdbWavesEffect [routerLink]="['/modifier-produit', produit.id]">Modifier</button>
+  <table id="table" mdbTable>
 
-    </td>
-  </tr>
-  </tbody>
-</table>
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>Nom</th>
+      <th>Catégorie</th>
+      <th>Fournisseur</th>
+      <th>Origine</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr mdbTableCol *ngFor="let produit of produits">
+      <td>{{ produit.id }}</td>
+      <td>{{ produit.nom }}</td>
+      <td>{{ produit.categorie }}</td>
+      <td>{{ produit.fournisseur}}</td>
+      <td>{{ produit.origine }}</td>
+
+      <td>
+        <button [id]="produit.id" type="submit" mdbBtn color="danger" mdbWavesEffect (click)="deleteProduit(produit.id)">Supprimer</button>
+        <button [id]="produit.id" type="submit" mdbBtn color="primary" mdbWavesEffect [routerLink]="['/modifier-produit', produit.id]">Modifier</button>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<!-- Jumbotron -->
+
+
+
+
+
+
+
 
