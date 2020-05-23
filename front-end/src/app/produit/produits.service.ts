@@ -12,7 +12,7 @@ export class ProduitsService {
   }
 
 
-  url = 'https://idlunch.wt1-2.ephec-ti.be:3000';
+  url = 'http://localhost:3000';
 
   getProduits(data) {
     return this

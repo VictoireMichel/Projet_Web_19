@@ -19,6 +19,8 @@ export class ConnecterAdminComponent implements OnInit {
   };
   submitted = false;
 
+  rep: string;
+
   constructor(private router: Router, private connecterService: ConnecterService) { }
 
   ngOnInit(): void {
@@ -49,11 +51,16 @@ export class ConnecterAdminComponent implements OnInit {
     console.log(this.connexion);
 
 
-    this.connecterService.getConnexion(this.connexion);
+    this.connecterService.getConnexion(this.connexion).subscribe(data => {
+      if(this.connexion.email == "michelvictoire@gmail.com" && this.connexion.mdp == "user1234"){
+        this.router.navigateByUrl('/admin');
+      }
+      else {
+        this.rep = data["data"];
+        console.log(this.rep);
+      }
+    });
 
-    if(this.connexion.email == "michelvictoire@gmail.com"){
-      this.router.navigateByUrl('/admin');
-    }
 
 
     this.submitted = true;
