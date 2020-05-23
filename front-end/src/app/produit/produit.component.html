@@ -1,20 +1,48 @@
-
-<div class="row">
-  <div class="col-md-12 pad-10">
-    <form class="navbar-form navbar-left" role="search">
-      <button type="submit" class="btn btn-primary" (click)="goToAddProduits()">
-      <span class="glyphicon glyphicon-floppy-disk"></span> Ajout Produit
-    </button>
-    </form>
-  </div>
-</div>
-
 <br>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-1 navbar-light green lighten-2 " [containerInside]="false">
 
-<div>
-  <input #box (keyup.enter)="recherche(box.value)">
-  <button type="button" class="btn btn-light-green" (click)="recherche(box.value)">Recherche</button>
-</div>
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand white-text py-4">Administration de la page</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item ">
+        <a class="nav-link waves-light white-text" routerLink="/produits" mdbWavesEffect>PRODUITS<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light white-text" routerLink="/categories" mdbWavesEffect>CATEGORIES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light white-text" routerLink="/fournisseurs" mdbWavesEffect>FOURNISSEURS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light white-text" routerLink="/utilisateurs" mdbWavesEffect>UTILISATEURS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light white-text" routerLink="/statistiques" mdbWavesEffect>STATISTIQUES</a>
+      </li>
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+
+<form class="form-inline md-form mr-auto mb-4">
+  <input class="form-control mr-sm-2" type="text" placeholder="Recherche" aria-label="Search" #box (keyup.enter)="recherche(box.value)">
+  <button mdbBtn size="md" color="light-green" rounded="true" class="my-0 waves-light" mdbWavesEffect type="button" (click)="recherche(box.value)">Recherche</button>
+  <button mdbBtn size="md" color="light-green" rounded="true" class="my-0 waves-light" mdbWavesEffect type="button" (click)="goToAddProduits()">Ajout de produit</button>
+
+</form>
+
+
+
 
 
 
