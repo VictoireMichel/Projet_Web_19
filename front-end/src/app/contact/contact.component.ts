@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from "@angular/forms";
+import { ContactService } from './contact.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-contact',
@@ -17,7 +19,7 @@ export class ContactComponent implements OnInit {
   };
   submitted = false;
 
-  constructor() {
+  constructor(private contactService: ContactService, private router: Router) {
     this.createForm();
   }
 
@@ -42,7 +44,18 @@ export class ContactComponent implements OnInit {
     const formValue = this.contactForm.value;
     const message = ("Merci " + formValue['nom'] + " d'avoir posé une question ayant comme sujet : " + formValue['sujet'] + ", nous allons transmettre ce message au gérant : " + formValue['message'] + " !");
     console.log(message);
+
+    this.contact.nom = formValue.nom;
+    this.contact.email = formValue.email;
+    this.contact.sujet = formValue.sujet;
+    this.contact.message = formValue.message;
+
+    this.contactService.getContact(this.contact);
+
+
     this.submitted = true;
+
+
   }
 
 
