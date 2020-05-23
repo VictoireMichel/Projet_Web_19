@@ -115,11 +115,14 @@ module.exports = {
     },
     email: (req, res) => {
         const data = req.body;
-        const smtpTransport = mailer.createTransport("SMTP", {
+        const smtpTransport = mailer.createTransport( {
             service: "Gmail",
             auth: {
                 user: process.env.MAIL,
                 pass: process.env.MAIL_PASSWORD
+            },
+            tls: {
+                rejectUnauthorized: false
             }
         });
         const mail = {
