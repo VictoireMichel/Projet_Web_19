@@ -33,7 +33,7 @@ export class ProduitComponent implements OnInit {
 
   }
 
-  onEnter(value: string) {
+  recherche(value: string) {
     this.produitsService.getProduits(value).subscribe(data => {
       this.produits = data["data"];
 

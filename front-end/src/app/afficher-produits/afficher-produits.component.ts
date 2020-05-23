@@ -21,7 +21,7 @@ export class AfficherProduitsComponent implements OnInit {
 
     }
 
-  onEnter(value) {
+  recherche(value) {
 
     this.produitsService.getProduits(value).subscribe(data => {
       this.produits = data["data"];

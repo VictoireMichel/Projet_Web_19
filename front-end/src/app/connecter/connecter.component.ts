@@ -17,6 +17,9 @@ export class ConnecterComponent implements OnInit {
   };
   submitted = false;
 
+  rep: string;
+  data: number;
+
   constructor(private connecterService: ConnecterService, private router: Router) {
     this.createForm();
   }
@@ -45,11 +48,23 @@ export class ConnecterComponent implements OnInit {
     console.log(this.connexion);
 
 
-    this.connecterService.getConnexion(this.connexion);
+    this.connecterService.getConnexion(this.connexion).subscribe(data => {
+      this.data = data["success"];
+      console.log(this.data);
+
+      if(this.data == 1){
+        this.router.navigateByUrl('/afficher-produits');
+      }
+      else {
+          this.rep = data["data"];
+          console.log(this.rep);
+      }
+    });
 
 
 
-    this.router.navigateByUrl('/afficher-produits');
+
+
 
 
     this.submitted = true;
