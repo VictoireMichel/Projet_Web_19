@@ -1,3 +1,10 @@
+<br>
+
+<button type="button" class="close" aria-label="Close" routerLink="/categories">
+  <span aria-hidden="true">×</span>
+</button>
+
+
 <div class="form-horizontal pad-10">
   <br>
   <form #modifierCategorieForm="ngForm">
@@ -25,7 +32,7 @@
               [popoverMessage]="'êtes-vous sûr?'"
               placement="top"
               (confirm)="modifierCategorie(this.id)"
-              type="submit" class="btn btn-save btn-primary" [disabled]="!modifierCategorieForm.valid">
+              type="submit" mdbBtn color="primary" mdbWavesEffect [disabled]="!modifierCategorieForm.valid">
         <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
       </button>
     </div>
