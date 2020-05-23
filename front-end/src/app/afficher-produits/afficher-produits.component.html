@@ -2,14 +2,14 @@
 <br>
 
 <div>
-  <input #box (keyup.enter)="onEnter(box.value)">
+  <input #box (keyup.enter)="recherche(box.value)">
+  <button type="button" class="btn btn-light-green" (click)="recherche(box.value)">Recherche</button>
 </div>
 
     <table id="table" mdbTable>
 
       <thead>
       <tr>
-        <th>id</th>
         <th>Nom</th>
         <th>Catégorie</th>
         <th>Fournisseur</th>
@@ -18,7 +18,6 @@
       </thead>
       <tbody>
       <tr mdbTableCol *ngFor="let produit of produits">
-        <td>{{ produit.id }}</td>
         <td>{{ produit.nom }}</td>
         <td>{{ produit.categorie }}</td>
         <td>{{ produit.fournisseur}}</td>

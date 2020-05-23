@@ -31,7 +31,7 @@ module.exports = {
         });
     },
     getProduits: (req, res) => {
-        const data = req.body;
+        const data = req.params;
         getProduits(data, (err, results) => {
             if (err) {
                 console.log(err);

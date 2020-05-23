@@ -1,9 +1,9 @@
 {
   "targets": {
-    "idlunch-e11a5": {
+    "idlunch-14bd5": {
       "hosting": {
         "mdb-angular-free": [
-          "idlunch-e11a5"
+          "idlunch-14bd5"
         ]
       }
     }

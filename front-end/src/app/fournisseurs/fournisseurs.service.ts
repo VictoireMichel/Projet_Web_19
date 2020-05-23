@@ -9,6 +9,7 @@ export class FournisseursService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
+
   url = 'http://localhost:3000';
 
   getFournisseurs() {

@@ -1,8 +1,10 @@
-const { createUtilisateur, getUtilisateurByUtilisateurId, getUtilisateurs, updateUtilisateur, deleteUtilisateur, getUtilisateurByUtilisateurEmail } = require("./utilisateur.service");
+const { createUtilisateur, getUtilisateurs, updateUtilisateur, deleteUtilisateur, getUtilisateurByUtilisateurEmail } = require("./utilisateur.service");
 
 const { genSaltSync, hashSync, compareSync } = require("bcrypt");
 const { sign } = require("jsonwebtoken");
-const Cookies = require( "cookies" );
+const Cookies = require("cookies");
+const mailer = require("nodemailer");
+
 
 module.exports = {
     createUtilisateur: (req, res) => {
@@ -21,25 +23,6 @@ module.exports = {
                 success: 1,
                 data: results
             });
-        });
-    },
-    getUtilisateurByUtilisateurId: (req, res) => {
-        const id = req.params.id;
-        getUtilisateurByUtilisateurId(id, (err, results) => {
-            if (err) {
-                console.log(err);
-                return;
-            }
-            if (!results) {
-                return res.json({
-                    success: 0,
-                    message: "données non trouvées"
-                });
-            }
-            return res.json({
-                success: 1,
-                data: results
-            })
         });
     },
     getUtilisateurs: (req, res) => {
@@ -128,6 +111,37 @@ module.exports = {
                     data: "email ou mot de passe non valide"
                 });
             }
+        });
+    },
+    email: (req, res) => {
+        const data = req.body;
+        const smtpTransport = mailer.createTransport( {
+            service: "Gmail",
+            auth: {
+                user: process.env.MAIL,
+                pass: process.env.MAIL_PASSWORD
+            },
+            tls: {
+                rejectUnauthorized: false
+            }
+        });
+        const mail = {
+            from: data.email,
+            to: process.env.MAIL,
+            subject: data.sujet,
+            html: data.message
+        }
+        smtpTransport.sendMail(mail,function(error, response){
+            if (error){
+                console.log(error);
+                return;
+            }
+            smtpTransport.close();
+            return res.json({
+                success: 1,
+                data: response,
+                message: "email envoyé"
+            });
         });
     }
 };

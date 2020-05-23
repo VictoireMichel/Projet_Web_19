@@ -11,19 +11,20 @@ export class ProduitsService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
+
   url = 'http://localhost:3000';
 
   getProduits(data) {
     return this
       .http
-      .post(`${this.url}/v1/api/produits/get`, data);
+      .get(`${this.url}/v1/api/produits/` + data);
 
   }
 
  getProduitsAll(){
   return this
     .http
-    .get(`${this.url}/v1/api/produits/all`);
+    .get(`${this.url}/v1/api/produits/recherche/all`);
 }
 
   createProduits(data) {

@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ContactComponent } from './contact/contact.component';
+import { ContactService } from './contact/contact.service';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { ConnecterComponent } from './connecter/connecter.component';
@@ -45,6 +46,7 @@ import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnecterAdminComponent } from './connecter-admin/connecter-admin.component';
 import {HttpRequestInterceptor} from "./HttpRequestInterceptor";
+
 
 
 
@@ -123,6 +125,7 @@ const routes: Routes = [
     FournisseursService,
     UtilisateursService,
     ConnecterService,
+    ContactService,
     [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }]
 
   ],

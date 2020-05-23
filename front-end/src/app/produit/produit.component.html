@@ -12,7 +12,8 @@
 <br>
 
 <div>
-  <input #box (keyup.enter)="onEnter(box.value)">
+  <input #box (keyup.enter)="recherche(box.value)">
+  <button type="button" class="btn btn-light-green" (click)="recherche(box.value)">Recherche</button>
 </div>
 
 

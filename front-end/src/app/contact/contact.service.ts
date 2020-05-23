@@ -6,16 +6,16 @@ import {Router} from "@angular/router";
   providedIn: 'root',
 })
 
-export class ConnecterService {
+export class ContactService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
   url = 'http://localhost:3000';
 
-  getConnexion(data) {
+  getContact(data) {
     return this
       .http
-      .post(`${this.url}/v1/api/utilisateurs/login`, data)
+      .post(`${this.url}/v1/api/utilisateurs/email`, data)
 
   }
 
