@@ -69,8 +69,8 @@
       <td>{{ produit.origine }}</td>
 
       <td>
-        <button [id]="produit.id" type="submit" mdbBtn color="danger" mdbWavesEffect (click)="deleteProduit(produit.id)">Supprimer</button>
-        <button [id]="produit.id" type="submit" mdbBtn color="primary" mdbWavesEffect [routerLink]="['/modifier-produit', produit.id]">Modifier</button>
+        <button [id]="produit.id" type="submit" mdbBtn color="danger" outline="true" mdbWavesEffect (click)="deleteProduit(produit.id)">Supprimer</button>
+        <button [id]="produit.id" type="submit" mdbBtn color="primary" outline="true" mdbWavesEffect [routerLink]="['/modifier-produit', produit.id]">Modifier</button>
       </td>
     </tr>
     </tbody>
