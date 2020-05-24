@@ -115,6 +115,7 @@ module.exports = {
     },
     email: (req, res) => {
         const data = req.body;
+        console.log(data);
         const smtpTransport = mailer.createTransport( {
             service: "Gmail",
             auth: {

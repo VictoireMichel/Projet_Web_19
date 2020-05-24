@@ -13,10 +13,9 @@ export class ContactService {
   url = 'http://localhost:3000';
 
   getContact(data) {
+    console.log(data);
     return this
       .http
-      .post(`${this.url}/v1/api/utilisateurs/email`, data)
-
+      .post(`${this.url}/v1/api/utilisateurs/email`, data).subscribe(res => {console.log(res);})
   }
-
 }

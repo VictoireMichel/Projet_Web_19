@@ -1,29 +1,56 @@
+<!-- Jumbotron -->
+<mdb-card style="background-color:#ecffe6">
 
-<br>
+  <div class="text-white text-center py-5 px-4">
+    <div class="py-5">
 
-<div>
-  <input #box (keyup.enter)="recherche(box.value)">
-  <button type="button" class="btn btn-light-green" (click)="recherche(box.value)">Recherche</button>
-</div>
+      <!-- Content -->
+      <h5 class="h5 light-green-text"><mdb-icon fas icon="utensils"></mdb-icon> iDlunch</h5>
+      <h2 class="card-title h2 my-4 py-2 grey-text">Tous vos produits à porté de main</h2>
+      <p class="mb-4 pb-2 px-md-5 mx-md-5 grey-text">iDlunch s'éfforce à travailler avec toujours plus de produits pour satisfaire sa clientèle. 100 % des produits sont issus d'une production locale par des fournisseurs de qualité </p>
 
-    <table id="table" mdbTable>
 
-      <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Catégorie</th>
-        <th>Fournisseur</th>
-        <th>Origine</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr mdbTableCol *ngFor="let produit of produits">
-        <td>{{ produit.nom }}</td>
-        <td>{{ produit.categorie }}</td>
-        <td>{{ produit.fournisseur}}</td>
-        <td>{{ produit.origine }}</td>
+      <hr class="my-4">
 
-      </tr>
-      </tbody>
-    </table>
+      <form class="form-inline md-form mr-auto mb-4">
+        <input class="form-control mr-sm-2" type="text" placeholder="Recherche" aria-label="Search" #box (keyup.enter)="recherche(box.value)">
+        <button mdbBtn size="md" color="light-green" rounded="true" class="my-0 waves-light" mdbWavesEffect type="button" (click)="recherche(box.value)">Recherche</button>
+      </form>
+
+      <table id="table" mdbTable>
+
+        <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Catégorie</th>
+          <th>Fournisseur</th>
+          <th>Origine</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr mdbTableCol *ngFor="let produit of produits">
+          <td>{{ produit.nom }}</td>
+          <td>{{ produit.categorie }}</td>
+          <td>{{ produit.fournisseur}}</td>
+          <td>{{ produit.origine }}</td>
+
+        </tr>
+        </tbody>
+      </table>
+
+
+
+    </div>
+  </div>
+</mdb-card>
+<!-- Jumbotron -->
+
+
+
+
+
+
+
+
+
 

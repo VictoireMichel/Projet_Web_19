@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { ConnecterService } from './connecter.service';
 import {Router} from "@angular/router";
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-connecter',

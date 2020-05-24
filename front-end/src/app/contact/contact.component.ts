@@ -51,6 +51,7 @@ export class ContactComponent implements OnInit {
     this.contact.email = formValue.email;
     this.contact.sujet = formValue.sujet;
     this.contact.message = formValue.message;
+    console.log(this.contact);
 
     console.log(this.contact);
 

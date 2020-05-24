@@ -16,7 +16,6 @@ export class ConnecterService {
     return this
       .http
       .post(`${this.url}/v1/api/utilisateurs/login`, data)
-
   }
 
 }

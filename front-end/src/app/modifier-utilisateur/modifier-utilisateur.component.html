@@ -1,3 +1,11 @@
+<br>
+
+<button type="button" class="close" aria-label="Close" routerLink="/utilisateurs">
+  <span aria-hidden="true">×</span>
+</button>
+
+
+
 <div class="form-horizontal pad-10">
   <br>
   <form #modifierUtilisateurForm="ngForm">
@@ -81,7 +89,7 @@
               [popoverMessage]="'êtes-vous sûr?'"
               placement="top"
               (confirm)="modifierUtilisateur(this.id)"
-              type="submit" class="btn btn-save btn-primary" [disabled]="!modifierUtilisateurForm.valid">
+              type="submit" mdbBtn color="light-green" mdbWavesEffect [disabled]="!modifierUtilisateurForm.valid">
         <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
       </button>
     </div>
