@@ -19,6 +19,8 @@ export class ContactComponent implements OnInit {
   };
   submitted = false;
 
+  rep: string;
+
   constructor(private contactService: ContactService, private router: Router) {
     this.createForm();
   }
@@ -51,7 +53,10 @@ export class ContactComponent implements OnInit {
     this.contact.message = formValue.message;
     console.log(this.contact);
 
-    this.contactService.getContact(this.contact);
+    console.log(this.contact);
+
+    this.contactService.getContact(this.contact).subscribe(
+      data => this.rep = data["data"] + "\n" + data["message"]);
 
 
     this.submitted = true;
