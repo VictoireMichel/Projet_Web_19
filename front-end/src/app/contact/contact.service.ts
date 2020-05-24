@@ -17,5 +17,6 @@ export class ContactService {
     return this
       .http
       .post(`${this.url}/v1/api/utilisateurs/email`, data)
+
   }
 }
