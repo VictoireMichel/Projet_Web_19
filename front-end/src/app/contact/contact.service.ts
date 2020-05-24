@@ -16,6 +16,6 @@ export class ContactService {
     console.log(data);
     return this
       .http
-      .post(`${this.url}/v1/api/utilisateurs/email`, data).subscribe(res => {console.log(res);})
+      .post(`${this.url}/v1/api/utilisateurs/email`, data)
   }
 }
