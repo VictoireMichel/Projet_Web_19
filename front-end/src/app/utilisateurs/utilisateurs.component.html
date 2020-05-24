@@ -1,37 +1,18 @@
 <br>
-
-
-
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-1 navbar-light green lighten-2 " [containerInside]="false">
-
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand white-text py-4">Utilisateurs</a></mdb-navbar-brand>
-
-  <!-- Collapsible content -->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green">
+  <mdb-navbar-brand>
+    <a class="navbar-brand" routerLink="/admin">Administration de la page</a>
+  </mdb-navbar-brand>
   <links>
-
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto ">
-      <li class="nav-item ">
-        <a class="nav-link waves-light white-text" routerLink="/produits" mdbWavesEffect>PRODUITS<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light white-text" routerLink="/categories" mdbWavesEffect>CATEGORIES</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light white-text" routerLink="/fournisseurs" mdbWavesEffect>FOURNISSEURS</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light white-text" routerLink="/statistiques" mdbWavesEffect>STATISTIQUES</a>
-      </li>
-    </ul>
-    <!-- Links -->
+    <div class="navbar-nav">
+      <a class="nav-item nav-link waves-light" routerLink="/produits" mdbWavesEffect>PRODUITS</a>
+      <a class="nav-item nav-link waves-light" routerLink="/categories" mdbWavesEffect>CATEGORIES</a>
+      <a class="nav-item nav-link waves-light" routerLink="/fournisseurs" mdbWavesEffect>FOURNISSEURS</a>
+      <a class="nav-item nav-link active waves-light" routerLink="/utilisateurs" mdbWavesEffect>UTILISATEURS <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link waves-light" routerLink="/statistiques" mdbWavesEffect>STATISTIQUES</a>
+    </div>
   </links>
-  <!-- Collapsible content -->
-
 </mdb-navbar>
-<!--/.Navbar-->
 
 
 <!-- Jumbotron -->
