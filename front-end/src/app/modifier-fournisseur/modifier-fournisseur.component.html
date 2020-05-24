@@ -1,3 +1,10 @@
+<br>
+
+<button type="button" class="close" aria-label="Close" routerLink="/fournisseurs">
+  <span aria-hidden="true">×</span>
+</button>
+
+
 <div class="form-horizontal pad-10">
   <br>
   <form #modifierFournisseurForm="ngForm">
@@ -29,7 +36,7 @@
               [popoverMessage]="'êtes-vous sûr?'"
               placement="top"
               (confirm)="modifierFournisseur(this.id)"
-              type="submit" class="btn btn-save btn-primary" [disabled]="!modifierFournisseurForm.valid">
+              type="submit" mdbBtn color="light-green" mdbWavesEffect [disabled]="!modifierFournisseurForm.valid">
         <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
       </button>
     </div>
