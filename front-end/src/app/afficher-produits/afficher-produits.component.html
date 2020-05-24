@@ -1,10 +1,10 @@
 
 <br>
 
-<div>
-  <input #box (keyup.enter)="recherche(box.value)">
-  <button type="button" class="btn btn-light-green" (click)="recherche(box.value)">Recherche</button>
-</div>
+<form class="form-inline md-form mr-auto mb-4">
+  <input class="form-control mr-sm-2" type="text" placeholder="Recherche" aria-label="Search" #box (keyup.enter)="recherche(box.value)">
+  <button mdbBtn size="md" color="light-green" rounded="true" class="my-0 waves-light" mdbWavesEffect type="button" (click)="recherche(box.value)">Recherche</button>
+</form>
 
     <table id="table" mdbTable>
 
