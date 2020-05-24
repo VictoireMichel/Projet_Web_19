@@ -1,10 +1,20 @@
+<br>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green">
+  <mdb-navbar-brand>
+    <a class="navbar-brand" routerLink="/admin">Administration de la page</a>
+  </mdb-navbar-brand>
+  <links>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link waves-light" routerLink="/produits" mdbWavesEffect>PRODUITS</a>
+      <a class="nav-item nav-link waves-light" routerLink="/categories" mdbWavesEffect>CATEGORIES</a>
+      <a class="nav-item nav-link waves-light" routerLink="/fournisseurs" mdbWavesEffect>FOURNISSEURS</a>
+      <a class="nav-item nav-link waves-light" routerLink="/utilisateurs" mdbWavesEffect>UTILISATEURS</a>
+      <a class="nav-item nav-link active waves-light" routerLink="/statistiques" mdbWavesEffect>STATISTIQUES <span class="sr-only">(current)</span></a>
+    </div>
+  </links>
+</mdb-navbar>
 
 <br>
-
-<button type="button" class="close" aria-label="Close" routerLink="/admin">
-  <span aria-hidden="true">×</span>
-</button>
-
 
 <div style="display: block">
   <canvas mdbChart
