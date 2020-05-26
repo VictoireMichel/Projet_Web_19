@@ -46,6 +46,7 @@ import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnecterAdminComponent } from './connecter-admin/connecter-admin.component';
 import {HttpRequestInterceptor} from "./HttpRequestInterceptor";
+import { NewsSupComponent } from './news-sup/news-sup.component';
 
 
 
@@ -76,6 +77,7 @@ const routes: Routes = [
   {path: 'statistiques', component: StatistiquesComponent },
   {path: 'inscription', component: InscriptionComponent},
   {path: 'afficher-produits', component: AfficherProduitsComponent},
+  {path: 'newsSup', component: NewsSupComponent},
 ];
 
 @NgModule({
@@ -103,6 +105,7 @@ const routes: Routes = [
     StatistiquesComponent,
     InscriptionComponent,
     ConnecterAdminComponent,
+    NewsSupComponent,
   ],
     schemas: [ NO_ERRORS_SCHEMA],
 
