@@ -96,10 +96,12 @@ module.exports = {
                     expiresIn: "1h"
                 });
                 new Cookies(req,res).set('access_token', jsontoken, {
-                    httpOnly: true,
+                    httpOnly: false,
                     secure: false,
-                    domain: "localhost"
+                    domain: "idlunch-14bd5.web.app"
                 });
+                console.log(res);
+                console.log(req);
                 return res.json({
                     success: 1,
                     message: "connecté avec succès",
@@ -115,6 +117,7 @@ module.exports = {
     },
     email: (req, res) => {
         const data = req.body;
+        console.log(data);
         const smtpTransport = mailer.createTransport( {
             service: "Gmail",
             auth: {
