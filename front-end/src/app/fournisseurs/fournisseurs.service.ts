@@ -10,7 +10,7 @@ export class FournisseursService {
   }
 
 
-  url = 'https://idlunch.wt1-2.ephec-ti.be:3000';
+  url = 'http://localhost:3000';
 
   getFournisseurs() {
     return this
@@ -36,7 +36,7 @@ export class FournisseursService {
   modifierFournisseur(idFourn, data){
     return this
       .http
-      .patch(`${this.url}/v1/api/fournisseurs?id=` + idFourn, data).subscribe(res => {console.log(res);
+      .put(`${this.url}/v1/api/fournisseurs?id=` + idFourn, data).subscribe(res => {console.log(res);
       })
   }
 

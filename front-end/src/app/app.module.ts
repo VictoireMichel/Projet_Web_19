@@ -44,7 +44,6 @@ import { ModifierUtilisateurComponent } from './modifier-utilisateur/modifier-ut
 import { AfficherProduitsComponent } from './afficher-produits/afficher-produits.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
-import { ConnecterAdminComponent } from './connecter-admin/connecter-admin.component';
 import {HttpRequestInterceptor} from "./HttpRequestInterceptor";
 import { NewsSupComponent } from './news-sup/news-sup.component';
 
@@ -60,7 +59,6 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent}, // http://localhost:4200/news
   {path: 'contact', component: ContactComponent }, // http://localhost:4200/contact
   {path: 'connecter', component: ConnecterComponent}, // http://localhost:4200/connecter
-  {path: 'connecter-admin', component: ConnecterAdminComponent},
   {path: 'produits', component: ProduitComponent},
   {path: 'ajout-produit', component: AjoutProduitComponent },
   {path: 'admin', component: AdminComponent},
@@ -104,7 +102,6 @@ const routes: Routes = [
     AfficherProduitsComponent,
     StatistiquesComponent,
     InscriptionComponent,
-    ConnecterAdminComponent,
     NewsSupComponent,
   ],
     schemas: [ NO_ERRORS_SCHEMA],
