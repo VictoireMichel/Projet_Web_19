@@ -143,9 +143,9 @@ module.exports = {
                 user: process.env.MAIL,
                 pass: process.env.MAIL_PASSWORD
             },
-            tls: {
-                rejectUnauthorized: false
-            }
+            //tls: {
+                //rejectUnauthorized: false
+            //}
         });
         const mail = {
             from: data.email,
