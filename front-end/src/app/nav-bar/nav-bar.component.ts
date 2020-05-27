@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ConnecterService} from "../connecter/connecter.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private connecterService: ConnecterService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  getLogout(){
+    this.connecterService.getLogout();
+    this.router.navigateByUrl('/');
   }
 
 }

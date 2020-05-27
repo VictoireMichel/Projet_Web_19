@@ -21,7 +21,7 @@ export class ConnecterService {
   getLogout() {
     return this
       .http
-      .get(`${this.url}/v1/api/utilisateurs/logout`)
+      .get(`${this.url}/v1/api/utilisateurs/logout`).subscribe(res => console.log(res));
   }
 
 }

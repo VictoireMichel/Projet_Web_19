@@ -33,7 +33,7 @@
             <div class="dropdown-menu dropdown-menu-right dropdown-primary">
               <a class="dropdown-item" routerLink="/connecter" style="background-color: lightcyan">Se connecter</a>
               <div class="divider dropdown-divider"></div>
-              <a class="dropdown-item" routerLink="/" style="background-color: lightpink">Se déconnecter</a>
+              <a class="dropdown-item" (click)="getLogout()" style="background-color: lightpink" >Se déconnecter</a>
             </div>
           </div>
         </a>
