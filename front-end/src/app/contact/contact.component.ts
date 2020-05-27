@@ -56,7 +56,7 @@ export class ContactComponent implements OnInit {
 
 
     this.contactService.getContact(this.contact).subscribe(
-      data => this.rep = data["data"] + "\n" + data["message"]);
+      data => this.rep = data["message"]);
 
 
     this.submitted = true;
