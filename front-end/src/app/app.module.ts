@@ -20,17 +20,17 @@ import { ConnecterComponent } from './connecter/connecter.component';
 import { ConnecterService } from './connecter/connecter.service';
 
 import { ProduitComponent } from './produit/produit.component';
-import {ProduitsService} from './produit/produits.service';
+import { ProduitsService } from './produit/produits.service';
 
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
 
-import {CategoriesService} from './categories/categories.service';
-import {FournisseursService} from './fournisseurs/fournisseurs.service';
+import { CategoriesService } from './categories/categories.service';
+import { FournisseursService } from './fournisseurs/fournisseurs.service';
 import { AdminComponent } from './admin/admin.component';
 import { ModifierProduitComponent } from './modifier-produit/modifier-produit.component';
 import { AjoutFournisseurComponent } from './ajout-fournisseur/ajout-fournisseur.component';
@@ -38,13 +38,12 @@ import { ModifierFournisseurComponent } from './modifier-fournisseur/modifier-fo
 import { AjoutCategorieComponent } from './ajout-categorie/ajout-categorie.component';
 import { ModifierCategorieComponent } from './modifier-categorie/modifier-categorie.component';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
-import {UtilisateursService} from "./utilisateurs/utilisateurs.service";
+import { UtilisateursService } from "./utilisateurs/utilisateurs.service";
 import { AjoutUtilisateurComponent } from './ajout-utilisateur/ajout-utilisateur.component';
 import { ModifierUtilisateurComponent } from './modifier-utilisateur/modifier-utilisateur.component';
 import { AfficherProduitsComponent } from './afficher-produits/afficher-produits.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import {HttpRequestInterceptor} from "./HttpRequestInterceptor";
+import { HttpRequestInterceptor } from "./HttpRequestInterceptor";
 import { NewsSupComponent } from './news-sup/news-sup.component';
 
 
@@ -73,7 +72,6 @@ const routes: Routes = [
   {path: 'utilisateurs', component: UtilisateursComponent },
   {path: 'modifier-utilisateur/:id', component: ModifierUtilisateurComponent },
   {path: 'statistiques', component: StatistiquesComponent },
-  {path: 'inscription', component: InscriptionComponent},
   {path: 'afficher-produits', component: AfficherProduitsComponent},
   {path: 'newsSup', component: NewsSupComponent},
 ];
@@ -101,7 +99,6 @@ const routes: Routes = [
     ModifierUtilisateurComponent,
     AfficherProduitsComponent,
     StatistiquesComponent,
-    InscriptionComponent,
     NewsSupComponent,
   ],
     schemas: [ NO_ERRORS_SCHEMA],
