@@ -50,11 +50,15 @@ export class ConnecterComponent implements OnInit {
 
 
     this.connecterService.getConnexion(this.connexion).subscribe(data => {
+      console.log(data);
       this.data = data["success"];
       console.log(this.data);
 
       if(this.data == 1){
         this.router.navigateByUrl('/afficher-produits');
+      }
+      if(this.data == 2){
+        this.router.navigateByUrl('/admin');
       }
       else {
           this.rep = data["data"];
